@@ -2,6 +2,7 @@ import re
 import zipfile
 import nltk
 from functools import cmp_to_key
+import os.path
 
 from tokens_lemmas import tokenization, get_lemma
 
@@ -102,6 +103,20 @@ def read_index():
             map[key].add(words[i])
     return map
 
+def boolean_search(query, index):
+    query_words = re.split('\s+', query)
+    page_crossing = set()
+    token_query = set(map(lambda x: get_lemma(x), query_words))
+    for word in token_query:
+        page_crossing = page_crossing | index[word]
+    print(len(page_crossing))
+    print(page_crossing)
+
 if __name__ == '__main__':
     nltk.download('stopwords')
-    create_index()
+
+    if not os.path.isfile('index.txt'):
+        create_index() 
+
+    query = input('Введите ваш запрос: ')
+    boolean_search(query, read_index())
