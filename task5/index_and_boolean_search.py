@@ -104,21 +104,82 @@ def read_index():
     return map
 
 def boolean_search(query, index):
-    query_words = re.split('\s+', query)
-    page_crossing = set()
-    token_query = set(map(lambda x: get_lemma(x), query_words))
-    for word in token_query:
-        page_crossing = page_crossing | index[word]
-    print(len(page_crossing))
-    print(page_crossing)
+    and_operator = '&'
+    or_operator = '|'
+    not_operator = 'not'
 
-    return page_crossing
+    all_pages = set()
+    for page in index.values():
+        all_pages = all_pages | page
+
+    def and_operation(set_a, set_b):
+        return set_a & set_b
+
+    def or_operation(set_a, set_b):
+        return set_a | set_b
+
+    def difference_set(set_a, set_b):
+        return set_a - set_b
+
+    words = re.split('\s+', query)
+    inversion = False
+
+    query_in_sets = []
+
+    prev_set = set()
+    for i in range(len(words)):
+        word = words[i]
+        if i == len(words) - 1:
+            if word not in index.keys():
+                prev_set = set()
+            elif inversion:
+                prev_set = difference_set(all_pages, index[word])
+            else:
+                prev_set = index[word]
+            query_in_sets.append((prev_set, None))
+        if word == and_operator or word == or_operator:
+            query_in_sets.append((prev_set, word))
+            continue
+
+        if word == not_operator:
+            inversion = True
+            continue
+        if word not in index.keys():
+            prev_set = set()
+        elif inversion:
+            prev_set = difference_set(all_pages, index[word])
+            inversion = False
+        else:
+            if word not in index.keys():
+                prev_set = set()
+            else:
+                prev_set = index[word]
+
+    def run_operations(query, operation_symbol, operation_func):
+        result = []
+        for i in range(len(query) - 1):
+            if query[i][1] == operation_symbol:
+                current_result = operation_func(query[i][0], query[i + 1][0])
+                query[i + 1] = (current_result, query[i + 1][1])
+            else:
+                result.append((query[i][0], query[i][1]))
+        result.append((query[len(query) - 1]))
+        return result
+
+    and_result = run_operations(query_in_sets, and_operator, and_operation)
+    or_result = run_operations(and_result, or_operator, or_operation)
+    if len(or_result) == 1:
+        print("Correct query")
+    return or_result[0][0]
+
 
 if __name__ == '__main__':
     nltk.download('stopwords')
 
     if not os.path.isfile('index.txt'):
-        create_index() 
+        create_index()
 
     query = input('Введите ваш запрос: ')
-    boolean_search(query, read_index())
+    result = boolean_search(query, read_index())
+    print(len(result))
+    print(result)
