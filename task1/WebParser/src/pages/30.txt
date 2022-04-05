@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Intent, action, data, Uri, parse, scheme, authority"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lesson 31. Intent attributes Uri and data. Launch system apps."/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://lh3.googleusercontent.com/-Y2wWS9RFCoc/TqRT2R6dmtI/AAAAAAAAAiA/hRpMbJOsvTo/s640/20111023_L0031_L_AVD.jpg"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="How to put data into Intent"/>
+	<meta name="author" content="Дмитрий Виноградов"/>
+	<meta name="description" content="How to put data into Intent"/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lesson 31. Intent attributes Uri and data. Launch system apps.</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/70-urok-31-zachem-u-intent-est-atribut-data-chto-takoe-uri-vyzyvaem-sistemnye-prilozhenija.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[522]='/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/70-urok-31-zachem-u-intent-est-atribut-data-chto-takoe-uri-vyzyvaem-sistemnye-prilozhenija.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Lessons</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="en-GB"/>
+	<meta itemprop="url" content="/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html" itemprop="url" title="Lesson 31. Intent attributes Uri and data. Launch system apps.">
+				Lesson 31. Intent attributes Uri and data. Launch system apps.</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-11-07T08:00:00+03:00" itemprop="datePublished">
+					07 November 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>This lesson:</p>
+<p>- explore Uri and data intent attribute;<br/>- launch system apps (browser, dialer, map).</p>
+ 
+<p> </p>
+<p>We know that <strong>Intent</strong> has an <strong>action</strong> attribute. It is used to indicate action: <strong>viewing</strong> or <strong>editing</strong> for example. It’s common, that action is often applied to smth,so we need to declare an <strong>object</strong>, but not only an action, and Intent has <strong>data</strong> attribute for it.</p>
+<p>A way to set value to this attribute is Intent’s <a href="http://developer.android.com/reference/android/content/Intent.html#setData(android.net.Uri)" target="_blank" rel="noopener noreferrer">setData (Uri data)</a> method, and <a href="http://developer.android.com/reference/android/net/Uri.html" target="_blank" rel="noopener noreferrer">Uri</a> object must be passed to this method.</p>
+<p>Uri is an object which uses string, disassembles it to parts and remember it. We are not allowed to use any string we want, we can only use strings which are declared according to this document: <a href="http://www.faqs.org/rfcs/rfc2396.html" target="_blank" rel="noopener noreferrer">RFC 2396</a>. Uri has lot’s of methods which allow us to retrieve separate parts from parsed string.</p>
+<p>I will create Uri from string and pass (using colon) method’s name and a value which it returns to logs. Let’s take this string, http address for example:</p>
+<div class="java">
+<pre class="brush:java">Uri uri = Uri.parse("http://developer.android.com/reference/android/net/Uri.html");</pre>
+</div>
+<p>Let’s look at what methods return:</p>
+<p><em>uri.getScheme(): http<br/></em><em>uri.getSchemeSpecificPart(): //developer.android.com/reference/android/net/Uri.html<br/></em><em>uri.getAuthority(): developer.android.com<br/></em><em>uri.getHost(): developer.android.com<br/></em><em>uri.getPath(): /reference/android/net/Uri.html<br/></em><em>uri.getLastPathSegment(): Uri.html</em></p>
+<p>Scheme, Authority, Host, Path, and others are concepts, taken from RFC document I linked before. Following the link you can find full description of them, understand their meaning and verify with what was returned by Uri.</p>
+<p> </p>
+<p>Let’s take a look at some more example:</p>
+<p> </p>
+<p>FTP</p>
+<pre class="brush:java">Uri uri = Uri.parse("ftp://bob @ google.com:80/data/files");</pre>
+<p>(<em>As for real, the code above is written in one string. There are spaces before and after @ because of layout features</em>)</p>
+<p><em>uri.getScheme(): ftp<br/>uri.getSchemeSpecificPart(): //<span id="cloak6bbae40bd51135c73d44f763949e5148">This email address is being protected from spambots. You need JavaScript enabled to view it.</span><script type='text/javascript'>document.getElementById('cloak6bbae40bd51135c73d44f763949e5148').innerHTML='';var prefix='&#109;a'+'i&#108;'+'&#116;o';var path='hr'+'ef'+'=';var addy6bbae40bd51135c73d44f763949e5148='b&#111;b'+'&#64;';addy6bbae40bd51135c73d44f763949e5148=addy6bbae40bd51135c73d44f763949e5148+'g&#111;&#111;gl&#101;'+'&#46;'+'c&#111;m';var addy_text6bbae40bd51135c73d44f763949e5148='b&#111;b'+'&#64;'+'g&#111;&#111;gl&#101;'+'&#46;'+'c&#111;m';document.getElementById('cloak6bbae40bd51135c73d44f763949e5148').innerHTML+='<a '+path+'\''+prefix+':'+addy6bbae40bd51135c73d44f763949e5148+'\'>'+addy_text6bbae40bd51135c73d44f763949e5148+'<\/a>';</script>:80/data/files<br/>uri.getAuthority(): <span id="cloak2eabf779f39dd402d05e6c6cf5db0a48">This email address is being protected from spambots. You need JavaScript enabled to view it.</span><script type='text/javascript'>document.getElementById('cloak2eabf779f39dd402d05e6c6cf5db0a48').innerHTML='';var prefix='&#109;a'+'i&#108;'+'&#116;o';var path='hr'+'ef'+'=';var addy2eabf779f39dd402d05e6c6cf5db0a48='b&#111;b'+'&#64;';addy2eabf779f39dd402d05e6c6cf5db0a48=addy2eabf779f39dd402d05e6c6cf5db0a48+'g&#111;&#111;gl&#101;'+'&#46;'+'c&#111;m';var addy_text2eabf779f39dd402d05e6c6cf5db0a48='b&#111;b'+'&#64;'+'g&#111;&#111;gl&#101;'+'&#46;'+'c&#111;m';document.getElementById('cloak2eabf779f39dd402d05e6c6cf5db0a48').innerHTML+='<a '+path+'\''+prefix+':'+addy2eabf779f39dd402d05e6c6cf5db0a48+'\'>'+addy_text2eabf779f39dd402d05e6c6cf5db0a48+'<\/a>';</script>:80<br/>uri.getHost(): google.com<br/>uri.getPort(): 80<br/>uri.getPath(): /data/files<br/>uri.getLastPathSegment(): files<br/>uri.getUserInfo(): bob</em></p>
+<p> </p>
+<p>Coordinates</p>
+<div class="java">
+<pre class="brush:java">Uri uri = Uri.parse("geo:55.754283,37.62002"); </pre>
+</div>
+<p><em>uri.getScheme(): geo<br/>uri.getSchemeSpecificPart(): 55.754283,37.62002</em></p>
+<p>We only could retrieve Scheme and SchemeSpecificPart here.</p>
+<p> </p>
+<p>Phone number</p>
+<div class="java">
+<pre class="brush:java">Uri uri = Uri.parse("tel:12345");</pre>
+</div>
+<p><em>uri.getScheme(): tel<br/>uri.getSchemeSpecificPart():12345</em></p>
+<p>Similarly, only two parts we could retrieve here.</p>
+<p> </p>
+<p>Contact</p>
+<div class="java">
+<pre class="brush:java">Uri uri = Uri.parse("content://contacts/people/1");</pre>
+</div>
+<p><em>uri.getScheme(): content<br/>uri.getSchemeSpecificPart(): //contacts/people/1<br/>uri.getAuthority(): contacts<br/>uri.getPath(): /people/1<br/>uri.getLastPathSegment(): 1</em></p>
+<p>Scheme equals to content within this example. It’s a special data type - Content Provider which allows any program to give access to it’s data, and other programs to read and edit this data. We will unveil this topic later and create this data type by ourselves.</p>
+<p>You can inquire standard supported Uris <a href="http://developer.android.com/guide/appendix/g-app-intents.html" target="_blank" rel="noopener noreferrer">here</a></p>
+<p> </p>
+<p>Examples show that Uri could be created from completely different strings: http address, ftp address, coordinates, phone numbers, contacts.</p>
+<p>Content type could be identified by <strong>Scheme</strong>. Also, Scheme could be adjusted within <strong>Intent Filter</strong>, and we can filter Intents with Uri’s data type we need, only http for example. We will do it later, and now let’s code a simple example, where we will declare an Intent with action and data, send it and wait for result. Let’s view http address, coordinates on a map and open the dialer.</p>
+<p>We need Google Maps App to view map coordinates. There is no such an app in standard android system images (that you downloaded with SDK Manager). We need system image which name begins with "Google APIs".</p>
+<p> </p>
+<p>Create AVD with platform Google APIs with API Level 10. Call it any way you want</p>
+<p><img src="https://lh3.googleusercontent.com/-Y2wWS9RFCoc/TqRT2R6dmtI/AAAAAAAAAiA/hRpMbJOsvTo/s640/20111023_L0031_L_AVD.jpg" alt="" width="404" height="640" border="0"/></p>
+<p> </p>
+<p>Let’s create a project. Note, that we use Google APIs 2.3.3</p>
+<p><img src="https://lh4.googleusercontent.com/-SqAm5XfrDCE/TqRGSl4h5iI/AAAAAAAAAhY/hDJs7eEBNB0/s800/20111023_L0031_L_Platform.jpg" alt="" width="525" height="573" border="0"/></p>
+<p> </p>
+<p><strong>Project name</strong>: P0311_SimpleIntents<br/> <strong>Build Target</strong>: Google APIs 2.3.3<br/> <strong>Application name</strong>: SimpleIntents<br/> <strong>Package name</strong>: ru.startandroid.develop.p0311simpleintents<br/> <strong>Create Activity</strong>: MainActivity</p>
+<p><em>(If you didn’t manage to load Google APIs, just create a new project as usual with Android 2.3.3 platform. Google Maps just won’t work within this example). </em></p>
+<p> </p>
+<p>Let’s code<strong> main.xml</strong></p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"&gt;
+        &lt;Button
+            android:id="@+id/btnWeb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Web"&gt;
+        &lt;/Button&gt;
+        &lt;Button
+            android:id="@+id/btnMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Map"&gt;
+        &lt;/Button&gt;
+        &lt;Button
+            android:id="@+id/btnCall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Call"&gt;
+        &lt;/Button&gt;
+&lt;/LinearLayout&gt;</pre>
+<p>There are three buttons on the screen: the first one will open a web-page, the second is for map opening and the third is for dialer. </p>
+<p> </p>
+<p>Let's code<strong> MainActivity.java</strong>:</p>
+<pre class="brush:java">package ru.startandroid.develop.p0311simpleintents;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class MainActivity extends Activity implements OnClickListener {
+
+  Button btnWeb;
+  Button btnMap;
+  Button btnCall;
+
+  /** Called when the activity is first created. */
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+
+    btnWeb = (Button) findViewById(R.id.btnWeb);
+    btnMap = (Button) findViewById(R.id.btnMap);
+    btnCall = (Button) findViewById(R.id.btnCall);
+
+    btnWeb.setOnClickListener(this);
+    btnMap.setOnClickListener(this);
+    btnCall.setOnClickListener(this);
+  }
+
+  @Override
+  public void onClick(View v) {
+    Intent intent;
+    switch (v.getId()) {
+    case R.id.btnWeb:
+      intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://developer.android.com"));
+      startActivity(intent);
+      break;
+    case R.id.btnMap:
+      intent = new Intent();
+      intent.setAction(Intent.ACTION_VIEW);
+      intent.setData(Uri.parse("geo:55.754283,37.62002"));
+      startActivity(intent);
+      break;
+    case R.id.btnCall:
+      intent = new Intent(Intent.ACTION_DIAL);
+      intent.setData(Uri.parse("tel:12345"));
+      startActivity(intent);
+      break;
+    }
+  }
+}</pre>
+<p>I followed three different ways to create an Intent with attributes.</p>
+<p>I used <a href="http://developer.android.com/reference/android/content/Intent.html#Intent(java.lang.String, android.net.Uri)" target="_blank" rel="noopener noreferrer">Intent (String action, Uri uri)</a> constructor for <strong>btnWeb</strong>. It creates an <strong>intent</strong> with <strong>action</strong> and <strong>data</strong> variables. We use a standard action – ACTION_VIEW, it indicates if we want to <strong>view</strong> something. We pass Uri, created from web link http://developer.android.com, as <strong>data</strong> variable. If we try to describe in words our code, we will get something like this: our intent indicates if we want to view this link’s content and looking for activity to do it.</p>
+<p>In case with <strong>btnMap</strong> I used <a href="http://developer.android.com/reference/android/content/Intent.html#Intent()" target="_blank" rel="noopener noreferrer">Intent()</a> constructor. It just creates <strong>intent</strong>, and we determine <strong>action</strong> and <strong>data</strong> attributes for it within next rows. <strong>action</strong> is ACTION_VIEW again and we use Uri was which created from coordinates - 55.754283,37.62002, as <strong>data</strong>. This intent indicates that we want to see the coordinates on a map.</p>
+<p>We use <a href="http://developer.android.com/reference/android/content/Intent.html#Intent(java.lang.String)" target="_blank" rel="noopener noreferrer">Intent (String action)</a> constructor for <strong>btnCall</strong>. It needs an <strong>action</strong> to be set at once, but data attribute will be determined later. action (in this case it is ACTION_DIAL ) opens dialer and dial a number determined in <strong>data</strong>, but it doesn’t launch a call. We set Uri, created from phone number 12345, as data.</p>
+<p>All this three ways lead us to same result: we will get an <strong>intent</strong> with determined action and data attributes. You decide which one to use, depending on the situation.</p>
+<p>We need an internet connection to be on our PC, because App will use it to open the link and show the map.</p>
+<p>Add a Users Permission element within app’s manifest and choose android.permission.INTERNET for it’s name. It will allow internet connection to the app. In my case it works even without this permission, but I can’t get why…</p>
+<p> </p>
+<p>Let’s save and launch the app.</p>
+<p> </p>
+<p><img src="https://lh5.googleusercontent.com/-usHz6HwbVgY/TqRGSHOglyI/AAAAAAAAAhM/U_VGWC-ojcY/s640/20111023_L0031_L_MainScreen.jpg" alt="" width="640" height="454" border="0"/></p>
+<p>Click Web button.</p>
+<p>Standard browser will be launched, showing our link content.</p>
+<p><img src="https://lh4.googleusercontent.com/-hprC7pbt_tE/TqRGS4VIICI/AAAAAAAAAhk/0ZauEBdDq18/s640/20111023_L0031_L_WebScreen.jpg" alt="" width="640" height="454" border="0"/></p>
+<p> </p>
+<p>Return to the main screen and click Map.</p>
+<p>Map which shows place, according to determined coordinates, is now displayed.</p>
+<p><img src="https://lh4.googleusercontent.com/--uDBALCUWoI/TqRGSaKiMcI/AAAAAAAAAhQ/tZ8jDgBnljM/s640/20111023_L0031_L_MapScreen.jpg" alt="" width="640" height="454" border="0"/></p>
+<p> </p>
+<p>Return to the main screen and click Call.</p>
+<p>Standard dialer is displayed and we see that determined within data number is already dialed. We just need to click the call-button.</p>
+<p><img src="https://lh4.googleusercontent.com/-VrHil4zQwsg/TqRGSKtf5dI/AAAAAAAAAhc/7FQHGVIRulk/s640/20111023_L0031_L_CallScreen.jpg" alt="" width="640" height="454" border="0"/></p>
+<p> </p>
+<p>Most likely, you may have lot’s of "what if" questions now. I can answer some of them at once and suggest you to make some experiments within this app.</p>
+<p>1) What if we don’t use "geo" prefix:</p>
+<p>System will warn you, that there is no suitable activity, because Map Activity is adjusted to work with Schema = geo, I think.</p>
+<p>If we don’t use tel prefix, Call Activity similarly won’t work.</p>
+<p> </p>
+<p>2) What if we use geo with out of range coordinates:</p>
+<p>If we use, out of range coordinates for example, like geo:a,b, map Activity will be launched, but will warn: "Unable to load the URL". I.e. data was suitable by Schema, but was incorrect.</p>
+<p> </p>
+<p>3) What if we use wright coordinates, but the action will be ACTION_EDIT instead of ACTION_VIEW.</p>
+<p>It turns out that we want to edit place on map, defined with this coordinates. System will warn us, that there is no appropriate activity. Google app is waiting for Intent with action = ACTION_VIEW. It will show us place on a map, but it didn’t agree to edit this place )</p>
+<p> </p>
+<p>It’s necessary to understand, that all system apps are designed for specific actions with specific data. So, if you try to make a call to http link or find a phone number on a map, system just won’t find appropriate activity.</p>
+<p> </p>
+<p>Next lesson:<br/>- code simple browser</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Lesson 30. More details about onActivityResult" aria-label="Previous article: Lesson 30. More details about onActivityResult" href="/en/lessons/521-lesson-30-more-details-about-onactivityresult.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Prev</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Lesson 32. Code simple browser." aria-label="Next article: Lesson 32. Code simple browser." href="/en/lessons/523-lesson-32-code-simple-browser.html" rel="next">
+			<span aria-hidden="true">Next</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki/vse-uroki-spiskom/70-urok-31-zachem-u-intent-est-atribut-data-chto-takoe-uri-vyzyvaem-sistemnye-prilozhenija.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons/522-lesson-31-intent-attributes-uri-and-data-launch-system-apps.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

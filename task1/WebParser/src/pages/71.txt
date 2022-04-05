@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons/536-lesson-34-storing-data-sqlite.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="SQLite, SQLiteOpenHelper, onCreate, onUpgrade, getWritableDatabase, close, SQLiteDatabase, insert, query, delete, getColumnIndex, moveToFirst, moveToNext"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lesson 34. Storing data. SQLite"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://lh4.googleusercontent.com/--STCYBGgSKc/TrrCZwz2RXI/AAAAAAAAAls/pc3KBMUy9A8/s640/20111109_L0034_L_AddData.jpg"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons/536-lesson-34-storing-data-sqlite.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="How to create SQLite database in Android. How to storage data in database"/>
+	<meta name="author" content="Дмитрий Виноградов"/>
+	<meta name="description" content="How to create SQLite database in Android. How to storage data in database"/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lesson 34. Storing data. SQLite</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/536-lesson-34-storing-data-sqlite.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[536]='/en/lessons/536-lesson-34-storing-data-sqlite.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Lessons</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="en-GB"/>
+	<meta itemprop="url" content="/en/lessons/536-lesson-34-storing-data-sqlite.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/en/lessons/536-lesson-34-storing-data-sqlite.html" itemprop="url" title="Lesson 34. Storing data. SQLite">
+				Lesson 34. Storing data. SQLite</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2018-01-11T22:38:44+03:00" itemprop="datePublished">
+					11 January 2018				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>This lesson:</p>
+<p>- storing data with SQLite;</p>
+<p> </p>
+ 
+<p>The last lesson we took a look at the most simple way of data storing  - <strong>Preferences. </strong>This way is very limited and not suitable for big structured data storing. This lesson we will take a look at <a href="http://www.sqlite.org/index.html" target="_blank" rel="noopener noreferrer">SQLite</a>. This is a database with table and requests, just like a common database.</p>
+<p>At first, we need to enquire about the way an app interacts with a database. </p>
+<p>Connecting to database within an app we set its name and version. The following situations may occur:</p>
+<p>1) Database <strong>doesn’t exist</strong>. It may happen in case the application has been installed for the first time. In such case the application should itself create a database with tables and interact with it then.</p>
+<p>2) Database <strong>exists</strong>, but its version is <strong>obsolete</strong>. It may happen in case the application has been updated. For example: an updated program needs new fields in existing tables or even new tables. In such case the application should update existing tables or create new, if it’s necessary.</p>
+<p>3) Database <strong>exists</strong> and its version is <strong>actual</strong>. In such case an application just connect to database and interact with it.</p>
+<p>As you understand, when we say “application should” that means “developer should”. I.e. It’s our responsibility.  To do all operations described before, we should create a class which extends <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html">SQLiteOpenHelper</a>. Let’s call it DBHelper. This class will provide methods for update and creation of a database in cases when it doesn’t exist or it is obsolete.</p>
+<p><strong>onCreate </strong>is a method which will be called in case the database doesn’t exist or obsolete.</p>
+<p><strong>onUpgrade </strong>will be called if we try to connect to a newer version of the database than the existing one.</p>
+<p>Let’s create a simple contacts directory application which will store name and mail info. We will enter data with the phone screen and use logs for data displaying. List is often used for that, but we don’t know about it for now and I don’t want to make our application too heavy. The main thing is to master the techniques of working with the database.</p>
+<p>Let’s create a new project: </p>
+<p><strong>Project name</strong>: P0341_SimpleSQLite<br/> <strong>Build Target</strong>: Android 2.3.3<br/> <strong>Application name</strong>: SimpleSQLite<br/> <strong>Package name</strong>: ru.startandroid.develop.p0341simplesqlite<br/> <strong>Create Activity</strong>: MainActivity</p>
+<p> </p>
+<p>We will create two screens for data entering and table clearing. Open <strong>main.xml</strong> and code:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"&gt;
+    &lt;LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"&gt;
+        &lt;TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"&gt;
+        &lt;/TextView&gt;
+        &lt;EditText
+            android:id="@+id/etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"&gt;
+            &lt;requestFocus&gt;
+            &lt;/requestFocus&gt;
+        &lt;/EditText&gt;
+    &lt;/LinearLayout&gt;
+    &lt;LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"&gt;
+        &lt;TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"&gt;
+        &lt;/TextView&gt;
+        &lt;EditText
+            android:id="@+id/etEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"&gt;
+        &lt;/EditText&gt;
+    &lt;/LinearLayout&gt;
+    &lt;LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"&gt;
+        &lt;Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"&gt;
+        &lt;/Button&gt;
+        &lt;Button
+            android:id="@+id/btnRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read"&gt;
+        &lt;/Button&gt;
+        &lt;Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"&gt;
+        &lt;/Button&gt;
+    &lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;</pre>
+<p>There are two views for data entering and buttons for adding and loading data and clearing the table.</p>
+<p> </p>
+<p>Open <strong>MainActivity.java</strong> and code:</p>
+<pre class="brush:java">package ru.startandroid.develop.p0341simplesqlite;
+
+import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends Activity implements OnClickListener {
+
+  final String LOG_TAG = "myLogs";
+
+  Button btnAdd, btnRead, btnClear;
+  EditText etName, etEmail;
+
+  DBHelper dbHelper;
+
+  /** Called when the activity is first created. */
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+
+    btnAdd = (Button) findViewById(R.id.btnAdd);
+    btnAdd.setOnClickListener(this);
+
+    btnRead = (Button) findViewById(R.id.btnRead);
+    btnRead.setOnClickListener(this);
+
+    btnClear = (Button) findViewById(R.id.btnClear);
+    btnClear.setOnClickListener(this);
+
+    etName = (EditText) findViewById(R.id.etName);
+    etEmail = (EditText) findViewById(R.id.etEmail);
+    
+    // create object for database creation and control
+    dbHelper = new DBHelper(this);
+  }
+
+  
+  @Override
+  public void onClick(View v) {
+    
+    // create object for data
+    ContentValues cv = new ContentValues();
+    
+    // get data from editText fields
+    String name = etName.getText().toString();
+    String email = etEmail.getText().toString();
+
+    // connect to database
+    SQLiteDatabase db = dbHelper.getWritableDatabase();
+    
+
+    switch (v.getId()) {
+    case R.id.btnAdd:
+      Log.d(LOG_TAG, "--- Insert in mytable: ---");
+      // create data for insertion in a form of pairs: column name and value
+      
+      cv.put("name", name);
+      cv.put("email", email);
+      // insert row and get it’s ID
+      long rowID = db.insert("mytable", null, cv);
+      Log.d(LOG_TAG, "row inserted, ID = " + rowID);
+      break;
+    case R.id.btnRead:
+      Log.d(LOG_TAG, "--- Rows in mytable: ---");
+      // make a request for all data from mytable, get Cursor 
+      Cursor c = db.query("mytable", null, null, null, null, null, null);
+
+      // put the cursor to the first row
+      // false will be returned in case there are no rows
+      if (c.moveToFirst()) {
+
+        // determine the column numbers by names
+        int idColIndex = c.getColumnIndex("id");
+        int nameColIndex = c.getColumnIndex("name");
+        int emailColIndex = c.getColumnIndex("email");
+
+        do {
+          // get values according to column numbers and put them to log
+          Log.d(LOG_TAG,
+              "ID = " + c.getInt(idColIndex) + 
+              ", name = " + c.getString(nameColIndex) + 
+              ", email = " + c.getString(emailColIndex));
+          // moving to the next row 
+          // if the current row is the last and there are no rows we get false and leave the statement
+        } while (c.moveToNext());
+      } else
+        Log.d(LOG_TAG, "0 rows");
+      c.close();
+      break;
+    case R.id.btnClear:
+      Log.d(LOG_TAG, "--- Clear mytable: ---");
+      // delete all rows
+      int clearCount = db.delete("mytable", null, null);
+      Log.d(LOG_TAG, "deleted rows count = " + clearCount);
+      break;
+    }
+    // close database connection
+    dbHelper.close();
+  }
+  
+  
+
+  class DBHelper extends SQLiteOpenHelper {
+
+    public DBHelper(Context context) {
+      // superclass constructor
+      super(context, "myDB", null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+      Log.d(LOG_TAG, "--- onCreate database ---");
+      // create table with columns
+      db.execSQL("create table mytable ("
+          + "id integer primary key autoincrement," 
+          + "name text,"
+          + "email text" + ");");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+  }
+
+}</pre>
+<p>There are lots of new words in this code. Let’s find out what it is.</p>
+<p>Within Activity’s <strong>onCreate </strong>method we determine objects, set listeners and for database management we create dbHelper which is an instance of <strong>DBHelper </strong>class. <strong>DBHelper </strong>will be described later.</p>
+<p>Let’s take a look at <strong>onClick </strong>method within which we process buttons clicking.</p>
+<p><a href="http://developer.android.com/reference/android/content/ContentValues.html">ContentValues</a> class is used to determine values for table fields. We create <strong>cv </strong>and then use it. We initialize name and email variables with values from editText views. After that using <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html#getWritableDatabase()">getWritableDatabase</a>  method, we connect to the database and get <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> object. It will allow us to work with DB. We will use its methods insert, query and delete which have many entering parametres, but we will use them in the most simple way.</p>
+<p>Following the next step we determine which button was clicked:</p>
+<p><strong>btnAdd </strong>is for adding data into <em> We put the field name and value pairs into <strong>cv</strong>. </em>Inserting data into a table, values will be inserted into table fields under appropriate names we have specified.  We fill with data the name and email fields, an id will be filled automatically (primary key autoincrement). Now we call  <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html#insert(java.lang.String,%20java.lang.String,%20android.content.ContentValues)">insert</a> method and pass table name and cv object which includes entered values to it. The second method’s argument is used to paste an empty row to the table, we don’t need it this time so we pass null.  The insert method returns an ID of the pasted row, we save it into rowID and display in logs.</p>
+<p><strong>btnRead </strong>is used for loading all existing rows from mytable. <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html#query(java.lang.String,%20java.lang.String%5B%5D,%20java.lang.String,%20java.lang.String%5B%5D,%20java.lang.String,%20java.lang.String,%20java.lang.String)">query</a> method is used for loading, its input parameters are the table name, the list of requested fields, the conditions of the selection, grouping and sorting. As we need all table rows we only pass the table name and all other parameters will be null. The method will return a <a href="http://developer.android.com/reference/android/database/Cursor.html">Cursor</a> It can be considered as a table with data. <a href="http://developer.android.com/reference/android/database/Cursor.html#moveToFirst()">moveToFirst</a> method makes the first row active and checks if there are any rows (if something was selected with query method). The next step we get columns order number within Cursor by their names with <a href="http://developer.android.com/reference/android/database/Cursor.html#getColumnIndex(java.lang.String)">getColumnIndex</a> method. This numbers we use for data loading with <a href="http://developer.android.com/reference/android/database/Cursor.html#getInt(int)">getInt</a>  and <a href="http://developer.android.com/reference/android/database/Cursor.html#getString(int)">getString</a> methods and then we display data in logs. Using the <a href="http://developer.android.com/reference/android/database/Cursor.html#moveToNext()">moveToNext</a>  method we go through all data in Cursor until we get the last one. If there was not any rows in the table we would display an appropriate message in logs - 0 rows. At the end we close cursor (release resources) with <a href="http://developer.android.com/reference/android/database/Cursor.html#close()">close</a> method because we won’t use it further.</p>
+<p><strong>btnClear </strong>is used for table clearing. <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html#delete(java.lang.String,%20java.lang.String,%20java.lang.String%5B%5D)">delete</a> method deletes rows, we pass table name and null to it, as a condition for removing, everything will be deleted this case. The method returns a count of deleted rows.</p>
+<p>After this we close database connection with <a href="http://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html#close()">close</a> method.</p>
+<p> </p>
+<p><strong>DBHelper </strong>class is nested to <strong>MainActivity </strong>and declared at the end of the code. As I said before, <strong>DBHelper </strong>must extend <strong>SQLiteOpenHelper </strong>class.</p>
+<p>Within constructor we call super class’ constructor and pass to it:<br/><strong>context;<br/></strong><em>mydb </em>as a database name;<br/><strong>null </strong>as an object for interaction with cursos, we don’t need it for now;<br/>1 is a database version.</p>
+<p>Within this class’ <strong>onCreate </strong>method we use SQLiteDatabase object’s execSQL  method to make SQL request, which creates the table. I will remind you that this method is called when a table doesn’t exist and it must be created. Looking at the request, we see that we have created a table named <em>mytable</em>  with id, name and email fields.</p>
+<p>We don’t fill <strong>onUpgrade </strong>method because we use only one database version and not gonna change it.</p>
+<p>Let’s save and launch our app. We will interact with database and look at the logs which will show us the methods were called, and what is happening within them.</p>
+<p>Fill editText fields with something and click <strong>Add</strong>.</p>
+<p><img src="https://lh4.googleusercontent.com/--STCYBGgSKc/TrrCZwz2RXI/AAAAAAAAAls/pc3KBMUy9A8/s640/20111109_L0034_L_AddData.jpg" alt="" width="640" height="454"/></p>
+<p> </p>
+<p>Look at logs:</p>
+<p><em>--- onCreate database ---<br/></em><em>--- Insert in mytable: ---<br/></em><em>row inserted, ID = 1</em></p>
+<p>We see that <strong>DBHelper </strong>class’ <strong>onCreate </strong>method was called, that means that a table creation script has been executed. It happened because it was the first application launch and DB  has not been created. Now DB exists and it is possible to interact with it.</p>
+<p>Next, we see that the paste method was called and returned ID equals to 1.</p>
+<p> </p>
+<p>Let’s add some more row.</p>
+<p><img src="https://lh6.googleusercontent.com/-KbTvl2p9T_g/TrrCaB_D7yI/AAAAAAAAAlw/-DcpkyQWEV8/s640/20111109_L0034_L_AddData2.jpg" alt=""/></p>
+<p> </p>
+<p>Look at logs:</p>
+<p><em>--- Insert in mytable: ---<br/></em><em>row inserted, ID = 2</em></p>
+<p>This time <strong>onCreate  </strong>wasn’t called, because DB already exists. The row with ID equals to 2 was pasted.</p>
+<p> </p>
+<p>Let’s  look at the table’s content. We click the read button and look at the logs:</p>
+<p><em>--- Rows in mytable: ---<br/></em><em>ID = 1, name = John Smith, email = <span id="cloak0b569c95c9c4d298778d2945e26666f3">This email address is being protected from spambots. You need JavaScript enabled to view it.</span><script type='text/javascript'>document.getElementById('cloak0b569c95c9c4d298778d2945e26666f3').innerHTML='';var prefix='&#109;a'+'i&#108;'+'&#116;o';var path='hr'+'ef'+'=';var addy0b569c95c9c4d298778d2945e26666f3='j&#111;hn.sm&#105;th'+'&#64;';addy0b569c95c9c4d298778d2945e26666f3=addy0b569c95c9c4d298778d2945e26666f3+'&#97;bc'+'&#46;'+'c&#111;m';var addy_text0b569c95c9c4d298778d2945e26666f3='j&#111;hn.sm&#105;th'+'&#64;'+'&#97;bc'+'&#46;'+'c&#111;m';document.getElementById('cloak0b569c95c9c4d298778d2945e26666f3').innerHTML+='<a '+path+'\''+prefix+':'+addy0b569c95c9c4d298778d2945e26666f3+'\'>'+addy_text0b569c95c9c4d298778d2945e26666f3+'<\/a>';</script><br/></em><em>ID = 2, name = Some body, email = <span id="cloak3c6a971c9b14fcafe56095c281039283">This email address is being protected from spambots. You need JavaScript enabled to view it.</span><script type='text/javascript'>document.getElementById('cloak3c6a971c9b14fcafe56095c281039283').innerHTML='';var prefix='&#109;a'+'i&#108;'+'&#116;o';var path='hr'+'ef'+'=';var addy3c6a971c9b14fcafe56095c281039283='s&#111;m&#101;b&#111;dy'+'&#64;';addy3c6a971c9b14fcafe56095c281039283=addy3c6a971c9b14fcafe56095c281039283+'&#97;ny'+'&#46;'+'c&#111;m';var addy_text3c6a971c9b14fcafe56095c281039283='s&#111;m&#101;b&#111;dy'+'&#64;'+'&#97;ny'+'&#46;'+'c&#111;m';document.getElementById('cloak3c6a971c9b14fcafe56095c281039283').innerHTML+='<a '+path+'\''+prefix+':'+addy3c6a971c9b14fcafe56095c281039283+'\'>'+addy_text3c6a971c9b14fcafe56095c281039283+'<\/a>';</script></em></p>
+<p>We see the rows we have inserted.</p>
+<p> </p>
+<p>Now let’s clear the table by clicking Clear button and look at the logs:</p>
+<p><em>--- Clear mytable: ---<br/></em><em>deleted rows count = 2</em></p>
+<p>Two rows were deleted. that’s alright. Now click Read button and loot at the table content:</p>
+<p><em>--- Rows in mytable: ---<br/></em><em>0 rows</em></p>
+<p>There is not any rows.</p>
+<p> </p>
+<p>It’s necessary to understand within this topic that we used two classes to interact with the database:</p>
+<p>- <strong>DBHelper</strong> which extends <strong>SQLiteOpenHelper. </strong>We called a super class’ constructor within its constructor and passed to it the database name and version. The <strong>getWritableDatabase </strong>method connects to database and returns <strong>SQLiteDatabase </strong>object for interaction with database. The <strong>close method </strong>closes the connection to database. In case database doesn’t exist or its version is obsolete, class lets us to implement its creation or update by ourselves within <strong>onCreate </strong>and <strong>onUpgrate </strong> methods.</p>
+<p>- <strong>SQLiteDatabase </strong>which contains methods such as interaction with data, paste, update, delete and reading.</p>
+<p> </p>
+<p>The database file can be found in the File Explorer, as in the previous lesson. The link to it is <em>data/data/ru.startandroid.develop.p0341simpelsqlite/databases/myDB</em>.</p>
+<p>The next lesson we will go on with this application. We will add an opportunity to delete and update exact rows.</p>
+<p> </p>
+<h3>Notice</h3>
+<p>I make all database operations process in the main thread in my examples for not to make this lesson too difficult. In a real application code you should use an individual thread for interaction with database so that your app won’t slow down visually. How to make it I will tell within lessons number 80-91 and 135-136.</p>
+<p> </p>
+<p> </p>
+<p>Next lesson:</p>
+<ul>
+<li>usage of delete and query methods with the conditions.</li>
+</ul>
+<p> </p>
+<p> </p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Lesson 33. Data storing. Preferences." aria-label="Previous article: Lesson 33. Data storing. Preferences." href="/en/lessons/535-lesson-33-data-storing-preferences.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Prev</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Lesson 35. SQLite. Methods update и delete with parameters" aria-label="Next article: Lesson 35. SQLite. Methods update и delete with parameters" href="/en/lessons/546-lesson-35-sqlite-methods-update-i-delete-with-conditions.html" rel="next">
+			<span aria-hidden="true">Next</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons/536-lesson-34-storing-data-sqlite.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

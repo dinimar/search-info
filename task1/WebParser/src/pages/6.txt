@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Lifecycle, Activity, Resumed, Paused, Stopped, oncreate, onstart, onresume, onpause, onstop, ondestroy"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lesson 23. Activity Lifecycle. Activity states"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://startandroid.ru/images/stories/lessons/L0023/L0023_010_en.jpg"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content=" Activity lifecycle. In what states can be Activity."/>
+	<meta name="author" content="Dmitry Vinogradov"/>
+	<meta name="description" content=" Activity lifecycle. In what states can be Activity."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lesson 23. Activity Lifecycle. Activity states</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/60-urok-23-activity-lifecycle-v-kakih-sostojanijah-mozhet-byt-activity.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[230]='/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/60-urok-23-activity-lifecycle-v-kakih-sostojanijah-mozhet-byt-activity.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Lessons</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="en-GB"/>
+	<meta itemprop="url" content="/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html" itemprop="url" title="Lesson 23. Activity Lifecycle. Activity states">
+				Lesson 23. Activity Lifecycle. Activity states</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-10-10T15:31:02+03:00" itemprop="datePublished">
+					10 October 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>In this lesson:</p>
+<p>- Activity LifeCycle - Activity behavior during creation, invocation and closing</p>
+ 
+<p><em>Translated by Taras Leskiv (<a href="http://android-by-example.blogspot.com/" target="_blank" rel="noopener noreferrer">http://android-by-example.blogspot.com/</a>)</em></p>
+<h3>Theory</h3>
+<p>While application is running, we <b>create</b> new <b>Activities</b> and <b>close</b> old ones, <b>hide</b> the application and <b>open</b> it again and so on, and Activity can process all these events. It is required, for example, to free resources or to save data. It is described in detail in <a href="http://developer.android.com/guide/topics/fundamentals/activities.html#Lifecycle" target="_blank" rel="noopener noreferrer">documentation</a>.</p>
+<p><b>Activity</b>, created in a running application can be in one of <b>three states</b>: </p>
+<p><b>Resumed</b> - Activity is visible on the screen, it is focused and the user can interact with it. This state is sometimes called Running<br/><b>Paused</b> - Activity is not focused, user cannot interact with it, but it is visible (it is covered by another Activity, which doesn’t cover the whole screen or is transparent)<br/><b>Stopped</b> - Activity is not visible (is completely covered by another Activity), that is, it is not focused and user cannot interact with it</p>
+<p>When Activity goes from one <b>state</b> to another, the system invokes its different <b>methods</b>, which we can fill in with our code. This can be illustrated as a diagram:</p>
+<p><img src="/images/stories/lessons/L0023/xL0023_010_en.jpg.pagespeed.ic.ZwfeKAcJep.jpg" alt="" width="352" height="564"/></p>
+<p>To simplify understanding I’ve given a brief state description in brackets below the state names. Cross means that Activity does not exist.</p>
+<p>So we have the following methods that are invoked by the system:</p>
+<p><b>onCreate()</b> - invoked when Activity is created for the first time<br/><b>onStart()</b> - invoked before Activity is shown to the user<br/><b>onResume()</b> - invoked before Activity becomes available for user interaction</p>
+<p><b>onPause()</b> - invoked before another Activity is shown<br/><b>onStop()</b> - invoked when Activity is not visible to the user<br/><b>onDestroy()</b> - invoked before Activity is destroyed</p>
+<p>That is, these methods do <b>NOT</b> cause state changes. But vice-versa, state change of an Activity is a trigger which invokes these methods. We are informed about state changes in this way, so we can react accordingly. Let’s see in which order are these methods invoked in practice.</p>
+<p> </p>
+<h3>Practice</h3>
+<p>In this lesson we will have to emulate screen orientation changes. But Android emulator 2.3 does it wrong, so we will use 2.2 version in this project. To do so, we need to create a new AVD version 2.2 </p>
+<p><img src="/images/stories/lessons/L0023/xL0023_020.jpg.pagespeed.ic.ZSIUzUp0oj.jpg" alt="" width="404" height="640"/></p>
+<p> </p>
+<p>Let’s create a project (Note that we use Android 2.2 version):</p>
+<p><b>Project name</b>: P0231_OneActivityState<br/><b>Build Target</b>: Android 2.2<br/><b>Application name</b>: OneActivityState<br/><b>Package name</b>: ru.startandroid.develop.p0231oneactivitystate<br/><b>Create Activity</b>: MainActivity</p>
+<p>Do not change the layout. It is not important for now. Open <b>MainActivity.java</b>. There is some code by default as usual:</p>
+<pre class="brush:java">package ru.startandroid.develop.p0231oneactivitystate;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class MainActivity extends Activity {
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+    }
+}</pre>
+<p>We can see, that already familiar for us <b>onCreate</b> method is already implemented. I will repeat once again, it is important to understand that this method <b>does NOT create</b> an Activity. Creation is the system business. That is, the system creates an Activity and gives us an opportunity to participate in it and run our own code inside onCreate() method. We use this opportunity and tell the system that Activity should display the screen from R.layout.main.</p>
+<p>Let’s add all the remaining <b>methods</b> from the diagram and add <b>log</b> entry to each of them.</p>
+<pre class="brush:java">package ru.startandroid.develop.p0231oneactivitystate;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+  
+  final String TAG = "States";
+  
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        Log.d(TAG, "MainActivity: onCreate()");
+    }
+    
+  @Override
+  protected void onStart() {
+    super.onStart();
+    Log.d(TAG, "MainActivity: onStart()");
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    Log.d(TAG, "MainActivity: onResume()");
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    Log.d(TAG, "MainActivity: onPause()");
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
+    Log.d(TAG, "MainActivity: onStop()");
+  }
+    
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    Log.d(TAG, "MainActivity: onDestroy()");
+  }
+}</pre>
+<p>While implementing these methods always invoke the corresponding superclass methods and always before your code. See the code above. Each method contains superclass method invocation and our own code is located after it. </p>
+<p>Now, when the methods will be invoked we will see it in logs. Configure filter for the "States" tag, to not look for your messages in the pile of other logs. We’ve learnt how it is done in the lesson 12</p>
+<p><img src="/images/stories/lessons/L0023/xL0023_030.jpg.pagespeed.ic.5ov8B0iJAg.jpg" alt="" width="410" height="270"/></p>
+<p>Save everything and run the application. After running see the log:</p>
+<p><i>MainActivity: onCreate()<br/>MainActivity: onStart()<br/>MainActivity: onResume()</i></p>
+<p>Activity has been created, passed two states (Stopped, Paused) and now is in the third state - Resumed. It means it was created (onCreate), displayed (onStart) and gained the ability to interact with the user (onResume).</p>
+<p>Now press the Back button in the emulators. Activity has closed. See the log:</p>
+<p><i>MainActivity: onPause()<br/>MainActivity: onStop()<br/>MainActivity: onDestroy()</i></p>
+<p>Activity does the opposite to its creation. At first, the focus is lost (onPause ), than it disappears from the screen (onStop), then destroyed completely (onDestroy).</p>
+<h3> </h3>
+<h3>Screen orientation change</h3>
+<p>Let’s see how will Activity behave when we change our screen orientation. Run the application again (or find it in the list of running applications on the emulator or press CTRL + F11 in Eclipse). Three methods that were invoked on creation are displayed. Now press CTRL + F12 in the emulator, the orientation has changed. It looks like nothing special has happened, but have a look at the logs and see:</p>
+<p><i>MainActivity: onPause()<br/>MainActivity: onStop()<br/>MainActivity: onDestroy()<br/>MainActivity: onCreate()<br/>MainActivity: onStart()<br/>MainActivity: onResume()</i></p>
+<p>Activity is completely destroyed and created again. During this process, procedures of saving and restoring data usually occur, not to lose data and for application to save its appearance. We will talk in the next lessons about how it is done.</p>
+<p>There is also <b>onRestart</b> method. It is invoked before <b>onStart</b> if Activity is not created from scratch but is restored from the <b>Stopped</b> state. We will have look at this method in the next lesson.</p>
+<p> </p>
+<p>Usually in books this topic is presented a little bit different. But as for me, this template explanation seems not very clear, that’s why I’ve written my own. As usual, I hope that I’ve managed to explain the subject well )</p>
+<p>My advice for you is, after this lesson - to read documentation, link to which I’ve provided in the beginning of the lesson. Everything is written very well there. And you will remember everything better. But for now, the most important thing is to understand in which moment each method is invoked. And later we will look through how we can use it and what to code there.</p>
+<p> </p>
+<p>In the next lesson we will:</p>
+<p>- learn state changes by example with two Activities</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Lesson 22. Intent, Intent Filter, Context - theory" aria-label="Previous article: Lesson 22. Intent, Intent Filter, Context - theory" href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Prev</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Lesson 24. Activity Lifecycle, example about changing states with two Activities" aria-label="Next article: Lesson 24. Activity Lifecycle, example about changing states with two Activities" href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" rel="next">
+			<span aria-hidden="true">Next</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki/vse-uroki-spiskom/60-urok-23-activity-lifecycle-v-kakih-sostojanijah-mozhet-byt-activity.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons/230-lesson-23-activity-lifecycle-activity-states.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

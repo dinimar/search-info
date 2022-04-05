@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons/550-lesson-39-onupgrade-database-migrating.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="SQLite, version, onUpgrade, delete column, transaction, SQLiteOpenHelper, onCreate"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lesson 39. onUpgrade. Database migrating"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons/550-lesson-39-onupgrade-database-migrating.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="How to store data in database in Android. How to migrate database."/>
+	<meta name="author" content="Дмитрий Виноградов"/>
+	<meta name="description" content="How to store data in database in Android. How to migrate database."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lesson 39. onUpgrade. Database migrating</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/550-lesson-39-onupgrade-database-migrating.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[550]='/en/lessons/550-lesson-39-onupgrade-database-migrating.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Lessons</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="en-GB"/>
+	<meta itemprop="url" content="/en/lessons/550-lesson-39-onupgrade-database-migrating.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/en/lessons/550-lesson-39-onupgrade-database-migrating.html" itemprop="url" title="Lesson 39. onUpgrade. Database migrating">
+				Lesson 39. onUpgrade. Database migrating</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2018-04-10T00:07:52+03:00" itemprop="datePublished">
+					10 April 2018				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>This lesson:</p>
+<p>- changing database version and updating its structure with onUpdate method</p>
+ 
+<p> </p>
+<p>Developing your app it may occur a need to change a structure of the database which it uses. I mentioned in one of the previous lessons, that the SQLiteOpenHelper class’ onUpdate method is used for that. This method is called if an existing database version differs from that one, we are trying to connect to. We usually  specified database version in DBHelper’s constructor calling <strong>SQLiteOpenHelper </strong>superclass constructor.</p>
+<p>We will try to use the onUpgrade method and look, how the migration to a newer version of the database is processing. For this we will code a little app, similar to the one from the previous lesson about positions and employees.</p>
+<p>First version of the database will only contain the people table with employee’s name and position. But such table won’t be correct enough. We will have to update all appropriate rows in the people table, in case the position name will suddenly change. That’s why we decide to change the database structure and to organise data another way.</p>
+<p>We will add the <strong>position</strong> table with salary and position columns within the second version. In the <strong>people </strong>table we will put an appropriate id from the <strong>position</strong> table instead of specifying the position name. </p>
+<p> </p>
+<p>Let’s create a project:</p>
+<p> </p>
+<p><b>Project name</b>: P0391_SQLiteOnUpgradeDB<br/><b>Build Target</b>: Android 2.3.3<br/><b>Application name</b>: SQLiteOnUpgradeDB<br/><b>Package name</b>: ru.startandroid.develop.p0391sqliteonupgradedb<br/><b>Create Activity</b>: MainActivity</p>
+<p>We won’t use the UI components and will display the data in logs.</p>
+<p> </p>
+<p>Open <strong>MainActivity.java</strong> and code<span style="font-size: 12.16px;">:</span></p>
+<pre class="brush:java">package ru.startandroid.develop.p0391sqliteonupgradedb;
+
+import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+
+  final String LOG_TAG = "myLogs";
+
+  final String DB_NAME = "staff"; // DB name
+  final int DB_VERSION = 1; // DB version
+
+  /** Called when the activity is first created. */
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+
+    DBHelper dbh = new DBHelper(this);
+    SQLiteDatabase db = dbh.getWritableDatabase();
+    Log.d(LOG_TAG, " --- Staff db v." + db.getVersion() + " --- ");
+    writeStaff(db);
+    dbh.close();
+  }
+
+  // the data request and displaying
+  private void writeStaff(SQLiteDatabase db) {
+    Cursor c = db.rawQuery("select * from people", null);
+    logCursor(c, "Table people");
+    c.close();
+  }
+
+  // displaying the cursor data in logs
+  void logCursor(Cursor c, String title) {
+    if (c != null) {
+      if (c.moveToFirst()) {
+        Log.d(LOG_TAG, title + ". " + c.getCount() + " rows");
+        StringBuilder sb = new StringBuilder();
+        do {
+          sb.setLength(0);
+          for (String cn : c.getColumnNames()) {
+            sb.append(cn + " = "
+                + c.getString(c.getColumnIndex(cn)) + "; ");
+          }
+          Log.d(LOG_TAG, sb.toString());
+        } while (c.moveToNext());
+      }
+    } else
+      Log.d(LOG_TAG, title + ". Cursor is null");
+  }
+
+  // the class for databasae interaction
+  class DBHelper extends SQLiteOpenHelper {
+
+    public DBHelper(Context context) {
+      super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    public void onCreate(SQLiteDatabase db) {
+      Log.d(LOG_TAG, " --- onCreate database --- ");
+
+      String[] people_name = { "Ivan", "Maria", "Petr", "Anton", "Dasha",
+          "Boris", "Kostja", "Igor" };
+      String[] people_positions = { "Developer", "Accountant",
+          "Developer", "Developer", "Accountant", "Director",
+          "Developer", "Security" };
+
+      ContentValues cv = new ContentValues();
+
+      // the creation of the people table
+      db.execSQL("create table people ("
+          + "id integer primary key autoincrement,"
+          + "name text, position text);");
+
+      // filling it
+      for (int i = 0; i &lt; people_name.length; i++) {
+        cv.clear();
+        cv.put("name", people_name[i]);
+        cv.put("position", people_positions[i]);
+        db.insert("people", null, cv);
+      }
+    }
+
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+  }
+}</pre>
+<p> </p>
+<p>The code is simple. We grouped the operations of the data displaying into the log from Cursor within the logCursor method. The writeStaff method selects data from the people table and calls the method for displaying data into the logs. We create a DBHelper object within the onCreate method, connect to the database, display database version in logs, call writeStaff method and close the connection.  </p>
+<p>Everything is as usual with <strong>DBHelper. </strong> We call the super class method within the constructor. Note, <strong>DB_VERSION </strong>= 1, we will connect to the first version of the database. Within onCreate method we create a table and fill it with data.</p>
+<p>Let’s save and launch the app. Look in logs:</p>
+<p><em>--- onCreate database --- </em><br/><em>--- Staff db v.1 --- </em><br/><em>Table people. 8 rows</em><br/><em>id = 1; name = Ivan; position = Developer; </em><br/><em>id = 2; name = Maria; position = Accountant; </em><br/><em>id = 3; name = Petr; position = Developer; </em><br/><em>id = 4; name = Anton; position = Developer; </em><br/><em>id = 5; name = Dasha; position = Accountant; </em><br/><em>id = 6; name = Boris; position = Director; </em><br/><em>id = 7; name = Kostja; position = Developer; </em><br/><em>id = 8; name = Igor; position = Security;</em></p>
+<p>The database was created, it’s version equals to 1 and the table’s data was displayed in logs. The application works and everything is fine, but suddenly we understand that a mistake was made while database designing. It’s not right to write position’s name in people table. In addition, salary data will be added. We should create a position table and use its ids in the people table. This way our database structure will change and we will specify its version as second.</p>
+<p>But our application is already installed by users.It has already created the first version of the database, and it was filled with data. We can’t just delete an existing tables and create the new ones, because the user may possibly keep his data in them. We need to write scripts for database updating without data losses.</p>
+<p>Here is the plan:<br/>- we will create and fill with data the position table;<br/>- we will add a posid column into the people table for keeping id from the position table;<br/>- we will fill people.posid with data from position depending on people.position value;<br/>- we will delete the people.position column;</p>
+<p>Let’s change the MainActivity.java code. Our application will now be oriented to database version 2. Let’s specify this by changing DB_VERSION field value to 2:</p>
+<div class="java">
+<pre class="brush:java"> final int DB_VERSION = 2; // DB version</pre>
+<p> </p>
+</div>
+<p>Rewrite the writeStaff method this way:</p>
+<pre class="brush:java">  private void writeStaff(SQLiteDatabase db) {
+      Cursor c = db.rawQuery("select * from people", null);
+      logCursor(c, "Table people");
+      c.close();
+      
+      c = db.rawQuery("select * from position", null);
+      logCursor(c, "Table position");
+      c.close();
+      
+      String sqlQuery = "select PL.name as Name, PS.name as Position, salary as Salary "
+        + "from people as PL "
+        + "inner join position as PS "
+        + "on PL.posid = PS.id ";
+      c = db.rawQuery(sqlQuery, null);
+      logCursor(c, "inner join");
+      c.close();
+    }</pre>
+<p><span style="font-size: 12.16px;">We will display in logs the data from people and position tables and their joins. </span></p>
+<p><span style="font-size: 12.16px;">We will implement the onUpgrade method within DBHelper:</span></p>
+<pre class="brush:java">    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+      Log.d(LOG_TAG, " --- onUpgrade database from " + oldVersion
+          + " to " + newVersion + " version --- ");
+
+      if (oldVersion == 1 &amp;&amp; newVersion == 2) {
+
+        ContentValues cv = new ContentValues();
+
+        // position table data
+        int[] position_id = { 1, 2, 3, 4 };
+        String[] position_name = { "Director", "Developer",
+            "Accountant", "Security" };
+        int[] position_salary = { 15000, 13000, 10000, 8000 };
+
+        db.beginTransaction();
+        try {
+          // positions table creation
+          db.execSQL("create table position ("
+              + "id integer primary key,"
+              + "name text, salary integer);");
+
+          // filling it
+          for (int i = 0; i &lt; position_id.length; i++) {
+            cv.clear();
+            cv.put("id", position_id[i]);
+            cv.put("name", position_name[i]);
+            cv.put("salary", position_salary[i]);
+            db.insert("position", null, cv);
+          }
+
+          db.execSQL("alter table people add column posid integer;");
+
+          for (int i = 0; i &lt; position_id.length; i++) {
+            cv.clear();
+            cv.put("posid", position_id[i]);
+            db.update("people", cv, "position = ?",
+                new String[] { position_name[i] });
+          }
+
+          db.execSQL("create temporary table people_tmp ("
+              + "id integer, name text, position text, posid integer);");
+
+          db.execSQL("insert into people_tmp select id, name, position, posid from people;");
+          db.execSQL("drop table people;");
+
+          db.execSQL("create table people ("
+              + "id integer primary key autoincrement,"
+              + "name text, posid integer);");
+
+          db.execSQL("insert into people select id, name, posid from people_tmp;");
+          db.execSQL("drop table people_tmp;");
+
+          db.setTransactionSuccessful();
+        } finally {
+          db.endTransaction();
+        }
+      }
+    }</pre>
+<p>The code follows the updation plan, I mentioned before. But there are a couple of notes.</p>
+<p>At first, we use the database transaction, i.e we need all our updates to be applied to the database. All the updates must be canceled in case of a mistake and the database must remain the same. The transactions are very useful in this case.</p>
+<p>Secondly, you can’t just delete a column in SQLite, you need to create a temporary column for that, transfer your data to it, delete the original table, then create it again but with a new structure, fill it with the data from the temporary table and delete the last one. <a href="http://www.sqlite.org/faq.html#q11" target="_blank" rel="noopener noreferrer">Here</a> you may read about it in details - How do I add or delete columns from an existing table in SQLite.</p>
+<p>Our application was updated. It will try to connect to the database version 2 after launch, by it will see that the existing database version is 1 and will call the onUpgrade method, giving us an opportunity to apply all necessary changes to the database structure. This will happen in case of the application updating, but what will happen in case user will install our application on his device for the first time.</p>
+<p>In this case the application will try to connect to the database version 2, but since the application has just been installed, the database doesn’t exist. The application will create the database and specify its number as 2, because it knows how to work exactly with this version. Creating the table the DBHelper’s class onCreate method will be called. That means within this method we must to add some code that will create database version 2, i.e updated people table and new position table.</p>
+<p>Let’s code the onCreate within DBHelper:</p>
+<div class="java">
+<pre class="brush:java">    public void onCreate(SQLiteDatabase db) {
+      Log.d(LOG_TAG, " --- onCreate database --- ");
+
+      String[] people_name = { "Ivan", "Maria", "Petr", "Anton", "Dasha",
+          "Boris", "Kostja", "Igor" };
+      int[] people_posid = { 2, 3, 2, 2, 3, 1, 2, 4 };
+
+      // positions table data
+      int[] position_id = { 1, 2, 3, 4 };
+      String[] position_name = { "Director", "Developer", "Accountant",
+          "Security" };
+      int[] position_salary = { 15000, 13000, 10000, 8000 };
+
+      ContentValues cv = new ContentValues();
+
+      // creating of the positions table
+      db.execSQL("create table position (" + "id integer primary key,"
+          + "name text, salary integer" + ");");
+
+      // filling it
+      for (int i = 0; i &lt; position_id.length; i++) {
+        cv.clear();
+        cv.put("id", position_id[i]);
+        cv.put("name", position_name[i]);
+        cv.put("salary", position_salary[i]);
+        db.insert("position", null, cv);
+      }
+
+      // creating of the people table
+      db.execSQL("create table people ("
+          + "id integer primary key autoincrement,"
+          + "name text, posid integer);");
+
+      // filling it
+      for (int i = 0; i &lt; people_name.length; i++) {
+        cv.clear();
+        cv.put("name", people_name[i]);
+        cv.put("posid", people_posid[i]);
+        db.insert("people", null, cv);
+      }
+    }</pre>
+<p>Here are the tables’ creation and filling them with data. Everything is clear.</p>
+<p>Now we can save and launch the app.</p>
+<p>Look in logs:</p>
+</div>
+<p><em>--- onUpgrade database from 1 to 2 version --- </em><br/><em>--- Staff db v.2 --- </em><br/><em>Table people. 8 rows</em><br/><em>id = 1; name = Ivan; posid = 2; </em><br/><em>id = 2; name = Maria; posid = 3; </em><br/><em>id = 3; name = Petr; posid = 2; </em><br/><em>id = 4; name = Anton; posid = 2; </em><br/><em>id = 5; name = Dasha; posid = 3; </em><br/><em>id = 6; name = Boris; posid = 1; </em><br/><em>id = 7; name = Kostja; posid = 2; </em><br/><em>id = 8; name = Igor; posid = 4; </em><br/><em>Table position. 4 rows</em><br/><em>id = 1; name = Director; salary = 15000; </em><br/><em>id = 2; name = Developer; salary = 13000; </em><br/><em>id = 3; name = Accountant; salary = 10000; </em><br/><em>id = 4; name = Security; salary = 8000; </em><br/><em>inner join. 8 rows</em><br/><em>Name = Ivan; Position = Developer; Salary = 13000; </em><br/><em>Name = Maria; Position = Accountant; Salary = 10000; </em><br/><em>Name = Petr; Position = Developer; Salary = 13000; </em><br/><em>Name = Anton; Position = Developer; Salary = 13000; </em><br/><em>Name = Dasha; Position = Accountant; Salary = 10000; </em><br/><em>Name = Boris; Position = Director; Salary = 15000; </em><br/><em>Name = Kostja; Position = Developer; Salary = 13000; </em><br/><em>Name = Igor; Position = Security; Salary = 8000;</em></p>
+<p>We see that the onUpgrade method was called and it has updated database version to second from the first one. Then we display data in logs to get sure that the updating was correct.</p>
+<p>We may also get sure that the new DBHelper class’ onCreate method works correctly. To do this we need to delete database file and launch the application, it won’t find the database and will create it in a new format with version 2.</p>
+<p> </p>
+<p>The script is fictional, there is something to complain about and what to argue about, but the point is not this. The point is that we saw the way of the database updating, if the application requested for a new version. For the first time may be, this way of creating and updating will seem complicated, but it is really not. A full understanding will come with experience.</p>
+<p>I also want to note that the Cursor object has a close () method, which frees the resources the method holds. Do not forget about it.</p>
+<p> </p>
+<p>I think now we can safely say that we sufficiently studied the work with SQLite in Android. And in the future lessons we can freely use this knowledge.<br/> </p>
+<p>MainActivity.java full code:</p>
+<pre class="brush:java">package ru.startandroid.develop.p0391sqliteonupgradedb;
+
+import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+
+  final String LOG_TAG = "myLogs";
+
+  final String DB_NAME = "staff"; // DB name
+  final int DB_VERSION = 2; // DB version
+
+  /** Called when the activity is first created. */
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+
+    DBHelper dbh = new DBHelper(this);
+    SQLiteDatabase db = dbh.getWritableDatabase();
+    Log.d(LOG_TAG, " --- Staff db v." + db.getVersion() + " --- ");
+    writeStaff(db);
+    dbh.close();
+  }
+
+  // data query and displaying
+  private void writeStaff(SQLiteDatabase db) {
+    Cursor c = db.rawQuery("select * from people", null);
+    logCursor(c, "Table people");
+    c.close();
+
+    c = db.rawQuery("select * from position", null);
+    logCursor(c, "Table position");
+    c.close();
+
+    String sqlQuery = "select PL.name as Name, PS.name as Position, salary as Salary "
+        + "from people as PL "
+        + "inner join position as PS "
+        + "on PL.posid = PS.id ";
+    c = db.rawQuery(sqlQuery, null);
+    logCursor(c, "inner join");
+    c.close();
+  }
+
+  // displaying data from cursor
+  void logCursor(Cursor c, String title) {
+    if (c != null) {
+      if (c.moveToFirst()) {
+        Log.d(LOG_TAG, title + ". " + c.getCount() + " rows");
+        StringBuilder sb = new StringBuilder();
+        do {
+          sb.setLength(0);
+          for (String cn : c.getColumnNames()) {
+            sb.append(cn + " = "
+                + c.getString(c.getColumnIndex(cn)) + "; ");
+          }
+          Log.d(LOG_TAG, sb.toString());
+        } while (c.moveToNext());
+      }
+    } else
+      Log.d(LOG_TAG, title + ". Cursor is null");
+  }
+
+  // class for database interaction
+  class DBHelper extends SQLiteOpenHelper {
+
+    public DBHelper(Context context) {
+      super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    public void onCreate(SQLiteDatabase db) {
+      Log.d(LOG_TAG, " --- onCreate database --- ");
+
+      String[] people_name = { "Ivan", "Maria", "Petr", "Anton", "Dasha",
+          "Boris", "Kostja", "Igor" };
+      int[] people_posid = { 2, 3, 2, 2, 3, 1, 2, 4 };
+
+      // data for position table
+      int[] position_id = { 1, 2, 3, 4 };
+      String[] position_name = { "Director", "Developer", "Accountant",
+          "Security" };
+      int[] position_salary = { 15000, 13000, 10000, 8000 };
+
+      ContentValues cv = new ContentValues();
+
+      // positions table creating
+      db.execSQL("create table position (" + "id integer primary key,"
+          + "name text, salary integer" + ");");
+
+      // filling it
+      for (int i = 0; i &lt; position_id.length; i++) {
+        cv.clear();
+        cv.put("id", position_id[i]);
+        cv.put("name", position_name[i]);
+        cv.put("salary", position_salary[i]);
+        db.insert("position", null, cv);
+      }
+
+      // people table creation
+      db.execSQL("create table people ("
+          + "id integer primary key autoincrement,"
+          + "name text, posid integer);");
+
+      // filling it
+      for (int i = 0; i &lt; people_name.length; i++) {
+        cv.clear();
+        cv.put("name", people_name[i]);
+        cv.put("posid", people_posid[i]);
+        db.insert("people", null, cv);
+      }
+    }
+
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+      Log.d(LOG_TAG, " --- onUpgrade database from " + oldVersion
+          + " to " + newVersion + " version --- ");
+
+      if (oldVersion == 1 &amp;&amp; newVersion == 2) {
+
+        ContentValues cv = new ContentValues();
+
+        // data for positions table
+        int[] position_id = { 1, 2, 3, 4 };
+        String[] position_name = { "Director", "Developer",
+            "Accountant", "Security" };
+        int[] position_salary = { 15000, 13000, 10000, 8000 };
+
+        db.beginTransaction();
+        try {
+          // positions table creating
+          db.execSQL("create table position ("
+              + "id integer primary key,"
+              + "name text, salary integer);");
+
+          // filling it
+          for (int i = 0; i &lt; position_id.length; i++) {
+            cv.clear();
+            cv.put("id", position_id[i]);
+            cv.put("name", position_name[i]);
+            cv.put("salary", position_salary[i]);
+            db.insert("position", null, cv);
+          }
+
+          db.execSQL("alter table people add column posid integer;");
+
+          for (int i = 0; i &lt; position_id.length; i++) {
+            cv.clear();
+            cv.put("posid", position_id[i]);
+            db.update("people", cv, "position = ?",
+                new String[] { position_name[i] });
+          }
+
+          db.execSQL("create temporary table people_tmp ("
+              + "id integer, name text, position text, posid integer);");
+
+          db.execSQL("insert into people_tmp select id, name, position, posid from people;");
+          db.execSQL("drop table people;");
+
+          db.execSQL("create table people ("
+              + "id integer primary key autoincrement,"
+              + "name text, posid integer);");
+
+          db.execSQL("insert into people select id, name, posid from people_tmp;");
+          db.execSQL("drop table people_tmp;");
+
+          db.setTransactionSuccessful();
+        } finally {
+          db.endTransaction();
+        }
+      }
+    }
+
+  }
+}</pre>
+<p> </p>
+<p>The next lesson:</p>
+<p>- find out the usage of LayoutInflater</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Lesson 38. SQLite transactions, short SQLite FAQ" aria-label="Previous article: Lesson 38. SQLite transactions, short SQLite FAQ" href="/en/lessons/549-lesson-38-tranzakcii-v-sqlite-nebolshoj-faq-po-sqlite.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Prev</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Lesson 40. Learning to use LayoutInflater" aria-label="Next article: Lesson 40. Learning to use LayoutInflater" href="/en/lessons/570-lesson-40-learning-to-use-layoutinflater.html" rel="next">
+			<span aria-hidden="true">Next</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons/550-lesson-39-onupgrade-database-migrating.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

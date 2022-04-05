@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="menu, group, order, onCreateOptionsMenu, onPrepareOptionsMenu, onOptionsItemSelected, MenuInflater"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lesson 14. Menu, groups, order. MenuInflater and xml-menu"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://startandroid.ru/images/stories/lessons/L0014/L0014_010_en.jpg"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="How to create menu in Android. How to set order in menu. "/>
+	<meta name="author" content="Dmitry Vinogradov"/>
+	<meta name="description" content="How to create menu in Android. How to set order in menu. "/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lesson 14. Menu, groups, order. MenuInflater and xml-menu</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/46-urok-14-menju-gruppy-porjadok.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[218]='/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/46-urok-14-menju-gruppy-porjadok.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Lessons</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="en-GB"/>
+	<meta itemprop="url" content="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url" title="Lesson 14. Menu, groups, order. MenuInflater and xml-menu">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-08T17:06:49+03:00" itemprop="datePublished">
+					08 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>In this lesson we will:</p>
+<p>- create menu items with IDs<br/>- group and sort menu items</p>
+ 
+<p><i>Translated by Taras Leskiv (<a href="http://android-by-example.blogspot.com/" target="_blank" rel="noopener noreferrer">http://android-by-example.blogspot.com/</a>)</i></p>
+<p> </p>
+<p>In the previous lesson we observed the simplest way of creating a menu using <a href="http://developer.android.com/reference/android/view/Menu.html#add(java.lang.CharSequence)" target="_blank" rel="noopener noreferrer">add(CharSequence title)</a> method, we passed only text as a parameter. Let’s  have a look at another implementation of this method - <a href="http://developer.android.com/reference/android/view/Menu.html#add(int, int, int, java.lang.CharSequence)" target="_blank" rel="noopener noreferrer">add(int groupId, int itemId, int order, CharSequence title)</a>. This methods takes 4 <b>parameters</b>:<br/><b>groupId </b>- group identifier to which a menu item belongs to<br/><b>itemId </b>- menu item ID<br/><b>order </b>- for specifying the order in which menu items will be shown<br/><b>title </b>- text that will be displayed</p>
+<p> </p>
+<p>We will create an application to illustrate how all these parameters are used. There will be a <b>TextView </b>and a <b>CheckBox </b>on the screen:<br/>- TextView will display which menu item was chosen<br/>- CheckBox will define whether to show a simple or expanded menu. It will be implemented using menu groups.</p>
+<p>Let me clarify that terms "simple menu" and "expanded menu" - are not Android terms, these are my namings. So when the application is running and the user clicks menu button, he will see a "simple" menu. If the user checks the CheckBox, the "expanded" menu which contains more items will be displayed.</p>
+<p> </p>
+<p>Let’s create a project:</p>
+<p><strong>Project name</strong>: P0141_MenuAdv<br/><strong>Build Target</strong>: Android 2.3.3<br/><strong>Application name</strong>: MenuAdv<br/><strong>Package name</strong>: ru.startandroid.develop.menuadv<br/><strong>Create Activity</strong>: MainActivity</p>
+<p> </p>
+<p>Open <b>main.xml</b>, assign the <b>ID</b> to an existing <b>TextView</b>, erase text in it and create a <b>CheckBox</b>. Code:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"&gt;
+	&lt;CheckBox
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/chbExtMenu"
+		android:text="expanded menu"&gt;
+	&lt;/CheckBox&gt;
+	&lt;TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView"&gt;
+	&lt;/TextView&gt;
+&lt;/LinearLayout&gt;</pre>
+<p> </p>
+<p>Open <b>MainActivity.java</b> and fill in <b>MainActivity</b> class with the following code:</p>
+<pre class="brush:java">public class MainActivity extends Activity {
+  
+  // Screen elements
+  TextView tv;
+  CheckBox chb;
+  
+  
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        // find the elements
+        tv = (TextView) findViewById(R.id.textView);
+        chb = (CheckBox) findViewById(R.id.chbExtMenu);
+        
+    }
+    
+    // menu creation
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+      // TODO Auto-generated method stub
+      // adding menu items
+      menu.add(0, 1, 0, "add");
+      menu.add(0, 2, 0, "edit");
+      menu.add(0, 3, 3, "delete");
+      menu.add(1, 4, 1, "copy");
+      menu.add(1, 5, 2, "paste");
+      menu.add(1, 6, 4, "exit");
+      
+      return super.onCreateOptionsMenu(menu);
+    }
+    
+    // menu update
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+      // TODO Auto-generated method stub
+      // menu items with group ID = 1 are visible if CheckBox is checked
+      menu.setGroupVisible(1, chb.isChecked());
+      return super.onPrepareOptionsMenu(menu);
+    }
+
+    // process clicks
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      // TODO Auto-generated method stub
+      StringBuilder sb = new StringBuilder();
+
+      // print the info about pressed menu item 
+      sb.append("Item Menu");
+      sb.append("\r\n groupId: " + String.valueOf(item.getGroupId()));
+      sb.append("\r\n itemId: " + String.valueOf(item.getItemId()));
+      sb.append("\r\n order: " + String.valueOf(item.getOrder()));
+      sb.append("\r\n title: " + item.getTitle());
+      tv.setText(sb.toString());
+      
+      return super.onOptionsItemSelected(item);
+    }
+}</pre>
+<p>Don’t forget to <b>update imports</b> (CTRL + SHIFT +O).</p>
+<p>Let’s look through the code above. We use the following <b>methods</b>:</p>
+<p><a href="http://developer.android.com/reference/android/app/Activity.html#onCreateOptionsMenu(android.view.Menu)" target="_blank" rel="noopener noreferrer">onCreateOptionsMenu</a> - is invoked only when the menu is shown for the first time. Creates a menu and is not used any more. We add menu items here.</p>
+<p><a href="http://developer.android.com/reference/android/app/Activity.html#onPrepareOptionsMenu(android.view.Menu)" target="_blank" rel="noopener noreferrer">onPrepareOptionsMenu</a> - invoked every time before displaying the menu. We make changes to the already existing menu if it is necessary.</p>
+<p><a href="http://developer.android.com/reference/android/app/Activity.html#onOptionsItemSelected(android.view.MenuItem)" target="_blank" rel="noopener noreferrer">onOptionsItemSelected</a> - is invoked when the menu item is clicked. Here we define which menu item has been clicked.</p>
+<p> </p>
+<p>In the <b>onCreateOptionsMenu</b> we add 6 menu items. Have a look at the <b>add </b>method parameters.</p>
+<p>The first parameter is the <b>group ID</b>. For the first three items it equals 0, for the other three it equals 1. So the <b>copy</b>, <b>paste </b>and <b>exit </b>menu items are united into a <b>group </b>with <b>ID = 1</b>. Visually, it is not displayed in any way - they do not differ in color or something else. We will use group ID in <b>onPrepareOptionsMenu</b> implementation.</p>
+<p>The second parameter is <b>ID of menu item</b>. It is used in listener to define which menu item has been pressed. We will use it in <b>onOptionsItemSelected</b>.</p>
+<p>The third parameter defines the <b>item position</b> in the menu. This parameter is used for defining the order of menu items when it is displayed. The <b>sort </b>order is <b>ascending</b>, from smaller <b>order </b>to larger.</p>
+<p>The fourth parameter is <b>text</b>, which will be displayed on the menu item. Everything is clear with it.</p>
+<p> </p>
+<p>Menu object is passed to <b>onPrepareOptionsMenu </b>method and we can work with it. In the current example we invoke <a href="http://developer.android.com/reference/android/view/Menu.html#setGroupVisible(int, boolean)" target="_blank" rel="noopener noreferrer">setGroupVisible</a>. This method allows to <b>hide\show</b> menu items. It is passed two parameters - <b>group ID</b> and a <b>boolean</b> value. We write <b>1</b> for the group ID (the same group which contains copy, paste and exit menu items). We will use the <b>CheckBox state</b> as a boolean parameter. If it is checked, menu items (from the <b>group </b>where <b>ID = 1</b>) will be displayed, if not - items will not be displayed.</p>
+<p>Let’s save everything and launch the application.</p>
+<p>"<b>Simple</b>" menu:</p>
+<p><img style="border: 0px;" src="/images/stories/lessons/L0014/640x449xL0014_010_en.jpg.pagespeed.ic.vehJnb73jy.jpg" alt="" width="640" height="449"/></p>
+<p> </p>
+<p>"<b>Expanded</b>" menu</p>
+<p><img style="border: 0px;" src="/images/stories/lessons/L0014/640x449xL0014_020_en.jpg.pagespeed.ic.QT6iPBHnA4.jpg" alt="" width="640" height="449"/></p>
+<p> </p>
+<p>Depending on <b>CheckBox</b> state, <b>3</b> or <b>6</b> items in menu are visible.</p>
+<p>Pay attention to the item <b>order</b>. They are sorted by <b>order </b>parameter <b>ascending</b>. If the <b>order</b> of several items is the <b>same</b>, these items will be positioned <b>in the order of their creation</b> in onCreateOptionsMenu method.</p>
+<p>When pressing any menu item, <b>onOptionsItemSelected </b>method is triggered. In this method we output the information about the item pressed to the <b>TextView</b>. You can compare this information to those we have coded when creating menu items. All the parameters have to match. I’ve made the same order of items as in the add method for convenience: <b>groupId</b>, <b>itemId</b>, <b>order</b>, <b>title</b>.</p>
+<p>Try to add some more items to the menu and have a look how they are displayed.</p>
+<p>To simplify the code I’ve hardcoded numbers for group IDs and menu item IDs. Usually, it is recommended to use constants. I will use constants further.</p>
+<p> </p>
+<h3>XML-menu</h3>
+<p>There is one more convenient and preferable way of creating a menu - using an xml-file, the same as layout-file when creating a screen. To get a menu which we have created programmatically in this lesson, we will create <b>mymenu.xml</b> file in res/menu folder:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;menu
+	xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+	&lt;item
+		android:id="@+id/menu_add"
+		android:title="add"&gt;
+	&lt;/item&gt;
+	&lt;item
+		android:id="@+id/menu_edit"
+		android:title="edit"&gt;
+	&lt;/item&gt;
+	&lt;item
+		android:id="@+id/menu_delete"
+		android:orderInCategory="3"
+		android:title="delete"&gt;
+	&lt;/item&gt;
+	&lt;group
+		android:id="@+id/group1"&gt;
+		&lt;item
+			android:id="@+id/menu_copy"
+			android:orderInCategory="1"
+			android:title="copy"&gt;
+		&lt;/item&gt;
+		&lt;item
+			android:id="@+id/menu_paste"
+			android:orderInCategory="2"
+			android:title="paste"&gt;
+		&lt;/item&gt;
+		&lt;item
+			android:id="@+id/menu_exit"
+			android:orderInCategory="4"
+			android:title="exit"&gt;
+		&lt;/item&gt;
+	&lt;/group&gt;
+&lt;/menu&gt;</pre>
+<p><b>item</b> - is a menu item, <b>group</b> - group of items. In the <b>ID</b> attributes we use the same approach as with IDs of screen components - @+id/&lt;your_ID&gt; and Eclipse will generate these IDs in R.java. <b>orderInCategory</b> attribute is the order of items, <b>title</b> is a text of menu item.</p>
+<p>Now we don’t need to hardcode the creation of each menu item, we will just connect menu, which is passed as a parameter to the <b>onCreateOptionsMenu</b> method and our xml-file: </p>
+<pre class="brush:java">  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.mymenu, menu);
+    return super.onCreateOptionsMenu(menu);
+  }</pre>
+<p>Using <b>getMenuInflater </b>method we obtain <a href="http://developer.android.com/reference/android/view/MenuInflater.html" target="_blank" rel="noopener noreferrer">MenuInflater</a> and invoke its inflate method. We pass our <b>mymenu.xml</b> file from res/menu folder and <b>menu</b> object as parameters. MenuInflater takes a menu object and fills it with menu items from mymenu.xml file.</p>
+<p>if you want to hide a group, invoke the same setGroupVisible method and pass R.id.group1 as a parameter for group ID.</p>
+<p>You can view attributes for menu xml-file in more details <a href="http://developer.android.com/guide/topics/resources/menu-resource.html" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>I recommend you to try and test both ways of creating a menu. Creating menu programmatically is more flexible, but xml shrinks the code amount.</p>
+<p> </p>
+<p>On the next lesson we will:</p>
+<p>- create a context menu</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Lesson 13. Creating a simple menu" aria-label="Previous article: Lesson 13. Creating a simple menu" href="/en/lessons/216-lesson-13-creating-a-simple-menu.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Prev</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Lesson 15. Context menu" aria-label="Next article: Lesson 15. Context menu" href="/en/lessons/219-lesson-15-context-menu.html" rel="next">
+			<span aria-hidden="true">Next</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki/vse-uroki-spiskom/46-urok-14-menju-gruppy-porjadok.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

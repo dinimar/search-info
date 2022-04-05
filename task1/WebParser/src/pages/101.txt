@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-194 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/ru/courses/performance.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Android, performance, андроид, производительность, приложений, profiler, memory, allocation"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Производительность"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:url" content="https://startandroid.ru/ru/courses/performance.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="Курс по производительности Android приложений. Как обнаружить проблемы и устранить их."/>
+	<meta name="author" content="Дмитрий Виноградов"/>
+	<meta name="description" content="Курс по производительности Android приложений. Как обнаружить проблемы и устранить их."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Производительность</title>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002,Mcc.7KF2sl1Z1n.css.pagespeed.cf.xARBNHkBBQ.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[579]='/ru/courses/performance.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod97"><div class="module-inner"><h3 class="module-title "><span>Самое читаемое</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" itemprop="url">
+			<span itemprop="name">
+				Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html" itemprop="url">
+			<span itemprop="name">
+				Урок 2. Установка Android Studio			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 4. Компоненты экрана и их свойства			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/14-urok-5-layout-kak-ispolzovat-smena-orientatsii-ekrana.html" itemprop="url">
+			<span itemprop="name">
+				Урок 5. Layout-файл в Activity. XML представление. Смена ориентации экрана.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/4-urok-1-vvedenie.html" itemprop="url">
+			<span itemprop="name">
+				Урок 1. Введение.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/16-urok-9-obrabotchiki-sobytij-na-primere-button.html" itemprop="url">
+			<span itemprop="name">
+				Урок 9. Обработчики событий на примере Button.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/15-urok-6-vidy-layouts-kljuchevye-otlichija-i-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 6. Виды Layouts. Ключевые отличия и свойства.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/38-urok-7-layout-parametry-dlja-view-elementov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 7. Layout параметры для View-элементов.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html" itemprop="url">
+			<span itemprop="name">
+				Урок 34. Хранение данных. SQLite			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/82-urok42-spisok-listview.html" itemprop="url">
+			<span itemprop="name">
+				Урок 42. Список - ListView			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/58-urok-21-sozdanie-i-vyzov-activity.html" itemprop="url">
+			<span itemprop="name">
+				Урок 21. Создание и вызов Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/24-urok-8-rabotaem-s-elementami-ekrana-iz-koda.html" itemprop="url">
+			<span itemprop="name">
+				Урок 8. Работаем с элементами экрана из кода			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/73-urok-33-hranenie-dannyh-preferences.html" itemprop="url">
+			<span itemprop="name">
+				Урок 33. Хранение данных. Preferences.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/80-urok-40-layoutinflater-uchimsja-ispolzovat.html" itemprop="url">
+			<span itemprop="name">
+				Урок 40. LayoutInflater. Учимся использовать.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/489-urok-180-constraintlayout-osnovy.html" itemprop="url">
+			<span itemprop="name">
+				Урок 180. ConstraintLayout. Основы			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/175-urok-105-android-3-fragments-dinamicheskaja-rabota.html" itemprop="url">
+			<span itemprop="name">
+				Урок 105. Android 3. Fragments. Динамическая работа			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 10. Оптимизируем реализацию обработчиков.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html" itemprop="url">
+			<span itemprop="name">
+				Урок 92. Service. Простой пример			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/54-urok-19-pishem-prostoj-kalkuljator.html" itemprop="url">
+			<span itemprop="name">
+				Урок 19. Пишем простой калькулятор			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/67-urok-28-extras-peredaem-dannye-s-pomoschju-intent.html" itemprop="url">
+			<span itemprop="name">
+				Урок 28. Extras - передаем данные с помощью Intent			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    	    <!-- HEAD SEARCH -->
+	    <div class="head-search">     
+	      <form class="form-search" action="/ru/courses/performance.html" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Поиск</label><i class="fa fa-search"></i><input name="searchword" id="mod-search-searchword" maxlength="200" class="form-control " type="text" size="0"/>	<input type="hidden" name="task" value="search"/>
+	<input type="hidden" name="option" value="com_search"/>
+	<input type="hidden" name="Itemid" value="194"/>
+	</div>
+</form>
+
+	    </div>
+	    <!-- //HEAD SEARCH -->
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="103" data-level="1">
+<a itemprop='url' class="" href="/ru/" data-target="#">Главная </a>
+
+</li>
+<li itemprop='name' data-id="124" data-level="1">
+<a itemprop='url' class="" href="/ru/novosti.html" data-target="#">Новости </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="104" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="/ru/uroki.html" data-target="#" data-toggle="dropdown">Уроки <em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="110" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/vse-uroki-spiskom.html" data-target="#">Полный список </a>
+
+</li>
+<li itemprop='name' data-id="123" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/100-pdf.html" target="_blank" data-target="#">Первые 100 уроков в PDF </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="167" data-level="1">
+<a itemprop='url' class="" href="/ru/blog.html" data-target="#">Блог </a>
+
+</li>
+<li itemprop='name' class="active dropdown mega" data-id="131" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">🆕Курсы<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="211" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/vse-kursy.html" data-target="#">🆕 Все курсы </a>
+
+</li>
+<li itemprop='name' data-id="132" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+<li itemprop='name' data-id="138" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/rxjava.html" data-target="#">RxJava </a>
+
+</li>
+<li itemprop='name' data-id="185" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/testing.html" data-target="#">Тестирование </a>
+
+</li>
+<li itemprop='name' data-id="187" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/architecture-components.html" data-target="#">Architecture Components </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="194" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/performance.html" data-target="#">Производительность </a>
+
+</li>
+<li itemprop='name' data-id="223" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/kotlin.html" data-target="#">Kotlin </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' class="dropdown mega" data-id="107" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Инфо<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="160" data-level="2">
+<a itemprop='url' class="" href="/ru/about/cntct5.html" data-target="#">Вопрос </a>
+
+</li>
+<li itemprop='name' data-id="108" data-level="2">
+<a itemprop='url' class="" href="/ru/about/osajte.html" data-target="#">О сайте </a>
+
+</li>
+<li itemprop='name' data-id="109" data-level="2">
+<a itemprop='url' class="" href="/ru/about/ob-avtore.html" data-target="#">Об авторе </a>
+
+</li>
+<li itemprop='name' data-id="224" data-level="2">
+<a itemprop='url' class="" href="/ru/about/reklama.html" data-target="#">Реклама </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="184" data-level="1">
+<a itemprop='url' class="" href="/ru/chats.html" data-target="#">Чаты </a>
+
+</li>
+<li itemprop='name' data-id="126" data-level="1">
+<a itemprop='url' class="" href="/ru/login.html" data-target="#">Войти </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="ru-RU"/>
+	<meta itemprop="url" content="/ru/courses/performance.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/ru/courses/performance.html" itemprop="url" title="Производительность">
+				Производительность</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Подробности							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Опубликовано: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2018-09-26T00:19:46+03:00" itemprop="datePublished">
+					26 сентября 2018				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<h2 style="text-align: center;">Предыстория</h2>
+<p>На DroidCon 17 Berlin мне довелось послушать про новый Android Profiler. Докладчик из Google рассказывал о новых удобных инструментах, доступных разработчикам для мониторинга сетевых запросов, потребления памяти и использования процессора. Это был очень полезный и интересный доклад, и, слушая его, я понял, что тема очень важная, и о ней надо обязательно рассказать. </p>
+<p> </p>
+<p> </p>
+<h2 style="text-align: center;">О чем будет этот курс</h2>
+<p>Для большинства разработчиков производительность - это последнее, чем они будут заниматься в процессе разработки приложения. О производительности обычно вспоминают, когда она становится реальной проблемой, от которой уже никак не получается отмахнуться.</p>
+<p>Но пользователи замечают признаки плохой производительности приложения гораздо лучше, чем новые фичи. Наиболее распространенная причина плохих отзывов на маркете - это плохая производительность и баги. Поэтому очень важно уделять внимание скорости и эффективности работы приложения.</p>
+<p>В этом курсе мы подробно разберем доступные нам инструменты для поиска проблем производительности. Научимся пользоваться ими и понимать данные, которые они нам предоставляют. Более подробно об этом вы можете прочитать в <a href="/ru/courses/performance/28-course/performance/575-urok-1-vvedenie.html" hreflang="ru">первом бесплатном уроке</a>.</p>
+<p> </p>
+<p> </p>
+<h2 style="text-align: center;">Какую пользу принесут вам эти знания?</h2>
+<p>С большой вероятностью на вашем текущем проекте вы сможете стать единоличным гуру производительности, т.к. мало кто из разработчиков всерьез интересуется этой темой.</p>
+<p>В ваше резюме можно будет добавлять пункт Application Performance, а на собеседованиях вы будете рассказывать о том, как на текущем проекте вы нашли и пофиксили множество мемори ликов, ускорили старт приложения в два раза и избавились от тормозов при скролле списка. При этом вы сможете подробно описать, какие именно действия вы предпринимали и какие инструменты использовали. Все это будет вам огромным плюсом в глазах будущего работодателя.</p>
+<p>Пару раз меня на собеседовании спрашивали, какие я знаю инструменты для выявления проблем производительности. А также просили перечислить правила оптимизации, которых я придерживаюсь при создании приложений.</p>
+<p>Ну и в целом, производительность - это интересная тема. Можно увидеть работу приложения изнутри. Например - подробный стек вызова методов с указанием, сколько времени выполнялся каждый метод. Или содержимое памяти приложения - какие там сейчас есть объекты, и кто на кого держит ссылку. Или все сетевые запросы с указанием их содержания, стека вызова и потока.</p>
+<p> </p>
+<p>На сегодняшний день курс приобрели уже более 60 человек.</p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<h2 style="text-align: center;"> </h2>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<h2 style="text-align: center;">Как получить курс</h2>
+<p> </p>
+<p>Первые два урока доступны бесплатно и без регистрации. Прочитав их, вы примете осознанное решение о покупке.</p>
+<p> </p>
+<p> В первом уроке поговорим о том, почему для приложения очень важна производительность, и обсудим общую схему поиска и устранения проблем. Я опишу пару случаев из моей практики и подробно расскажу, о чем будет этот курс.</p>
+<p> Во втором уроке рассмотрим самые распространенные приемы и советы по созданию эффективного приложения. </p>
+<p> </p>
+<p style="text-align: center;"><a class="myCustomCssButton myCustomCssButton_medium" href="/ru/courses/performance/28-course/performance/575-urok-1-vvedenie.html" hreflang="ru">Урок 1. Введение</a>    <span style="font-size: 10pt;"><a class="myCustomCssButton myCustomCssButton_medium" href="/ru/courses/performance/28-course/performance/576-urok-2-sovety-po-proizvoditelnosti.html" hreflang="ru">Урок 2. Советы по производительности</a></span></p>
+<p> </p>
+<p>Курс постоянно дополняется. На сегодняшний день он состоит из <a href="#content" rel="alternate">17 уроков</a></p>
+<p> </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<!-- START: Modules Anywhere --><div class="custom">
+	<p>Полный курс доступен после регистрации на сайте и оплаты. Стоимость курса - 1300 рублей</p></div>
+
+<!-- END: Modules Anywhere -->
+<!-- START: Modules Anywhere --><!-- END: Modules Anywhere -->
+</div>
+ 
+<!-- END: Modules Anywhere -->
+<p>С выходом новых уроков стоимость увеличивается. Но читатели, уже купившие курс, автоматически получат доступ к новым урокам. Поэтому, если тема вам интересна, не откладывайте покупку и получайте все следующие уроки бесплатно. Читателю, купившему хотя бы один курс, предоставляется <b>скидка 20%</b> на все остальные курсы.</p>
+<p>Доступ к курсу предоставляется <b>навсегда</b>, включая все последующие уроки или обновления.</p>
+<p></p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Сразу все курсы со <b>скидкой 40%</b> процентов вы можете купить (или докупить) на <a href="/ru/courses/vse-kursy.html" hreflang="ru">отдельной странице</a>.</p></div>
+ 
+<!-- END: Modules Anywhere --></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<div style="text-align: center;"><!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p><a class="myCustomCssButton" href="/ru/login.html?view=registration" rel="alternate">Зарегистрироваться</a></p></div>
+<!-- END: Modules Anywhere --></div>
+<div style="text-align: center;"> </div>
+<div style="text-align: center;"> </div>
+<div style="text-align: center;"><!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere --></div></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<h2 id="content" style="text-align: center;">Содержание курса</h2></div>
+ 
+<!-- END: Modules Anywhere -->
+<!-- START: Modules Anywhere --><ul class="category-module">
+			<li>
+							<a class="mod-articles-category-title " href="/ru/courses/performance/28-course/performance/575-urok-1-vvedenie.html">
+				Урок 1. Введение				</a>
+			
+			
+			
+			
+			
+							<p class="mod-articles-category-introtext">
+				В этом уроке поговорим о том, почему для приложения очень важна производительность, и обсудим общую схему поиска и устранения проблем. Я опишу пару случаев из моей практики и расскажу, о чем будет этот курс.				</p>
+			
+					</li>
+			<li>
+							<a class="mod-articles-category-title " href="/ru/courses/performance/28-course/performance/576-urok-2-sovety-po-proizvoditelnosti.html">
+				Урок 2. Советы по производительности				</a>
+			
+			
+			
+			
+			
+							<p class="mod-articles-category-introtext">
+				В этом уроке рассмотрим несколько общих и универсальных советов по производительности.				</p>
+			
+					</li>
+	</ul>
+<!-- END: Modules Anywhere -->
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p> </p>
+<p>Урок 3. StrictMode.<br/>В этом уроке рассмотрим возможности StrictMode. Разберем, как узнать, что в UI потоке выполняются операции с диском или сетью.</p>
+<p> </p>
+<p>Урок 4. Память.<br/>В этом уроке обсуждаем память: на что она расходуется, что такое Garbage Collector, как программно узнать количество свободной памяти. А также разберем режим Low memory и метод onTrimMemory, в котором система просит нас освободить память.</p>
+<p> </p>
+<p>Урок 5. Memory Profiler. Allocation.<br/>В этом уроке разбираемся, как с помощью Memory Profiler получить подробную информацию о создании новых и удалении старых объектов.</p>
+<p> </p>
+<p>Урок 6. Memory Profiler. Dump.<br/>В этом уроке рассмотрим как создать Memory Dump, и подробно разберемся, как читать его содержимое.</p>
+<p> </p>
+<p>Урок 7. Утечки памяти. Что это такое и как образуется.<br/>В этом уроке узнаем, что такое утечка памяти, и на примерах подробно рассмотрим, как она образуется. Кроме этого обсудим такие понятия как слабая ссылка WeakReference, Anonymous class и скрытая ссылка.</p>
+<p> </p>
+<p>Урок 8. Утечки памяти. Как понять, что она есть, и как ее найти.<br/>В этом уроке рассмотрим, как определить, что в приложении есть утечка памяти, и как ее найти.</p>
+<p> </p>
+<p>Урок 9. Утечки памяти. LeakCanary.<br/>В этом уроке мы рассматриваем инструмент LeakCanary: как его использовать, как читать и понимать результаты его работы. Кроме этого изучим возможности кастомизации и разберем несколько реальных примеров ликов. </p>
+<p> </p>
+<p>Урок 10. CPU Profiler.<br/>В этом уроке начинаем работу с CPU профайлером. Рассмотрим, какую информацию отображает его основной экран.</p>
+<p> </p>
+<p>Урок 11. CPU Profiler. Стек методов.<br/>В этом уроке рассмотрим доступные нам представления стека методов: Call Chart, Flame Chart, Top Down, Bottom Up.</p>
+<p> </p>
+<p>Урок 12. CPU Profiler. Режимы записи стека методов.<br/>В этом уроке рассмотрим доступные нам возможности записи стека методов.</p>
+<p> </p>
+<p>Урок 13. Network profiler<br/>В этом уроке рассмотрим возможности Network Profiler.</p>
+<p> </p>
+<p>Урок 14. Energy profiler<br/>В этом уроке рассмотрим возможности Energy Profiler.</p>
+<p> </p>
+<p>Урок 15. Кадр<br/>В этом уроке поговорим о том, как формируется кадр. А также рассмотрим инструменты для поиска графических проблем.</p>
+<p> </p>
+<p>Урок 16. APK Analyzer<br/>В этом уроке рассмотрим APK Analyzer. Это инструмент, который покажет подробную информацию о APK-файле.</p>
+<p> </p>
+<p>Урок 17. Systrace<br/>В этом уроке рассмотрим утилиту systrace, которая предоставляет детализированный отчет о том, что происходит в системе.</p></div>
+<!-- END: Modules Anywhere --></div>
+<!-- END: Modules Anywhere -->
+<!-- START: Modules Anywhere --><p><!--  Modules Anywhere Message: Этот модуль не может быть помещен сюда, потому, что он не опубликован или не привязан к этой странице. --></p>
+<!-- END: Modules Anywhere -->
+<!-- START: Modules Anywhere --><!--  Modules Anywhere Message: Этот модуль не может быть помещен сюда, потому, что он не опубликован или не привязан к этой странице. --><!-- END: Modules Anywhere --> 	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Architecture Components" aria-label="Previous article: Architecture Components" href="/ru/courses/architecture-components.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Назад</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Все курсы" aria-label="Next article: Все курсы" href="/ru/courses/vse-kursy.html" rel="next">
+			<span aria-hidden="true">Вперёд</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+									<li class="lang-active">
+			<a href="https://startandroid.ru/ru/courses/performance.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+								<li>
+			<a href="/en/">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod323"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center">
+<h2>Автор сайта</h2>
+<p><img src="/images/stories/pic/150x150xdmitryvinogradov.jpg.pagespeed.ic.ZW6Ncwy8-8.jpg" width="150" height="150"/></p>
+<p>Дмитрий Виноградов</p>
+<p>Подробнее можно <a href="https://youtu.be/xPuiCBRmJDg?t=102" target="_blank" rel="noopener noreferrer">посмотреть</a> или <a href="/ru/about/ob-avtore.html" target="_blank" rel="noopener noreferrer">почитать</a>.</p>
+<p>Никакие другие люди не имеют к этому сайту никакого отношения и просто занимаются плагиатом.</p>
+</div></div>
+</div></div></div><div class="t3-module module " id="Mod139"><div class="module-inner"><div class="module-ct"><div class="bannergroup">
+
+	<div class="banneritem">
+																																																																			<a href="/ru/component/banners/click/2.html" title="Курс RxJava">
+							<img src="https://startandroid.ru/images/banners/xbanner_rxjava.png.pagespeed.ic.5eHWjK-aEA.png" alt="Курс RxJava" width="240" height="400"/>
+						</a>
+																<div class="clr"></div>
+	</div>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod91"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center"><h2>Социальные сети</h2></div>
+<p> </p>
+<div align="center">
+<p><img src="/images/stories/pic/telegram.png.pagespeed.ce.nkfL74AMTR.png" alt="" width="100" height="100"/></p>
+<p>В <a href="https://t.me/startandroid" target="_blank">канале</a> я публикую ссылки на интересные и полезные статьи по Android</p>
+<p>В <a href="https://t.me/startandroidchat" target="_blank">чате</a> можно обсудить вопросы и проблемы, возникающие при разработке</p>
+</div>
+
+<br><br>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?144"></script>
+<!-- VK Widget -->
+
+<div align="center"><h4>Группа ВКонтакте</h4>
+<div id="vk_groups"></div>
+</div>
+<script type="text/javascript">VK.Widgets.Group("vk_groups",{mode:3},36284347);</script>
+<br><br>
+</div>
+</div></div></div><div class="t3-module module " id="Mod90"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<h1>Поддержка проекта</h1>
+<p><a href="https://money.yandex.ru/prepaid/" target="_blank">Яндекс</a><br/><strong>410011180491924</strong></p>
+<p><a href="http://www.webmoney.ru/rus/addfunds/index.shtml">WebMoney</a><br/><strong>R248743991365</strong><br/><strong>Z551306702056</strong></p>
+<p><a href="https://www.paypal.me/startandroidcourse">Paypal</a></p>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

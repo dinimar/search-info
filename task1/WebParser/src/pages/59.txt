@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-110 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="LoaderManager, LoaderCallbacks, Loader, onStartLoading, onStopLoading, onForceLoad, onAbandon, onReset, deliverResult, getLoaderManager, initLoader, onCreateLoader, onLoadFinished, onLoaderReset, getLoader, restartLoader, forceLoad, ContentObserver, ForceLoadContentObserver, takeContentChanged, destroyLoader, AsyncTaskLoader, loadInBackground, setUpdateThrottle"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Урок 135. Loader. LoaderManager. AsyncTaskLoader"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://startandroid.ru/images/stories/lessons/L0135/L0135_010.png"/>
+	<meta name="og:url" content="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="Loader пример использования. Зачем нужен Loader. "/>
+	<meta name="author" content="Dmitry Vinogradov"/>
+	<meta name="description" content="Loader пример использования. Зачем нужен Loader. "/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Урок 135. Loader. LoaderManager. AsyncTaskLoader</title>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[274]='/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod97"><div class="module-inner"><h3 class="module-title "><span>Самое читаемое</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" itemprop="url">
+			<span itemprop="name">
+				Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html" itemprop="url">
+			<span itemprop="name">
+				Урок 2. Установка Android Studio			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 4. Компоненты экрана и их свойства			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/14-urok-5-layout-kak-ispolzovat-smena-orientatsii-ekrana.html" itemprop="url">
+			<span itemprop="name">
+				Урок 5. Layout-файл в Activity. XML представление. Смена ориентации экрана.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/4-urok-1-vvedenie.html" itemprop="url">
+			<span itemprop="name">
+				Урок 1. Введение.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/16-urok-9-obrabotchiki-sobytij-na-primere-button.html" itemprop="url">
+			<span itemprop="name">
+				Урок 9. Обработчики событий на примере Button.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/15-urok-6-vidy-layouts-kljuchevye-otlichija-i-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 6. Виды Layouts. Ключевые отличия и свойства.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/38-urok-7-layout-parametry-dlja-view-elementov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 7. Layout параметры для View-элементов.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html" itemprop="url">
+			<span itemprop="name">
+				Урок 34. Хранение данных. SQLite			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/82-urok42-spisok-listview.html" itemprop="url">
+			<span itemprop="name">
+				Урок 42. Список - ListView			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/58-urok-21-sozdanie-i-vyzov-activity.html" itemprop="url">
+			<span itemprop="name">
+				Урок 21. Создание и вызов Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/24-urok-8-rabotaem-s-elementami-ekrana-iz-koda.html" itemprop="url">
+			<span itemprop="name">
+				Урок 8. Работаем с элементами экрана из кода			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/73-urok-33-hranenie-dannyh-preferences.html" itemprop="url">
+			<span itemprop="name">
+				Урок 33. Хранение данных. Preferences.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/80-urok-40-layoutinflater-uchimsja-ispolzovat.html" itemprop="url">
+			<span itemprop="name">
+				Урок 40. LayoutInflater. Учимся использовать.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/489-urok-180-constraintlayout-osnovy.html" itemprop="url">
+			<span itemprop="name">
+				Урок 180. ConstraintLayout. Основы			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/175-urok-105-android-3-fragments-dinamicheskaja-rabota.html" itemprop="url">
+			<span itemprop="name">
+				Урок 105. Android 3. Fragments. Динамическая работа			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 10. Оптимизируем реализацию обработчиков.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html" itemprop="url">
+			<span itemprop="name">
+				Урок 92. Service. Простой пример			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/54-urok-19-pishem-prostoj-kalkuljator.html" itemprop="url">
+			<span itemprop="name">
+				Урок 19. Пишем простой калькулятор			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/67-urok-28-extras-peredaem-dannye-s-pomoschju-intent.html" itemprop="url">
+			<span itemprop="name">
+				Урок 28. Extras - передаем данные с помощью Intent			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    	    <!-- HEAD SEARCH -->
+	    <div class="head-search">     
+	      <form class="form-search" action="/ru/uroki/vse-uroki-spiskom.html" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Поиск</label><i class="fa fa-search"></i><input name="searchword" id="mod-search-searchword" maxlength="200" class="form-control " type="text" size="0"/>	<input type="hidden" name="task" value="search"/>
+	<input type="hidden" name="option" value="com_search"/>
+	<input type="hidden" name="Itemid" value="110"/>
+	</div>
+</form>
+
+	    </div>
+	    <!-- //HEAD SEARCH -->
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="103" data-level="1">
+<a itemprop='url' class="" href="/ru/" data-target="#">Главная </a>
+
+</li>
+<li itemprop='name' data-id="124" data-level="1">
+<a itemprop='url' class="" href="/ru/novosti.html" data-target="#">Новости </a>
+
+</li>
+<li itemprop='name' class="active dropdown mega" data-id="104" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="/ru/uroki.html" data-target="#" data-toggle="dropdown">Уроки <em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' class="current active" data-id="110" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/vse-uroki-spiskom.html" data-target="#">Полный список </a>
+
+</li>
+<li itemprop='name' data-id="123" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/100-pdf.html" target="_blank" data-target="#">Первые 100 уроков в PDF </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="167" data-level="1">
+<a itemprop='url' class="" href="/ru/blog.html" data-target="#">Блог </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="131" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">🆕Курсы<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="211" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/vse-kursy.html" data-target="#">🆕 Все курсы </a>
+
+</li>
+<li itemprop='name' data-id="132" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+<li itemprop='name' data-id="138" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/rxjava.html" data-target="#">RxJava </a>
+
+</li>
+<li itemprop='name' data-id="185" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/testing.html" data-target="#">Тестирование </a>
+
+</li>
+<li itemprop='name' data-id="187" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/architecture-components.html" data-target="#">Architecture Components </a>
+
+</li>
+<li itemprop='name' data-id="194" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/performance.html" data-target="#">Производительность </a>
+
+</li>
+<li itemprop='name' data-id="223" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/kotlin.html" data-target="#">Kotlin </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' class="dropdown mega" data-id="107" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Инфо<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="160" data-level="2">
+<a itemprop='url' class="" href="/ru/about/cntct5.html" data-target="#">Вопрос </a>
+
+</li>
+<li itemprop='name' data-id="108" data-level="2">
+<a itemprop='url' class="" href="/ru/about/osajte.html" data-target="#">О сайте </a>
+
+</li>
+<li itemprop='name' data-id="109" data-level="2">
+<a itemprop='url' class="" href="/ru/about/ob-avtore.html" data-target="#">Об авторе </a>
+
+</li>
+<li itemprop='name' data-id="224" data-level="2">
+<a itemprop='url' class="" href="/ru/about/reklama.html" data-target="#">Реклама </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="184" data-level="1">
+<a itemprop='url' class="" href="/ru/chats.html" data-target="#">Чаты </a>
+
+</li>
+<li itemprop='name' data-id="126" data-level="1">
+<a itemprop='url' class="" href="/ru/login.html" data-target="#">Войти </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Полный список</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="ru-RU"/>
+	<meta itemprop="url" content="/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html" itemprop="url" title="Урок 135. Loader. LoaderManager. AsyncTaskLoader">
+				Урок 135. Loader. LoaderManager. AsyncTaskLoader</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Подробности							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Опубликовано: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2013-11-11T05:00:00+03:00" itemprop="datePublished">
+					11 ноября 2013				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>В этом уроке:</p>
+<p>- изучаем Loader и AsyncTaskLoader</p>
+ 
+<p><a href="http://developer.android.com/guide/components/loaders.html" target="_blank" rel="noopener noreferrer">Лоадеры</a> появились в третьей версии Android. Предназначены для выполнения асинхронных операций и привязаны к некоторым lifecycle-методам Activity или Fragment-ов.</p>
+<p>Я когда-то пытался уже эту тему осилить, но с ходу не получилось: не особо понял смысл и механизмы. Но создатели Android не дремлют. Они некоторые методы по работе с БД объявили устаревшими и очень рекомендуют использовать CursorLoader. Из-за этого мне теперь надо Урок 52 переделывать. И я решил, что сначала имеет смысл все-таки разобраться и осветить тему Loader-ов, а потом уже обновлю Урок 52.</p>
+<p> </p>
+<p>Итак, имеем два класса.</p>
+<p><a href="http://developer.android.com/reference/android/app/LoaderManager.html" target="_blank" rel="noopener noreferrer">LoaderManager</a> – встроен в Activity и Fragment. Как и следует из названия он управляет объектами Loader. Он их создает, хранит, уничтожает и стартует/останавливает. Для взаимодействия с ним используется колбэк интерфейс <a href="http://developer.android.com/reference/android/app/LoaderManager.LoaderCallbacks.html" target="_blank" rel="noopener noreferrer">LoaderCallbacks</a>.</p>
+<p><a href="http://developer.android.com/reference/android/content/Loader.html" target="_blank" rel="noopener noreferrer">Loader</a> – объект, который должен уметь асинхронно выполнять какую-либо задачу.</p>
+<p> </p>
+<p>Напишем приложение, в котором используем лоадер, и посмотрим его поведение на примерах. Лоадер будет просто определять текущее время, но делать это он будет асинхронно и с учетом формата.</p>
+<p>Создадим проект:</p>
+<p><strong>Project name</strong>: P1351_Loader<br/> <strong>Build Target</strong>: Android 4.0 <br/> <strong>Application name</strong>: Loader<br/> <strong>Package name</strong>: ru.startandroid.develop.p1351loader<br/> <strong>Create Activity</strong>: MainActivity</p>
+<p> </p>
+<p>В <b>strings.xml</b> добавим строки:</p>
+<pre class="brush:xml">&lt;string name="format_short"&gt;Short&lt;/string&gt;
+&lt;string name="format_long"&gt;Long&lt;/string&gt;
+&lt;string name="get_time"&gt;Get time&lt;/string&gt;
+&lt;string name="observer"&gt;Observer&lt;/string&gt;</pre>
+<p> </p>
+<p>Экран <b>main.xml</b>:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"&gt;
+    &lt;TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"&gt;
+    &lt;/TextView&gt;
+    &lt;RadioGroup
+        android:id="@+id/rgTimeFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTime"&gt;
+        &lt;RadioButton
+            android:id="@+id/rdShort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/format_short"&gt;
+        &lt;/RadioButton&gt;
+        &lt;RadioButton
+            android:id="@+id/rdLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/format_long"&gt;
+        &lt;/RadioButton&gt;
+    &lt;/RadioGroup&gt;
+    &lt;Button
+        android:id="@+id/btnGetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rgTimeFormat"
+        android:onClick="getTimeClick"
+        android:text="@string/get_time"&gt;
+    &lt;/Button&gt;
+    &lt;Button
+        android:id="@+id/btnObserver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnGetTime"
+        android:onClick="observerClick"
+        android:text="@string/observer"&gt;
+    &lt;/Button&gt;
+&lt;/RelativeLayout&gt;</pre>
+<p> </p>
+<p>Текст для отображения времени, выбор формата: короткий и длинный, кнопка получения времени и кнопка для работы с Observer-ом, который мы попробуем прикрутить к лоадеру.</p>
+<p><img src="/images/stories/lessons/L0135/xL0135_010.png.pagespeed.ic.EVU_3k7YeO.png" alt=""/></p>
+<p> </p>
+<p>Создадим класс лоадера. Причем, не в MainActivity, а отдельно, чтобы было нагляднее. Вообще, можно и в MainActivity создавать, но при этом есть ограничение: он должен быть static. Иначе LoaderManager ругнется: "<i>Object returned from onCreateLoader must not be a non-static inner member class</i>". </p>
+<p><b>TimeLoader.java</b>:</p>
+<div class="java">
+<pre class="brush:java">package ru.startandroid.develop.p1351loader;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+import android.content.Context;
+import android.content.Loader;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+
+public class TimeLoader extends Loader&lt;String&gt; {
+
+  final String LOG_TAG = "myLogs";
+  final int PAUSE = 10;
+
+  public final static String ARGS_TIME_FORMAT = "time_format";
+  public final static String TIME_FORMAT_SHORT = "h:mm:ss a";
+  public final static String TIME_FORMAT_LONG = "yyyy.MM.dd G 'at' HH:mm:ss";
+
+  GetTimeTask getTimeTask;
+  String format;
+
+  public TimeLoader(Context context, Bundle args) {
+    super(context);
+    Log.d(LOG_TAG, hashCode() + " create TimeLoader");
+    if (args != null)
+      format = args.getString(ARGS_TIME_FORMAT);
+    if (TextUtils.isEmpty(format))
+      format = TIME_FORMAT_SHORT;
+  }
+
+  @Override
+  protected void onStartLoading() {
+    super.onStartLoading();
+    Log.d(LOG_TAG, hashCode() + " onStartLoading");
+  }
+
+  @Override
+  protected void onStopLoading() {
+    super.onStopLoading();
+    Log.d(LOG_TAG, hashCode() + " onStopLoading");
+  }
+
+  @Override
+  protected void onForceLoad() {
+    super.onForceLoad();
+    Log.d(LOG_TAG, hashCode() + " onForceLoad");
+    if (getTimeTask != null)
+      getTimeTask.cancel(true);
+    getTimeTask = new GetTimeTask();
+    getTimeTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, format);
+  }
+
+  @Override
+  protected void onAbandon() {
+    super.onAbandon();
+    Log.d(LOG_TAG, hashCode() + " onAbandon");
+  }
+
+  @Override
+  protected void onReset() {
+    super.onReset();
+    Log.d(LOG_TAG, hashCode() + " onReset");
+  }
+
+  void getResultFromTask(String result) {
+    deliverResult(result);
+  }
+
+  class GetTimeTask extends AsyncTask&lt;String, Void, String&gt; {
+    @Override
+    protected String doInBackground(String... params) {
+      Log.d(LOG_TAG, TimeLoader.this.hashCode() + " doInBackground");
+      try {
+        TimeUnit.SECONDS.sleep(PAUSE);
+      } catch (InterruptedException e) {
+        return null;
+      }
+
+      SimpleDateFormat sdf = new SimpleDateFormat(params[0],
+          Locale.getDefault());
+      return sdf.format(new Date());
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+      super.onPostExecute(result);
+      Log.d(LOG_TAG, TimeLoader.this.hashCode() + " onPostExecute "
+          + result);
+      getResultFromTask(result);
+    }
+
+  }
+}</pre>
+</div>
+<p>Лоадер будет асинхронно получать время. При этом будем эмулировать паузой долгое выполнение, как будто он на какой-нить сервер ходит и оттуда данные получает. Я поставил паузу в 10 сек, но можно поставить и меньше, чтобы не ждать долго выполнение примеров. Выводить время он будет уметь в двух форматах – коротком и длинном, это соответственно константы TIME_FORMAT_SHORT и TIME_FORMAT_LONG.</p>
+<p>Наш класс расширяет класс Loader. Loader является параметризированным классом, поэтому нам в скобках &lt;&gt; необходимо указать класс-тип, который указывает, что будет возвращать лоадер после своей работы. Наш лоадер будет возвращать строку с временем, поэтому я указываю здесь String.</p>
+<p>В <b>конструкторе</b> читаем из Bundle данные о формате времени. Если ничего не пришло, то будем использовать короткий формат.</p>
+<p>Далее идут 5 стандартных методов лоадера.</p>
+<p><a href="http://developer.android.com/reference/android/content/Loader.html#onStartLoading()" target="_blank" rel="noopener noreferrer">onStartLoading</a> – вызывается при старте (onStart) Activity или фрагмента, к которому будет привязан Loader.</p>
+<p><a href="http://developer.android.com/reference/android/content/Loader.html#onStopLoading()" target="_blank" rel="noopener noreferrer">onStopLoading</a> – вызывается при остановке (onStop) Activity или фрагмента, к которому будет привязан Loader.</p>
+<p>Сразу надо определиться с формулировкой состояний. Будем считать что лоадер перешел в состояние «стартован» после метода onStartLoading и в состояние «остановлен» после метода onStopLoading. Это необходимо, т.к. поведение лоадера зависит от состояния и нам в дальнейшем нужно будет эти состояния как-то словесно идентифицировать.</p>
+<p>Надо понимать, что два этих метода автоматически не означают, что лоадер начал или закончил работу. Это просто переход в состояние стартован и остановлен. А будет он в это время работать или нет, определять вам.</p>
+<p><a href="http://developer.android.com/reference/android/content/Loader.html#onForceLoad()" target="_blank" rel="noopener noreferrer">onForceLoad</a> - в этом методе кодим работу лоадера. Запускаем здесь GetTimeTask, который будет нам время получать асинхронно. Ниже разберем подробно, что он делает.</p>
+<p><a href="http://developer.android.com/reference/android/content/Loader.html#onAbandon()" target="_blank" rel="noopener noreferrer">onAbandon</a> – метод означающий, что лоадер становится неактивным. Далее на примере будет видно, что это означает.</p>
+<p><a href="http://developer.android.com/reference/android/content/Loader.html#onReset()" target="_blank" rel="noopener noreferrer">onReset</a> – означает уничтожение лоадера, вызывается при закрытии (onDestroy) Activity или фрагмента, к которому будет привязан Loader. Не вызывается, если onDestroy был вызван, например при смене ориентации.</p>
+<p>Далее рассмотрим примеры и увидим, когда и какие методы вызываются.</p>
+<p> </p>
+<p>Метод <b>getResultFromTask</b> – это наш метод. GetTimeTask, по окончании своей работы, вызовет этот метод и передаст нам результаты своей работы. А мы уже вызываем в нем стандартный метод лоадера – <a href="http://developer.android.com/reference/android/content/Loader.html#deliverResult(D)" target="_blank" rel="noopener noreferrer">deliverResult</a>, который оповещает слушателя, подключенного к лоадеру, что работа окончена и передает ему данные.</p>
+<p><b>GetTimeTask</b> – это AsyncTask, который берет на вход формат даты и через определенную паузу возвращает (с помощью getResultFromTask) в лоадер текущее время в этом формате.</p>
+<p> </p>
+<p><b>MainActivity.java</b>:</p>
+<pre class="brush:java">package ru.startandroid.develop.p1351loader;
+
+import android.app.Activity;
+import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Loader;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+public class MainActivity extends Activity implements LoaderCallbacks&lt;String&gt; {
+
+  final String LOG_TAG = "myLogs";
+  static final int LOADER_TIME_ID = 1;
+
+  TextView tvTime;
+  RadioGroup rgTimeFormat;
+  static int lastCheckedId = 0;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+    tvTime = (TextView) findViewById(R.id.tvTime);
+    rgTimeFormat = (RadioGroup) findViewById(R.id.rgTimeFormat);
+
+    Bundle bndl = new Bundle();
+    bndl.putString(TimeLoader.ARGS_TIME_FORMAT, getTimeFormat());
+    getLoaderManager().initLoader(LOADER_TIME_ID, bndl, this);
+    lastCheckedId = rgTimeFormat.getCheckedRadioButtonId();
+  }
+
+  @Override
+  public Loader&lt;String&gt; onCreateLoader(int id, Bundle args) {
+    Loader&lt;String&gt; loader = null;
+    if (id == LOADER_TIME_ID) {
+      loader = new TimeLoader(this, args);
+      Log.d(LOG_TAG, "onCreateLoader: " + loader.hashCode());
+    }
+    return loader;
+  }
+
+  @Override
+  public void onLoadFinished(Loader&lt;String&gt; loader, String result) {
+    Log.d(LOG_TAG, "onLoadFinished for loader " + loader.hashCode()
+        + ", result = " + result);
+    tvTime.setText(result);
+  }
+
+  @Override
+  public void onLoaderReset(Loader&lt;String&gt; loader) {
+    Log.d(LOG_TAG, "onLoaderReset for loader " + loader.hashCode());
+  }
+
+  public void getTimeClick(View v) {
+    Loader&lt;String&gt; loader;
+
+    int id = rgTimeFormat.getCheckedRadioButtonId();
+    if (id == lastCheckedId) {
+      loader = getLoaderManager().getLoader(LOADER_TIME_ID);
+    } else {
+      Bundle bndl = new Bundle();
+      bndl.putString(TimeLoader.ARGS_TIME_FORMAT, getTimeFormat());
+      loader = getLoaderManager().restartLoader(LOADER_TIME_ID, bndl,
+          this);
+      lastCheckedId = id;
+    }
+    loader.forceLoad();
+  }
+
+  String getTimeFormat() {
+    String result = TimeLoader.TIME_FORMAT_SHORT;
+    switch (rgTimeFormat.getCheckedRadioButtonId()) {
+    case R.id.rdShort:
+      result = TimeLoader.TIME_FORMAT_SHORT;
+      break;
+    case R.id.rdLong:
+      result = TimeLoader.TIME_FORMAT_LONG;
+      break;
+    }
+    return result;
+  }
+
+  public void observerClick(View v) {
+  }
+
+}</pre>
+<p>В <b>onCreate </b>мы получаем объект LoaderManager с помощью метода <a href="http://developer.android.com/reference/android/app/Activity.html#getLoaderManager()" target="_blank" rel="noopener noreferrer">getLoaderManager</a> и вызываем его метод <a href="http://developer.android.com/reference/android/app/LoaderManager.html#initLoader(int, android.os.Bundle, android.app.LoaderManager.LoaderCallbacks&lt;D&gt;)" target="_blank" rel="noopener noreferrer">initLoader</a>, который создаст и вернет нам Loader. В качестве параметров метода initLoader указываем:<br/>- ID лоадера, это необходимо, т.к. мы запросто можем использовать сразу несколько разных лоадеров, и LoaderManager да и мы сами должны их как-то различать<br/>- объект Bunlde. В него вы помещаете данные, которые хотите использовать при создании лоадера<br/>- объект, реализующий колбэк-интерфейс LoaderCallbacks. Он будет использоваться для взаимодействия с лоадером.</p>
+<p>Итак, посмотрим, что мы передали в initLoader. В качестве ID используем константу LOADER_TIME_ID. В Bundle помещаем формат времени, который хотим получить. Для определения формата используем свой метод getTimeFormat(), его обсудим ниже. И третьим параметром метода идет MainActivity, которое реализует интерфейс LoaderCallbacks. На всякий случай поясню, что можно было и создать отдельный объект для этого колбэка, а не использовать Activity. Кому как удобнее.</p>
+<p>Метод initLoader возвращает созданный лоадер, но я его никуда не сохраняю, т.к. мне это здесь не нужно. </p>
+<p>Интерфейс LoaderCallbacks требует реализации трех методов:</p>
+<p><a href="http://developer.android.com/reference/android/app/LoaderManager.LoaderCallbacks.html#onCreateLoader(int, android.os.Bundle)" target="_blank" rel="noopener noreferrer">onCreateLoader</a> – вызывается, когда требуется создать новый лоадер, например, в тот момент, когда мы выше вызываем метод initLoader. На вход получает ID требуемого лоадера и Bundle с данными. Т.е. те самые объекты, что мы передавали в initLoader.</p>
+<p><a href="http://developer.android.com/reference/android/app/LoaderManager.LoaderCallbacks.html#onLoadFinished(android.content.Loader&lt;D&gt;, D)" target="_blank" rel="noopener noreferrer">onLoadFinished</a> – срабатывает, когда лоадер закончил работу и вернул результат. На вход приходит сам лоадер и результат его работы.</p>
+<p><a href="http://developer.android.com/reference/android/app/LoaderManager.LoaderCallbacks.html#onLoaderReset(android.content.Loader&lt;D&gt;)" target="_blank" rel="noopener noreferrer">onLoaderReset</a> – срабатывает, когда LoaderManager собрался уничтожать лоадер. На вход получает лоадер.</p>
+<p>Далее на примерах увидим порядок вызовов этих трех методов.</p>
+<p> </p>
+<p>Метод <b>getTimeClick </b>– обработчик кнопки Get time. В нем мы определяем: в каком формате требуется получить время. Далее проверяем, если последний созданный лоадер был создан с учетом этого же формата, то просто получаем лоадер методом <a href="http://developer.android.com/reference/android/app/LoaderManager.html#getLoader(int)" target="_blank" rel="noopener noreferrer">getLoader</a> по ID. Если же формат другой, то нам нужен новый лоадер. Для этого используется метод <a href="http://developer.android.com/reference/android/app/LoaderManager.html#restartLoader(int, android.os.Bundle, android.app.LoaderManager.LoaderCallbacks&lt;D&gt;)" target="_blank" rel="noopener noreferrer">restartLoader</a>. Он принимает на вход те же параметры, что и initLoader, и создает новый лоадер. Далее у полученного лоадера вызываем метод <a href="http://developer.android.com/reference/android/content/Loader.html#forceLoad()" target="_blank" rel="noopener noreferrer">forceLoad</a>, тем самым запуская работу.</p>
+<p>Как видим, у LoaderManager есть аж три метода для получения лоадера: getLoader, initLoader и restartLoader. Давайте сразу проговорим их отличия.</p>
+<p>getLoader – просто получение лоадера с указанным ID. Если лоадер с таким ID еще не был создан, то метод вернет null.</p>
+<p>initLoader – создание лоадера если он не существовал. Если лоадер существовал, то метод его и вернет, только заменит колбэк-объект, который вы передаете в метод. А если лоадер не просто существовал, но и уже успел отработать, то в метод onLoadFinished отправится его последний результат.</p>
+<p>restartLoader – создание нового лоадера в любом случае. Чуть позже мы рассмотрим на примерах, что происходит если при работающем лоадере создать новый.</p>
+<p>Надеюсь, что теперь стала понятнее логика метода getTimeClick.</p>
+<p> </p>
+<p>Методе <b>getTimeFormat</b> просто возвращает формат времени в зависимости от выбранного на экране формата.</p>
+<p>Метод <b>observerClick</b> пока оставим пустым. Позже заполним.</p>
+<p> </p>
+<p>Почти во все методы я добавил логи, чтобы видеть порядок выполнения методов. А хэш-коды лоадеров позволят нам видеть для какого лоадера эти методы выполняются.</p>
+<p>Все сохраняем, запускаем приложение.</p>
+<p> </p>
+<p>На экране пока не отображено время, т.к. лоадер пока только перешел в состояние «стартован», но работать не начинал.</p>
+<p>В логах:</p>
+<p><i>1091125312 create TimeLoader<br/>onCreateLoader: 1091125312<br/>1091125312 onStartLoading</i></p>
+<p>Видим, что метод initLoader в onCreate вызвал метод onCreateLoader, в котором был вызван конструктор TimeLoader. А метод onStartLoading сработал при старте Activity.</p>
+<p> </p>
+<p>Свернем приложение, нажав Home.</p>
+<p><i>1091125312 onStopLoading</i></p>
+<p> </p>
+<p>Снова откроем из списка последних</p>
+<p><i>1091125312 onStartLoading</i></p>
+<p> </p>
+<p>Закроем приложение кнопкой Back</p>
+<p><i>1091125312 onStopLoading<br/>1091125312 onReset</i></p>
+<p> </p>
+<p>Видно, что Activity в своих lifecycle-методах вызывает соответствующие методы лоадера: при старте – onStartLoading, при остановке - onStopLoading, а при закрытии – onReset.</p>
+<p>Заметим, что не был вызван onLoaderReset. Он вызывается только в случае, когда хоть раз были получены данные. Далее в примерах увидим это.</p>
+<p> </p>
+<p>Посмотрим лоадер в работе. Снова запустим приложение, оставим формат времени Short и жмем Get time. Ждем 10 сек и видим на экране результат.</p>
+<p>Смотрим логи работы:</p>
+<p><i>1091254864 onForceLoad<br/>1091254864 doInBackground<br/>1091254864 onPostExecute 10:57:15 после полудня<br/>onLoadFinished for loader 1091254864, result = 10:57:15 после полудня</i></p>
+<p>В onForceLoad запустился и отработал AsyncTask и колбэк лоадера получил результат в onLoadFinished.</p>
+<p> </p>
+<p>Попробуем еще раз. Но теперь проверим, что будет, если свернуть приложение при работе лоадера.</p>
+<p>Нажмем Get time и сразу же свернем приложение кнопкой Home.</p>
+<p><i>1091254864 onForceLoad<br/>1091254864 doInBackground<br/>1091254864 onStopLoading<br/>1091254864 onPostExecute 11:00:26 после полудня</i></p>
+<p>Видим, что уже после onStopLoading AsyncTask вернул результат, но onLoadFinished уже не отработал, т.к. лоадер остановлен.</p>
+<p> </p>
+<p>Теперь проверим, что будет если при работающем лоадере мы закроем приложение.</p>
+<p>Откроем приложение, нажмем Get time и закроем приложение кнопкой Back.</p>
+<p><i>1091254864 onForceLoad<br/>1091254864 doInBackground<br/>1091254864 onStopLoading<br/>onLoaderReset for loader 1091254864<br/>1091254864 onReset<br/>1091254864 onPostExecute 11:03:00 после полудня</i></p>
+<p>Видим, что после onStopLoading лоадер был уничтожен. В этот раз, кстати сработал метод onLoaderReset, т.к. этот лоадер ранее уже получал данные. AsyncTask честно отработал и вернул результат, но это уже никому не интересно, т.к. лоадер уничтожен.</p>
+<p> </p>
+<p>Теперь проверим работу метода restartLoader.</p>
+<p>Откроем приложение, нажмем Get time. Дождемся пока лоадер отработает и покажет время, а затем переключим формат на Long и еще раз жмем Get time и дождемся пока отработает новый лоадер.</p>
+<p>Смотрим логи:</p>
+<p><i>1091662504 create TimeLoader<br/>onCreateLoader: 1091662504<br/>1091662504 onStartLoading<br/>1091662504 onForceLoad<br/>1091662504 doInBackground<br/>1091662504 onPostExecute 11:08:42 после полудня<br/>onLoadFinished for loader1091662504, result = 11:08:42 после полудня<br/>1091662504 onAbandon<br/>1091700592 create TimeLoader<br/>onCreateLoader: 1091700592<br/>1091700592 onStartLoading<br/>1091700592 onForceLoad<br/>1091700592 doInBackground<br/>1091700592 onPostExecute 2013.11.04 н.э. at 23:08:56<br/>onLoadFinished for loader1091700592, result = 2013.11.04 н.э. at 23:08:56<br/>1091662504 onReset</i></p>
+<p>По хэш-кодам видно, что у нас в работе было два лоадера: первый – 1091662504, второй - 1091700592 (у вас могут быть другие хэш-коды).</p>
+<p>При создании второго лоадера, у первого был вызван метод onAbandon, означающий, что первый лоадер становится устаревшим и более не является текущим. Т.е. метод getLoader уже его не вернет. Теперь текущий лоадер – второй. Далее идет стандартный набор методов работы второго лоадера и когда он успешно отрабатывает и возвращает результат, вызывается метод onReset первого лоадера. Т.е. после успешной работы второго лоадера первый лоадер уничтожается.</p>
+<p> </p>
+<p>Посмотрим, что будет если создать второй лоадер, пока не закончил работу первый.</p>
+<p>Оставляем формат Long, нажмем Get time, затем сразу же переключим на Short и снова нажмем Get time и дождемся результат. Смотрим логи.</p>
+<p><i>1091700592 onForceLoad<br/>1091700592 doInBackground<br/>1091700592 onAbandon<br/>1091713440 create TimeLoader<br/>onCreateLoader: 1091713440<br/>1091713440 onStartLoading<br/>1091713440 onForceLoad<br/>1091713440 doInBackground<br/>1091700592 onPostExecute 2013.11.04 н.э. at 23:16:39<br/>1091713440 onPostExecute 11:16:41 после полудня<br/>onLoadFinished for loader 1091713440, result = 11:16:41 после полудня<br/>1091700592 onReset</i></p>
+<p>Теперь первый лоадер – 1091700592, второй – 1091713440. Схема в целом та же: первый лоадер переводится в разряд старых (onAbandon) при создании второго.  Но результат в onLoadFinished считается только у второго, т.к. он является текущим, а результат старого лоадера будет проигнорен.</p>
+<p> </p>
+<p>Теперь попробуйте повернуть девайс, чтобы сменилась ориентация экрана. Видим, что последний результат снова на экране. Смотрим лог:</p>
+<p><i>onLoadFinished for loader 1091713440, result = 11:16:41 после полудня</i></p>
+<p>При повороте экрана у нас сработал initLoader в onCreate и вызвал onLoadFinished с последним результатом текущего лоадера. Соответственно, если вы запустите в работу новый лоадер и пока он работает повернете экран, то вам ничего не вернется, т.к. у этого лоадера еще нет результата.</p>
+<p> </p>
+<h3>ContentObserver</h3>
+<p>Лоадеры умеют работать с объектами <a href="http://developer.android.com/reference/android/database/ContentObserver.html" target="_blank" rel="noopener noreferrer">ContentObserver</a>. Это такой объект, который сообщит вам, что интересующие вас данные изменились и имеет смысл их снова прочесть.</p>
+<p>У лоадера есть своя реализация этого класса: <a href="http://developer.android.com/reference/android/content/Loader.ForceLoadContentObserver.html" target="_blank" rel="noopener noreferrer">ForceLoadContentObserver</a>. Когда он получает уведомление о том, что данные были изменены, он действует в зависимости от состояния лоадера: <br/> - если лоадер в стартованном состоянии (onStartLoading), то вызывается метод forceLoad, который должен эти новые данные считать<br/> - если же лоадер остановлен (onStopLoading), то ставится метка о том, что данные были изменены и лоадер при старте может эту метку прочесть и запустить все тот же forceLoad для чтения данных</p>
+<p> </p>
+<p>Добавим в наше приложение работу с ContentObserver. Для этого в MainActivity реализуем обработчик кнопки Observer:</p>
+<pre class="brush:java">  public void observerClick(View v) {
+    Log.d(LOG_TAG, "observerClick");
+    Loader&lt;String&gt; loader = getLoaderManager().getLoader(LOADER_TIME_ID);
+    final ContentObserver observer = loader.new ForceLoadContentObserver();
+    v.postDelayed(new Runnable() {
+      @Override
+      public void run() {
+        observer.dispatchChange(false);
+      }
+    }, 5000);
+  }</pre>
+<p>Создаем экземпляр ForceLoadContentObserver и эмулируем ситуацию: он через 5 сек сообщит нам о том, что данные изменились.</p>
+<p> </p>
+<p>А в лоадере перепишем onStartLoading:</p>
+<pre class="brush:java">  @Override
+  protected void onStartLoading() {
+    super.onStartLoading();
+    Log.d(LOG_TAG, hashCode() + " onStartLoading");
+    if (takeContentChanged())
+      forceLoad();
+  }</pre>
+<p>Здесь мы читаем (и одновременно сбрасываем) метку методом <a href="http://developer.android.com/reference/android/content/Loader.html#takeContentChanged()" target="_blank" rel="noopener noreferrer">takeContentChanged</a>. Если метка говорит, что данные были изменены (true), то запускаем работу.</p>
+<p> </p>
+<p>Все сохраняем, запускаем приложение. Жмем Observer, ждем результат и смотрим логи:</p>
+<p><i>1091644064 create TimeLoader<br/>onCreateLoader: 1091644064<br/>1091644064 onStartLoading<br/>observerClick<br/>1091644064 onForceLoad<br/>1091644064 doInBackground<br/>1091644064 onPostExecute 10:31:26 после полудня<br/>onLoadFinished for loader 1091644064, result = 10:31:26 после полудня</i></p>
+<p>Видим, что Observer через 5 сек после нажатия кнопки запустил метод forceLoad. Дальше все как обычно.</p>
+<p> </p>
+<p>Теперь еще раз нажмем Observer и сразу же свернем приложение кнопкой Home.</p>
+<p><i>observerClick<br/>1091644064 onStopLoading</i></p>
+<p>Здесь Observer также сработал, но метод forceLoad не запускал, т.к. лоадер был остановлен. В этом случае поставилась метка о том, что данные изменены. И сейчас мы эту метку считаем.</p>
+<p>Откроем приложение из списка последних</p>
+<p><i>1091644064 onStartLoading<br/>1091644064 onForceLoad<br/>1091644064 doInBackground<br/>1091644064 onPostExecute 10:32:42 после полудня<br/>onLoadFinished for loader 1091644064, result = 10:32:42 после полудня</i></p>
+<p>Приложение восстановилось, при этом сработал onStartLoading, в котором мы прочли метку, поняли, что данные изменились, и стартовали onForceLoad.</p>
+<p> </p>
+<p>Напоследок еще пара слов.</p>
+<p><b>Важное замечание!</b> Все рассмотренные выше примеры работают при условии, что initLoader вызывается в onCreate. Если есть интерес, попробуйте переделать логику приложения убрав initLoader из onCreate и лоадер начнет себя вести по-другому, изменится его связка с lifecycle методами.</p>
+<p>Лоадер можно убить вручную, использовав метод <a href="http://developer.android.com/reference/android/app/LoaderManager.html#destroyLoader(int)" target="_blank" rel="noopener noreferrer">destroyLoader</a>.</p>
+<p>Все вышесказанное должно работать с фрагментами (у них есть свой метод getLoaderManager) и с android.support.v4.app.FragmentActivity (метод getSupportLoaderManager). </p>
+<p> </p>
+<h3>AsyncTaskLoader</h3>
+<p>Это лоадер, который выполнит свою работу асинхронно и вернет вам результат. Класс TimeLoader, который мы сделали, в принципе является упрощенной версией AsyncTaskLoader, т.к. он свою работу тоже в AsyncTask выполняет. Но чтобы самим каждый раз не возиться с AsyncTask, существует <a href="http://developer.android.com/reference/android/content/AsyncTaskLoader.html" target="_blank" rel="noopener noreferrer">AsyncTaskLoader</a>.</p>
+<p>Создадим класс <b>TimeAsyncLoader.java</b>:</p>
+<pre class="brush:java">package ru.startandroid.develop.p1351loader;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+import android.content.AsyncTaskLoader;
+import android.content.Context;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+
+public class TimeAsyncLoader extends AsyncTaskLoader&lt;String&gt; {
+
+  final String LOG_TAG = "myLogs";
+  final int PAUSE = 10;
+
+  public final static String ARGS_TIME_FORMAT = "time_format";
+  public final static String TIME_FORMAT_SHORT = "h:mm:ss a";
+  public final static String TIME_FORMAT_LONG = "yyyy.MM.dd G 'at' HH:mm:ss";
+
+  String format;
+
+  public TimeAsyncLoader(Context context, Bundle args) {
+    super(context);
+    Log.d(LOG_TAG, hashCode() + " create TimeAsyncLoader");
+    if (args != null)
+      format = args.getString(ARGS_TIME_FORMAT);
+    if (TextUtils.isEmpty(format))
+      format = TIME_FORMAT_SHORT;
+  }
+
+  @Override
+  public String loadInBackground() {
+    Log.d(LOG_TAG, hashCode() + " loadInBackground start");
+    try {
+      TimeUnit.SECONDS.sleep(PAUSE);
+    } catch (InterruptedException e) {
+      return null;
+    }
+    SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.getDefault());
+    return sdf.format(new Date());
+  }
+
+}</pre>
+<p>Полностью тот же функционал, что и в TimeLoader, только теперь рабочий код мы просто помещаем в метод <a href="http://developer.android.com/reference/android/content/AsyncTaskLoader.html#loadInBackground()" target="_blank" rel="noopener noreferrer">loadInBackground</a>. Я в этом классе уже не буду снова переопределять и логировать все его основные методы.</p>
+<p>Чтобы использовать этот лоадер в MainActivity, потребуются минимальные изменения. Надо просто в onCreateLoader указать, что по LOADER_TIME_ID необходимо создавать не TimeLoader, а TimeAsyncLoader:</p>
+<pre class="brush:java">  @Override
+  public Loader&lt;String&gt; onCreateLoader(int id, Bundle args) {
+    Loader&lt;String&gt; loader = null;
+    if (id == LOADER_TIME_ID) {
+      loader = new TimeAsyncLoader(this, args);
+      Log.d(LOG_TAG, "onCreateLoader: " + loader.hashCode());
+    }
+    return loader;
+  }</pre>
+<p>И все.</p>
+<p>Запускайте пример, внешне он будет работать точно также, но использовать теперь будет не TimeLoader, а TimeAsyncLoader. Ну и логов поменьше будет.</p>
+<p> </p>
+<p>У класса AsyncTaskLoader есть метод отмены: cancelLoad. Отмененный лоадер по окончании работы вызовет уже не onLoadFinished, а onCanceled в AsyncTaskLoader.</p>
+<p>Есть еще метод <a href="http://developer.android.com/reference/android/content/AsyncTaskLoader.html#setUpdateThrottle(long)" target="_blank" rel="noopener noreferrer">setUpdateThrottle</a>, который позволит поставить задержку между двумя последовательными вызовами одного лоадера. Т.е. вы, например, поставили эту задержку в 10 000 мсек. Далее запускаете лоадер, он отрабатывает. И вы сразу пытаетесь запустить его еще раз. Но он не запустится. Он отсчитает 10 сек после окончания работы последнего запуска, а потом уже снова начнет работу.</p>
+<p> </p>
+<p>На следующем уроке:</p>
+<p>- используем CursorLoader</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div><div id="jfusioncontent274">                <div class="jfusionclearfix jfusionButtonArea">
+                    	<a class="readon jfusionButton jfusionBtnDiscuss" target="_blank" href="http://forum.startandroid.ru/viewtopic.php?t=2910"><span>Обсудить на форуме [16 replies]</span></a>
+                </div>
+                <div class="jfusionclearfix jfusionButtonConfirmationBox" style="display: none;">
+                </div></div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Урок 134. Камера. Настройки" aria-label="Previous article: Урок 134. Камера. Настройки" href="/ru/uroki/vse-uroki-spiskom/270-urok-134-kamera-nastrojki.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Назад</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Урок 136. CursorLoader" aria-label="Next article: Урок 136. CursorLoader" href="/ru/uroki/vse-uroki-spiskom/278-urok-136-cursorloader.html" rel="next">
+			<span aria-hidden="true">Вперёд</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+									<li class="lang-active">
+			<a href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+								<li>
+			<a href="/en/">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod323"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center">
+<h2>Автор сайта</h2>
+<p><img src="/images/stories/pic/150x150xdmitryvinogradov.jpg.pagespeed.ic.ZW6Ncwy8-8.jpg" width="150" height="150"/></p>
+<p>Дмитрий Виноградов</p>
+<p>Подробнее можно <a href="https://youtu.be/xPuiCBRmJDg?t=102" target="_blank" rel="noopener noreferrer">посмотреть</a> или <a href="/ru/about/ob-avtore.html" target="_blank" rel="noopener noreferrer">почитать</a>.</p>
+<p>Никакие другие люди не имеют к этому сайту никакого отношения и просто занимаются плагиатом.</p>
+</div></div>
+</div></div></div><div class="t3-module module " id="Mod139"><div class="module-inner"><div class="module-ct"><div class="bannergroup">
+
+	<div class="banneritem">
+																																																																			<a href="/ru/component/banners/click/7.html" title="Курс Architecture Components ">
+							<img src="https://startandroid.ru/images/banners/banner_aac_v22.gif.pagespeed.ce.HK3DcOJl7m.gif" alt="Курс Architecture Components "/>
+						</a>
+																<div class="clr"></div>
+	</div>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod91"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center"><h2>Социальные сети</h2></div>
+<p> </p>
+<div align="center">
+<p><img src="/images/stories/pic/telegram.png.pagespeed.ce.nkfL74AMTR.png" alt="" width="100" height="100"/></p>
+<p>В <a href="https://t.me/startandroid" target="_blank">канале</a> я публикую ссылки на интересные и полезные статьи по Android</p>
+<p>В <a href="https://t.me/startandroidchat" target="_blank">чате</a> можно обсудить вопросы и проблемы, возникающие при разработке</p>
+</div>
+
+<br><br>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?144"></script>
+<!-- VK Widget -->
+
+<div align="center"><h4>Группа ВКонтакте</h4>
+<div id="vk_groups"></div>
+</div>
+<script type="text/javascript">VK.Widgets.Group("vk_groups",{mode:3},36284347);</script>
+<br><br>
+</div>
+</div></div></div><div class="t3-module module " id="Mod90"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<h1>Поддержка проекта</h1>
+<p><a href="https://money.yandex.ru/prepaid/" target="_blank">Яндекс</a><br/><strong>410011180491924</strong></p>
+<p><a href="http://www.webmoney.ru/rus/addfunds/index.shtml">WebMoney</a><br/><strong>R248743991365</strong><br/><strong>Z551306702056</strong></p>
+<p><a href="https://www.paypal.me/startandroidcourse">Paypal</a></p>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

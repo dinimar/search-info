@@ -1,0 +1,2104 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-category itemid-110 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Андроид,андройд,Android,программирование,под,учебник,уроки,начинающих,чайников,разработка,литература,программы,Eclipse,SDK,Java,Андройд,пример,example,sample,первое,простое,приложение,создать,научиться,программировать,учимся, beginner, dummie, study, programm, application, lesson, tutorial, книги, книга, java, programming, development, create, first, application, create, learn,"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Уроки"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:url" content="https://startandroid.ru/ru/uroki/vse-uroki-spiskom.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="Сайт о разработке программ для Андроид (Android). Учебник, уроки для начинающих, для чайников. Как самому создать приложение для андроид. Как научиться программировать под android."/>
+	<meta name="description" content="Сайт о разработке программ для Андроид (Android). Учебник, уроки для начинающих, для чайников. Как самому создать приложение для андроид. Как научиться программировать под android."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Полный список</title>
+	<link href="/ru/uroki/vse-uroki-spiskom.feed?type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0"/>
+	<link href="/ru/uroki/vse-uroki-spiskom.feed?type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0"/>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002,Mcc.7KF2sl1Z1n.css.pagespeed.cf.xARBNHkBBQ.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">.hide{display:none}.table-noheader{border-collapse:collapse}.table-noheader thead{display:none}#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Ed2PAi7Y_z.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">JFusion.view='category';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[4]='/ru/uroki/vse-uroki-spiskom/4-urok-1-vvedenie.html';JFusion.articelUrl[9]='/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html';JFusion.articelUrl[12]='/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html';JFusion.articelUrl[13]='/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html';JFusion.articelUrl[14]='/ru/uroki/vse-uroki-spiskom/14-urok-5-layout-kak-ispolzovat-smena-orientatsii-ekrana.html';JFusion.articelUrl[15]='/ru/uroki/vse-uroki-spiskom/15-urok-6-vidy-layouts-kljuchevye-otlichija-i-svojstva.html';JFusion.articelUrl[38]='/ru/uroki/vse-uroki-spiskom/38-urok-7-layout-parametry-dlja-view-elementov.html';JFusion.articelUrl[24]='/ru/uroki/vse-uroki-spiskom/24-urok-8-rabotaem-s-elementami-ekrana-iz-koda.html';JFusion.articelUrl[16]='/ru/uroki/vse-uroki-spiskom/16-urok-9-obrabotchiki-sobytij-na-primere-button.html';JFusion.articelUrl[17]='/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html';JFusion.articelUrl[18]='/ru/uroki/vse-uroki-spiskom/18-urok-11-papka-resvalues-ispolzuem-resursy-prilozhenija.html';JFusion.articelUrl[19]='/ru/uroki/vse-uroki-spiskom/19-urok-12-logi-i-vsplyvajuschie-soobschenija.html';JFusion.articelUrl[45]='/ru/uroki/vse-uroki-spiskom/45-urok-13-sozdanie-prostogo-menju.html';JFusion.articelUrl[46]='/ru/uroki/vse-uroki-spiskom/46-urok-14-menju-gruppy-porjadok.html';JFusion.articelUrl[47]='/ru/uroki/vse-uroki-spiskom/47-urok-15-kontekstnoe-menju.html';JFusion.articelUrl[49]='/ru/uroki/vse-uroki-spiskom/49-16-layoutparams.html';JFusion.articelUrl[50]='/ru/uroki/vse-uroki-spiskom/50-urok-17-sozdanie-view-komponent-v-rabochem-prilozhenii.html';JFusion.articelUrl[51]='/ru/uroki/vse-uroki-spiskom/51-urok-18-menjaem-layoutparams-v-rabochem-prilozhenii.html';JFusion.articelUrl[54]='/ru/uroki/vse-uroki-spiskom/54-urok-19-pishem-prostoj-kalkuljator.html';JFusion.articelUrl[56]='/ru/uroki/vse-uroki-spiskom/56-urok-20-animatsija.html';JFusion.articelUrl[58]='/ru/uroki/vse-uroki-spiskom/58-urok-21-sozdanie-i-vyzov-activity.html';JFusion.articelUrl[59]='/ru/uroki/vse-uroki-spiskom/59-urok-22-intent-intent-filter-context-teorija.html';JFusion.articelUrl[60]='/ru/uroki/vse-uroki-spiskom/60-urok-23-activity-lifecycle-v-kakih-sostojanijah-mozhet-byt-activity.html';JFusion.articelUrl[61]='/ru/uroki/vse-uroki-spiskom/61-urok-24-activity-lifecycle-primer-smeny-sostojanij-s-dvumja-activity.html';JFusion.articelUrl[62]='/ru/uroki/vse-uroki-spiskom/62-urok-25-task-chto-eto-takoe-i-kak-formiruetsja.html';JFusion.articelUrl[64]='/ru/uroki/vse-uroki-spiskom/64-urok-26-intent-filter-praktika.html';JFusion.articelUrl[65]='/ru/uroki/vse-uroki-spiskom/65-urok-27-chitaem-action-iz-intent.html';JFusion.articelUrl[67]='/ru/uroki/vse-uroki-spiskom/67-urok-28-extras-peredaem-dannye-s-pomoschju-intent.html';JFusion.articelUrl[68]='/ru/uroki/vse-uroki-spiskom/68-urok-29-vyzyvaem-activity-i-poluchaem-rezultat-metod-startactivityforresult.html';JFusion.articelUrl[69]='/ru/uroki/vse-uroki-spiskom/69-urok-30-podrobnee-pro-onactivityresult-zachem-nuzhny-requestcode-i-resultcode.html';JFusion.articelUrl[70]='/ru/uroki/vse-uroki-spiskom/70-urok-31-zachem-u-intent-est-atribut-data-chto-takoe-uri-vyzyvaem-sistemnye-prilozhenija.html';JFusion.articelUrl[72]='/ru/uroki/vse-uroki-spiskom/72-urok-32-pishem-prostoj-brauzer.html';JFusion.articelUrl[73]='/ru/uroki/vse-uroki-spiskom/73-urok-33-hranenie-dannyh-preferences.html';JFusion.articelUrl[74]='/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html';JFusion.articelUrl[75]='/ru/uroki/vse-uroki-spiskom/75-urok-35-metody-query-i-delete-s-ukazaniem-uslovija.html';JFusion.articelUrl[76]='/ru/uroki/vse-uroki-spiskom/76-urok-36-sqlite-podrobnee-pro-metod-query-uslovie-sortirovka-gruppirovka.html';JFusion.articelUrl[77]='/ru/uroki/vse-uroki-spiskom/77-urok-37-zaprosy-iz-svjazannyh-tablits-inner-join-v-sqlite-metod-rawquery.html';JFusion.articelUrl[78]='/ru/uroki/vse-uroki-spiskom/78-urok-38-tranzaktsii-v-sqlite.html';JFusion.articelUrl[79]='/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html';JFusion.articelUrl[80]='/ru/uroki/vse-uroki-spiskom/80-urok-40-layoutinflater-uchimsja-ispolzovat.html';JFusion.articelUrl[81]='/ru/uroki/vse-uroki-spiskom/81-urok-41-ispolzuem-layoutinflater-dlja-sozdanija-spiska.html';JFusion.articelUrl[82]='/ru/uroki/vse-uroki-spiskom/82-urok42-spisok-listview.html';JFusion.articelUrl[83]='/ru/uroki/vse-uroki-spiskom/83-urok-43-odinochnyj-i-mnozhestvennyj-vybor-v-list.html';JFusion.articelUrl[85]='/ru/uroki/vse-uroki-spiskom/85-urok-44-sobytija-v-listview.html';JFusion.articelUrl[86]='/ru/uroki/vse-uroki-spiskom/86-urok-45-spisok-derevo-expandablelistview.html';JFusion.articelUrl[88]='/ru/uroki/vse-uroki-spiskom/88-urok-46-sobytija-expandablelistview.html';JFusion.articelUrl[96]='/ru/uroki/vse-uroki-spiskom/96-urok-47-obzor-adapterov.html';JFusion.articelUrl[107]='/ru/uroki/vse-uroki-spiskom/107-urok-48-ispolzuem-simpleadapter.html';JFusion.articelUrl[108]='/ru/uroki/vse-uroki-spiskom/108-urok-49-simpleadapter-metody-setviewtext-i-setviewimage.html';JFusion.articelUrl[109]='/ru/uroki/vse-uroki-spiskom/109-urok-50-simpleadapter-ispolzuem-viewbinder.html';JFusion.articelUrl[110]='/ru/uroki/vse-uroki-spiskom/110-urok-51-simpleadapter-dobavlenie-i-udalenie-zapisej.html';JFusion.articelUrl[111]='/ru/uroki/vse-uroki-spiskom/111-urok-52-simplecursoradapter-primer-ispolzovanija.html';JFusion.articelUrl[112]='/ru/uroki/vse-uroki-spiskom/112-urok-53-simplecursortreeadapter-primer-ispolzovanija.html';JFusion.articelUrl[113]='/ru/uroki/vse-uroki-spiskom/113-urok-54-kastomizatsija-spiska-sozdaem-svoj-adapter.html';JFusion.articelUrl[114]='/ru/uroki/vse-uroki-spiskom/114-urok-55-header-i-footer-v-spiskah-headerviewlistadapter.html';JFusion.articelUrl[115]='/ru/uroki/vse-uroki-spiskom/115-urok-56-spinner-vypadajuschij-spisok.html';JFusion.articelUrl[116]='/ru/uroki/vse-uroki-spiskom/116-urok-57-gridview-i-ego-atributy.html';JFusion.articelUrl[117]='/ru/uroki/vse-uroki-spiskom/117-urok-58-dialogi-timepickerdialog.html';JFusion.articelUrl[118]='/ru/uroki/vse-uroki-spiskom/118-urok-59-dialogi-datepickerdialog.html';JFusion.articelUrl[119]='/ru/uroki/vse-uroki-spiskom/119-urok-60-dialogi-alertdialog-title-message-icon-buttons.html';JFusion.articelUrl[120]='/ru/uroki/vse-uroki-spiskom/120-urok-61-dialogi-alertdialogmetod-onpreparedialog.html';JFusion.articelUrl[121]='/ru/uroki/vse-uroki-spiskom/121-urok-62-dialogi-alertdialog-spisok.html';JFusion.articelUrl[122]='/ru/uroki/vse-uroki-spiskom/122-urok-63-dialogi-alertdialog-spisok-s-odinochnym-vyborom.html';JFusion.articelUrl[123]='/ru/uroki/vse-uroki-spiskom/123-urok-64-dialogi-alertdialog-spisok-s-mnozhestvennym-vyborom.html';JFusion.articelUrl[126]='/ru/uroki/vse-uroki-spiskom/126-urok-65-dialogi-alertdialog-kastomizatsija.html';JFusion.articelUrl[127]='/ru/uroki/vse-uroki-spiskom/127-urok-66-dialogi-obrabotchiki-i-operatsii.html';JFusion.articelUrl[128]='/ru/uroki/vse-uroki-spiskom/128-urok-67-dialogi-progressdialog.html';JFusion.articelUrl[131]='/ru/uroki/vse-uroki-spiskom/131-urok-68-nemnogo-o-parcel.html';JFusion.articelUrl[132]='/ru/uroki/vse-uroki-spiskom/132-urok-69-peredaem-parcelable-obekty-s-pomoschju-intent.html';JFusion.articelUrl[133]='/ru/uroki/vse-uroki-spiskom/133-urok-70-onsaveinstancestate-sohranenie-dannyh-activity-pri-povorote-ekrana.html';JFusion.articelUrl[134]='/ru/uroki/vse-uroki-spiskom/134-urok-71-preferences-kak-nastrojki-prilozhenija-preferenceactivity.html';JFusion.articelUrl[135]='/ru/uroki/vse-uroki-spiskom/135-urok-72-preferences-spisok-ekrany-i-kategorii.html';JFusion.articelUrl[136]='/ru/uroki/vse-uroki-spiskom/136-urok-73-preferences-upravljaem-aktivnostju-nastroek-setenabled.html';JFusion.articelUrl[137]='/ru/uroki/vse-uroki-spiskom/137-urok-74-preferences-programmnoe-sozdanie-ekrana-nastroek.html';JFusion.articelUrl[138]='/ru/uroki/vse-uroki-spiskom/138-urok-75-hranenie-dannyh-rabota-s-fajlami.html';JFusion.articelUrl[139]='/ru/uroki/vse-uroki-spiskom/139-urok-76-tab-vkladki-obschij-obzor.html';JFusion.articelUrl[140]='/ru/uroki/vse-uroki-spiskom/140-urok-77-tab-vkladki-tabactivity-activity-kak-soderzhimoe-vkladki.html';JFusion.articelUrl[141]='/ru/uroki/vse-uroki-spiskom/141-urok-78-tab-vkladki-tabcontentfactory-ruchnoe-sozdanie-soderzhimogo-vkladki.html';JFusion.articelUrl[142]='/ru/uroki/vse-uroki-spiskom/142-urok-79-xmlpullparser-parsim-xml.html';JFusion.articelUrl[143]='/ru/uroki/vse-uroki-spiskom/143-urok-80-handler-nemnogo-teorii-nagljadnyj-primer-ispolzovanija.html';JFusion.articelUrl[144]='/ru/uroki/vse-uroki-spiskom/144-urok-81-handler-posylaem-prostoe-soobschenie.html';JFusion.articelUrl[145]='/ru/uroki/vse-uroki-spiskom/145-urok-82-handler-primer-s-bolee-soderzhatelnymi-soobschenijami.html';JFusion.articelUrl[146]='/ru/uroki/vse-uroki-spiskom/146-urok-83-handler-otlozhennye-soobschenija-udalenie-iz-ocheredi-handlercallback.html';JFusion.articelUrl[147]='/ru/uroki/vse-uroki-spiskom/147-urok-84-handler-obrabotka-runnable.html';JFusion.articelUrl[148]='/ru/uroki/vse-uroki-spiskom/148-urok-85-esche-neskolko-sposobov-vypolnenija-koda-v-ui-potoke.html';JFusion.articelUrl[149]='/ru/uroki/vse-uroki-spiskom/149-urok-86-asynctask-znakomstvo-neslozhnyj-primer.html';JFusion.articelUrl[150]='/ru/uroki/vse-uroki-spiskom/150-urok-87-asynctask-parametry-promezhutochnye-rezultaty.html';JFusion.articelUrl[151]='/ru/uroki/vse-uroki-spiskom/151-urok-88-asynctask-itogovyj-rezultat-metod-get.html';JFusion.articelUrl[152]='/ru/uroki/vse-uroki-spiskom/152-urok-89-asynctask-cancel-otmenjaem-zadachu-v-protsesse-vypolnenija.html';JFusion.articelUrl[153]='/ru/uroki/vse-uroki-spiskom/153-urok-90-asynctask-status-statusy-zadachi.html';JFusion.articelUrl[154]='/ru/uroki/vse-uroki-spiskom/154-urok-91-asynctask-povorot-ekrana.html';JFusion.articelUrl[157]='/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html';JFusion.articelUrl[158]='/ru/uroki/vse-uroki-spiskom/158-urok-93-service-peredacha-dannyh-v-servis-metody-ostanovki-servisa.html';JFusion.articelUrl[159]='/ru/uroki/vse-uroki-spiskom/159-urok-94-service-podrobno-pro-onstartcommand.html';JFusion.articelUrl[160]='/ru/uroki/vse-uroki-spiskom/160-urok-95-service-obratnaja-svjaz-s-pomoschju-pendingintent.html';JFusion.articelUrl[161]='/ru/uroki/vse-uroki-spiskom/161-urok-96-service-obratnaja-svjaz-s-pomoschju-broadcastreceiver.html';JFusion.articelUrl[162]='/ru/uroki/vse-uroki-spiskom/162-urok-97-service-binding-serviceconnection.html';JFusion.articelUrl[163]='/ru/uroki/vse-uroki-spiskom/163-urok-98-service-lokalnyj-binding.html';JFusion.articelUrl[164]='/ru/uroki/vse-uroki-spiskom/164-urok-99-service-uvedomlenija-notifications.html';JFusion.articelUrl[165]='/ru/uroki/vse-uroki-spiskom/165-urok-100-service-intentservice-foreground-avtozagruzka-servisa.html';JFusion.articelUrl[166]='/ru/uroki/vse-uroki-spiskom/166-urok-101-sozdaem-svoj-contentprovider.html';JFusion.articelUrl[167]='/ru/uroki/vse-uroki-spiskom/167-urok-102-touch-obrabotka-kasanija.html';JFusion.articelUrl[168]='/ru/uroki/vse-uroki-spiskom/168-urok-103-multitouch-obrabotka-mnozhestvennyh-kasanij.html';JFusion.articelUrl[174]='/ru/uroki/vse-uroki-spiskom/174-urok-104-android-3-fragments-lifecycle.html';JFusion.articelUrl[175]='/ru/uroki/vse-uroki-spiskom/175-urok-105-android-3-fragments-dinamicheskaja-rabota.html';JFusion.articelUrl[176]='/ru/uroki/vse-uroki-spiskom/176-urok-106-android-3-fragments-vzaimodejstvie-s-activity.html';JFusion.articelUrl[177]='/ru/uroki/vse-uroki-spiskom/177-urok-107-android-3-actionbar-razmeschenie-elementov.html';JFusion.articelUrl[178]='/ru/uroki/vse-uroki-spiskom/178-urok-108-android-3-actionbar-navigatsija-taby-i-vypadajuschij-spisok.html';JFusion.articelUrl[179]='/ru/uroki/vse-uroki-spiskom/179-urok-109-android-3-fragments-listfragment-spisok.html';JFusion.articelUrl[180]='/ru/uroki/vse-uroki-spiskom/180-urok-110-android-3-fragments-dialogfragment-dialog.html';JFusion.articelUrl[181]='/ru/uroki/vse-uroki-spiskom/181-urok-111-android-3-fragments-preferencefragment-nastrojki-headers.html';JFusion.articelUrl[182]='/ru/uroki/vse-uroki-spiskom/182-urok-112-android-3-actionbar-dinamicheskoe-razmeschenie-elementov.html';JFusion.articelUrl[183]='/ru/uroki/vse-uroki-spiskom/183-urok-113-android-3-actionmode-kak-alternativa-kontekstnomu-menju.html';JFusion.articelUrl[184]='/ru/uroki/vse-uroki-spiskom/184-urok-114-android-3-biblioteka-support-library-zachem-nuzhna-i-kak-ee-ispolzovat-na-primere-fragmentov.html';JFusion.articelUrl[189]='/ru/uroki/vse-uroki-spiskom/189-urok-115-odno-prilozhenie-na-raznyh-ekranah.html';JFusion.articelUrl[190]='/ru/uroki/vse-uroki-spiskom/190-urok-116-povedenie-activity-v-task-intent-flagi-launchmode-affinity.html';JFusion.articelUrl[195]='/ru/uroki/vse-uroki-spiskom/195-urok-117-vidzhety-sozdanie-lifecycle.html';JFusion.articelUrl[198]='/ru/uroki/vse-uroki-spiskom/198-urok-118-vidzhety-konfiguratsionnyj-ekran-obnovlenie.html';JFusion.articelUrl[204]='/ru/uroki/vse-uroki-spiskom/204-urok-119-pendingintent-flagi-requestcode-alarmmanager.html';JFusion.articelUrl[205]='/ru/uroki/vse-uroki-spiskom/205-urok-120-vidzhety-obrabotka-nazhatij.html';JFusion.articelUrl[212]='/ru/uroki/vse-uroki-spiskom/212-urok-121-vidzhety-spisok.html';JFusion.articelUrl[217]='/ru/uroki/vse-uroki-spiskom/217-urok-122-vidzhety-prevju-izmenenie-razmera-ekran-blokirovki-ruchnoe-obnovlenie.html';JFusion.articelUrl[221]='/ru/uroki/vse-uroki-spiskom/221-urok-123-kak-podpisat-prilozhenie-utility-keytool-i-jarsigner.html';JFusion.articelUrl[223]='/ru/uroki/vse-uroki-spiskom/223-urok-124-chto-takoe-package-dlja-prilozhenija.html';JFusion.articelUrl[228]='/ru/uroki/vse-uroki-spiskom/228-urok-125-viewpager.html';JFusion.articelUrl[236]='/ru/uroki/vse-uroki-spiskom/236-urok-126-media-mediaplayer-audiovideo-pleer-osnovnye-vozmozhnosti.html';JFusion.articelUrl[239]='/ru/uroki/vse-uroki-spiskom/239-urok-127-media-soundpool.html';JFusion.articelUrl[240]='/ru/uroki/vse-uroki-spiskom/240-urok-128-media-audio-focus.html';JFusion.articelUrl[244]='/ru/uroki/vse-uroki-spiskom/244-urok-129-media-zapis-zvuka-s-pomoschju-mediarecorder.html';JFusion.articelUrl[247]='/ru/uroki/vse-uroki-spiskom/247-urok-130-media-zapis-zvuka-s-pomoschju-audiorecorder.html';JFusion.articelUrl[254]='/ru/uroki/vse-uroki-spiskom/254-urok-131-kamera-ispolzuem-sistemnoe-prilozhenie.html';JFusion.articelUrl[264]='/ru/uroki/vse-uroki-spiskom/264-urok-132-kamera-vyvod-izobrazhenija-na-ekran-obrabotka-povorota.html';JFusion.articelUrl[266]='/ru/uroki/vse-uroki-spiskom/266-urok-133-kamera-delaem-snimok-i-pishem-video.html';JFusion.articelUrl[270]='/ru/uroki/vse-uroki-spiskom/270-urok-134-kamera-nastrojki.html';JFusion.articelUrl[274]='/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html';JFusion.articelUrl[278]='/ru/uroki/vse-uroki-spiskom/278-urok-136-cursorloader.html';JFusion.articelUrl[287]='/ru/uroki/vse-uroki-spiskom/287-urok-137-sensory-uskorenie-orientatsija.html';JFusion.articelUrl[291]='/ru/uroki/vse-uroki-spiskom/291-urok-138-opredelenie-mestopolozhenija-gps-koordinaty.html';JFusion.articelUrl[306]='/ru/uroki/vse-uroki-spiskom/306-urok-139-google-maps-sozdanie-i-nastrojka-proekta-karta-kamera-sobytija.html';JFusion.articelUrl[307]='/ru/uroki/vse-uroki-spiskom/307-urok-140-google-maps-svoi-obekty-na-karte.html';JFusion.articelUrl[311]='/ru/uroki/vse-uroki-spiskom/311-urok-141-risovanie-dostup-k-canvas.html';JFusion.articelUrl[312]='/ru/uroki/vse-uroki-spiskom/312-urok-142-risovanie-prostye-figury-tekst.html';JFusion.articelUrl[316]='/ru/uroki/vse-uroki-spiskom/316-urok-143-risovanie-path.html';JFusion.articelUrl[317]='/ru/uroki/vse-uroki-spiskom/317-urok-144-risovanie-matrix-preobrazovanija.html';JFusion.articelUrl[320]='/ru/uroki/vse-uroki-spiskom/320-urok-145-risovanie-matrix-setrecttorect-i-setpolytopoly.html';JFusion.articelUrl[322]='/ru/uroki/vse-uroki-spiskom/322-urok-146-risovanie-canvas-preobrazovanija.html';JFusion.articelUrl[325]='/ru/uroki/vse-uroki-spiskom/325-urok-147-risovanie-region.html';JFusion.articelUrl[326]='/ru/uroki/vse-uroki-spiskom/326-urok-148-risovanie-canvas-clip.html';JFusion.articelUrl[329]='/ru/uroki/vse-uroki-spiskom/329-urok-149-risovanie-tekst.html';JFusion.articelUrl[332]='/ru/uroki/vse-uroki-spiskom/332-urok-150-risovanie-pathmeasure-informatsija-o-path-obekte.html';JFusion.articelUrl[348]='/ru/uroki/vse-uroki-spiskom/348-urok-151-risovanie-patheffect.html';JFusion.articelUrl[351]='/ru/uroki/vse-uroki-spiskom/351-urok-152-risovanie-picture.html';JFusion.articelUrl[353]='/ru/uroki/vse-uroki-spiskom/353-urok-153-risovanie-colorfilter-colormatrix.html';JFusion.articelUrl[356]='/ru/uroki/vse-uroki-spiskom/356-urok-154-porterduffmode-porterduffxfermode.html';JFusion.articelUrl[359]='/ru/uroki/vse-uroki-spiskom/359-urok-155-risovanie-porterduffcolorfilter.html';JFusion.articelUrl[360]='/ru/uroki/vse-uroki-spiskom/360-urok-156-risovanie-avoidxfermode.html';JFusion.articelUrl[364]='/ru/uroki/vse-uroki-spiskom/364-urok-157-risovanie-bitmap-bitmapfactory-chtenie-vyvod-na-kanvu-osnovnaja-informatsija.html';JFusion.articelUrl[365]='/ru/uroki/vse-uroki-spiskom/365-urok-158-risovanie-bitmap-metody-createbitmap-rabota-s-pikselami-density-mutable.html';JFusion.articelUrl[370]='/ru/uroki/vse-uroki-spiskom/370-urok-159-risovanie-bitmap-bitmapfactoryoptions-sohranenie-v-fajl.html';JFusion.articelUrl[372]='/ru/uroki/vse-uroki-spiskom/372-urok-160-risovanie-bitmap-chtenie-izobrazhenij-bolshogo-razmera.html';JFusion.articelUrl[376]='/ru/uroki/vse-uroki-spiskom/376-urok-161-risovanie-bitmap-memory-kesh-picasso.html';JFusion.articelUrl[377]='/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html';JFusion.articelUrl[381]='/ru/uroki/vse-uroki-spiskom/381-urok-163-grafika-drawable-bitmap-layer-list-state-list.html';JFusion.articelUrl[392]='/ru/uroki/vse-uroki-spiskom/392-urok-164-grafika-drawable-level-list-transition-inset-clip-scale.html';JFusion.articelUrl[393]='/ru/uroki/vse-uroki-spiskom/393-urok-165-risovanie-bitmapshader-lineargradient-radialgradient-sweepgradient.html';JFusion.articelUrl[394]='/ru/uroki/vse-uroki-spiskom/394-urok-166-risovanie-sozdanie-svoego-drawable.html';JFusion.articelUrl[395]='/ru/uroki/vse-uroki-spiskom/395-urok-167-risovanie-metod-canvas-savelayer.html';JFusion.articelUrl[397]='/ru/uroki/vse-uroki-spiskom/397-urok-168-opengl-vvedenie.html';JFusion.articelUrl[398]='/ru/uroki/vse-uroki-spiskom/398-urok-169-opengl-shejdery.html';JFusion.articelUrl[399]='/ru/uroki/vse-uroki-spiskom/399-urok-170-opengl-graficheskie-primitivy.html';JFusion.articelUrl[400]='/ru/uroki/vse-uroki-spiskom/400-urok-171-opengl-tsvet.html';JFusion.articelUrl[401]='/ru/uroki/vse-uroki-spiskom/401-urok-172-perspective-frustum-ortho.html';JFusion.articelUrl[403]='/ru/uroki/vse-uroki-spiskom/403-urok-173-opengl-kamera.html';JFusion.articelUrl[405]='/ru/uroki/vse-uroki-spiskom/405-urok-174-opengl-model.html';JFusion.articelUrl[406]='/ru/uroki/vse-uroki-spiskom/406-urok-175-opengl-tekstury.html';JFusion.articelUrl[408]='/ru/uroki/vse-uroki-spiskom/408-urok-176-opengl-indeksy-tekstury-dlja-kuba.html';JFusion.articelUrl[489]='/ru/uroki/vse-uroki-spiskom/489-urok-180-constraintlayout-osnovy.html';JFusion.articelUrl[490]='/ru/uroki/vse-uroki-spiskom/490-urok-181-constraintslayout-advanced.html';JFusion.articelUrl[491]='/ru/uroki/vse-uroki-spiskom/491-urok-182-constraintlayout-chain-weight-barrier-group.html';JFusion.articelUrl[494]='/ru/uroki/vse-uroki-spiskom/494-urok-183-constraintset-programmnaya-nastroyka-constraintlayout.html';JFusion.articelUrl[509]='/ru/uroki/vse-uroki-spiskom/509-android-notifications-osnovy.html';JFusion.articelUrl[510]='/ru/uroki/vse-uroki-spiskom/510-urok-185-notifications-rezhimy-otkrytiya-activity.html';JFusion.articelUrl[511]='/ru/uroki/vse-uroki-spiskom/511-urok-186-notifications-rasshirennye-uvedomlenija.html';JFusion.articelUrl[512]='/ru/uroki/vse-uroki-spiskom/512-urok-187-notifications-action-knopki-reply.html';JFusion.articelUrl[513]='/ru/uroki/vse-uroki-spiskom/513-urok-188-notifications-customize.html';JFusion.articelUrl[514]='/ru/uroki/vse-uroki-spiskom/514-urok-189-notifications-bundling.html';JFusion.articelUrl[515]='/ru/uroki/vse-uroki-spiskom/515-urok-190-notifications-kanaly.html';jQuery(window).on('load',function(){new JCaption('img.caption');});jQuery(function($){initPopovers();$("body").on("subform-row-add",initPopovers);function initPopovers(event,container){$(container||document).find(".hasPopover").popover({"html":true,"trigger":"hover focus","container":"body"});}});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod97"><div class="module-inner"><h3 class="module-title "><span>Самое читаемое</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" itemprop="url">
+			<span itemprop="name">
+				Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html" itemprop="url">
+			<span itemprop="name">
+				Урок 2. Установка Android Studio			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 4. Компоненты экрана и их свойства			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/14-urok-5-layout-kak-ispolzovat-smena-orientatsii-ekrana.html" itemprop="url">
+			<span itemprop="name">
+				Урок 5. Layout-файл в Activity. XML представление. Смена ориентации экрана.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/4-urok-1-vvedenie.html" itemprop="url">
+			<span itemprop="name">
+				Урок 1. Введение.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/16-urok-9-obrabotchiki-sobytij-na-primere-button.html" itemprop="url">
+			<span itemprop="name">
+				Урок 9. Обработчики событий на примере Button.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/15-urok-6-vidy-layouts-kljuchevye-otlichija-i-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 6. Виды Layouts. Ключевые отличия и свойства.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/38-urok-7-layout-parametry-dlja-view-elementov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 7. Layout параметры для View-элементов.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html" itemprop="url">
+			<span itemprop="name">
+				Урок 34. Хранение данных. SQLite			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/82-urok42-spisok-listview.html" itemprop="url">
+			<span itemprop="name">
+				Урок 42. Список - ListView			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/58-urok-21-sozdanie-i-vyzov-activity.html" itemprop="url">
+			<span itemprop="name">
+				Урок 21. Создание и вызов Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/24-urok-8-rabotaem-s-elementami-ekrana-iz-koda.html" itemprop="url">
+			<span itemprop="name">
+				Урок 8. Работаем с элементами экрана из кода			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/73-urok-33-hranenie-dannyh-preferences.html" itemprop="url">
+			<span itemprop="name">
+				Урок 33. Хранение данных. Preferences.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/80-urok-40-layoutinflater-uchimsja-ispolzovat.html" itemprop="url">
+			<span itemprop="name">
+				Урок 40. LayoutInflater. Учимся использовать.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/489-urok-180-constraintlayout-osnovy.html" itemprop="url">
+			<span itemprop="name">
+				Урок 180. ConstraintLayout. Основы			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/175-urok-105-android-3-fragments-dinamicheskaja-rabota.html" itemprop="url">
+			<span itemprop="name">
+				Урок 105. Android 3. Fragments. Динамическая работа			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 10. Оптимизируем реализацию обработчиков.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html" itemprop="url">
+			<span itemprop="name">
+				Урок 92. Service. Простой пример			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/54-urok-19-pishem-prostoj-kalkuljator.html" itemprop="url">
+			<span itemprop="name">
+				Урок 19. Пишем простой калькулятор			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/67-urok-28-extras-peredaem-dannye-s-pomoschju-intent.html" itemprop="url">
+			<span itemprop="name">
+				Урок 28. Extras - передаем данные с помощью Intent			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    	    <!-- HEAD SEARCH -->
+	    <div class="head-search">     
+	      <form class="form-search" action="/ru/uroki/vse-uroki-spiskom.html" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Поиск</label><i class="fa fa-search"></i><input name="searchword" id="mod-search-searchword" maxlength="200" class="form-control " type="text" size="0"/>	<input type="hidden" name="task" value="search"/>
+	<input type="hidden" name="option" value="com_search"/>
+	<input type="hidden" name="Itemid" value="110"/>
+	</div>
+</form>
+
+	    </div>
+	    <!-- //HEAD SEARCH -->
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="103" data-level="1">
+<a itemprop='url' class="" href="/ru/" data-target="#">Главная </a>
+
+</li>
+<li itemprop='name' data-id="124" data-level="1">
+<a itemprop='url' class="" href="/ru/novosti.html" data-target="#">Новости </a>
+
+</li>
+<li itemprop='name' class="active dropdown mega" data-id="104" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="/ru/uroki.html" data-target="#" data-toggle="dropdown">Уроки <em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' class="current active" data-id="110" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/vse-uroki-spiskom.html" data-target="#">Полный список </a>
+
+</li>
+<li itemprop='name' data-id="123" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/100-pdf.html" target="_blank" data-target="#">Первые 100 уроков в PDF </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="167" data-level="1">
+<a itemprop='url' class="" href="/ru/blog.html" data-target="#">Блог </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="131" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">🆕Курсы<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="211" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/vse-kursy.html" data-target="#">🆕 Все курсы </a>
+
+</li>
+<li itemprop='name' data-id="132" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+<li itemprop='name' data-id="138" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/rxjava.html" data-target="#">RxJava </a>
+
+</li>
+<li itemprop='name' data-id="185" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/testing.html" data-target="#">Тестирование </a>
+
+</li>
+<li itemprop='name' data-id="187" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/architecture-components.html" data-target="#">Architecture Components </a>
+
+</li>
+<li itemprop='name' data-id="194" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/performance.html" data-target="#">Производительность </a>
+
+</li>
+<li itemprop='name' data-id="223" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/kotlin.html" data-target="#">Kotlin </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' class="dropdown mega" data-id="107" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Инфо<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="160" data-level="2">
+<a itemprop='url' class="" href="/ru/about/cntct5.html" data-target="#">Вопрос </a>
+
+</li>
+<li itemprop='name' data-id="108" data-level="2">
+<a itemprop='url' class="" href="/ru/about/osajte.html" data-target="#">О сайте </a>
+
+</li>
+<li itemprop='name' data-id="109" data-level="2">
+<a itemprop='url' class="" href="/ru/about/ob-avtore.html" data-target="#">Об авторе </a>
+
+</li>
+<li itemprop='name' data-id="224" data-level="2">
+<a itemprop='url' class="" href="/ru/about/reklama.html" data-target="#">Реклама </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="184" data-level="1">
+<a itemprop='url' class="" href="/ru/chats.html" data-target="#">Чаты </a>
+
+</li>
+<li itemprop='name' data-id="126" data-level="1">
+<a itemprop='url' class="" href="/ru/login.html" data-target="#">Войти </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="category-list">
+
+  	<div class="content-category">
+				
+		
+									    
+    <div class="cat-items clearfix">
+      <form action="https://startandroid.ru/ru/uroki/vse-uroki-spiskom.html" method="post" name="adminForm" id="adminForm" class="form-inline">
+			<fieldset class="filters btn-toolbar clearfix">
+			<legend class="hide">Filters</legend>
+							<div class="btn-group">
+									<label class="filter-search-lbl element-invisible" for="filter-search">
+						Фильтр по заголовку&#160;					</label>
+					<input type="text" name="filter-search" id="filter-search" value="" class="inputbox" onchange="document.adminForm.submit();" title="Фильтр поиска по материалам" placeholder="Фильтр по заголовку"/>
+				
+				</div>
+										<div class="btn-group pull-right">
+					<label for="limit" class="element-invisible">
+						Display #					</label>
+					<select id="limit" name="limit" class="inputbox input-mini" size="1" onchange="this.form.submit()">
+	<option value="5">5</option>
+	<option value="10">10</option>
+	<option value="15">15</option>
+	<option value="20">20</option>
+	<option value="25">25</option>
+	<option value="30">30</option>
+	<option value="50">50</option>
+	<option value="100">100</option>
+	<option value="0" selected="selected">Все</option>
+</select>
+				</div>
+			
+			<input type="hidden" name="filter_order" value=""/>
+			<input type="hidden" name="filter_order_Dir" value=""/>
+			<input type="hidden" name="limitstart" value=""/>
+			<input type="hidden" name="task" value=""/>
+		</fieldset>
+		<div class="control-group hide pull-right">
+			<div class="controls">
+				<button type="submit" name="filter_submit" class="btn btn-primary">Filter</button>
+			</div>
+		</div>
+	
+		<table class="category table table-striped table-bordered table-hover">
+		<caption class="hide">List of articles in category Уроки</caption>
+		<thead>
+			<tr>
+				<th scope="col" id="categorylist_header_title">
+					<a href="#" onclick="Joomla.tableOrdering('a.title','asc','', document.getElementById('adminForm'));return false;" class="hasPopover" title="Заголовок" data-content="Нажмите для сортировки по этому столбцу" data-placement="top">Заголовок</a>				</th>
+									<th scope="col" id="categorylist_header_date">
+													<a href="#" onclick="Joomla.tableOrdering('a.publish_up','asc','');return false;" class="hasPopover" title="Дата публикации" data-content="Нажмите для сортировки по этому столбцу" data-placement="top">Дата публикации</a>											</th>
+																											</tr>
+		</thead>
+		<tbody>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/4-urok-1-vvedenie.html">
+						Урок 1. Введение.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 июля 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html">
+						Урок 2. Установка Android Studio					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 июля 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html">
+						Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html">
+						Урок 4. Компоненты экрана и их свойства					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					04 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/14-urok-5-layout-kak-ispolzovat-smena-orientatsii-ekrana.html">
+						Урок 5. Layout-файл в Activity. XML представление. Смена ориентации экрана.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/15-urok-6-vidy-layouts-kljuchevye-otlichija-i-svojstva.html">
+						Урок 6. Виды Layouts. Ключевые отличия и свойства.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					11 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/38-urok-7-layout-parametry-dlja-view-elementov.html">
+						Урок 7. Layout параметры для View-элементов.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					15 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/24-urok-8-rabotaem-s-elementami-ekrana-iz-koda.html">
+						Урок 8. Работаем с элементами экрана из кода					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/16-urok-9-obrabotchiki-sobytij-na-primere-button.html">
+						Урок 9. Обработчики событий на примере Button.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					22 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html">
+						Урок 10. Оптимизируем реализацию обработчиков.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					25 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/18-urok-11-papka-resvalues-ispolzuem-resursy-prilozhenija.html">
+						Урок 11. Папка res/values. Используем ресурсы приложения.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 августа 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/19-urok-12-logi-i-vsplyvajuschie-soobschenija.html">
+						Урок 12. Логи и всплывающие сообщения					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/45-urok-13-sozdanie-prostogo-menju.html">
+						Урок 13. Создание простого меню					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					05 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/46-urok-14-menju-gruppy-porjadok.html">
+						Урок 14. Меню, группы, порядок. MenuInflater и xml-меню.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/47-urok-15-kontekstnoe-menju.html">
+						Урок 15. Контекстное меню					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					12 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/49-16-layoutparams.html">
+						Урок 16. Программное создание экрана. LayoutParams					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					15 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/50-urok-17-sozdanie-view-komponent-v-rabochem-prilozhenii.html">
+						Урок 17. Создание View-компонент в рабочем приложении					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/51-urok-18-menjaem-layoutparams-v-rabochem-prilozhenii.html">
+						Урок 18. Меняем layoutParams в рабочем приложении					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					22 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/54-urok-19-pishem-prostoj-kalkuljator.html">
+						Урок 19. Пишем простой калькулятор					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/56-urok-20-animatsija.html">
+						Урок 20. Анимация					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 сентября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/58-urok-21-sozdanie-i-vyzov-activity.html">
+						Урок 21. Создание и вызов Activity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					03 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/59-urok-22-intent-intent-filter-context-teorija.html">
+						Урок 22. Intent, Intent Filter, Context - теория					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					06 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/60-urok-23-activity-lifecycle-v-kakih-sostojanijah-mozhet-byt-activity.html">
+						Урок 23. Activity Lifecycle. В каких состояниях может быть Activity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/61-urok-24-activity-lifecycle-primer-smeny-sostojanij-s-dvumja-activity.html">
+						Урок 24. Activity Lifecycle, пример смены состояний с двумя Activity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/62-urok-25-task-chto-eto-takoe-i-kak-formiruetsja.html">
+						Урок 25. Task. Что это такое и как формируется					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/64-urok-26-intent-filter-praktika.html">
+						Урок 26. Intent Filter - практика					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					20 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/65-urok-27-chitaem-action-iz-intent.html">
+						Урок 27. Читаем action из Intent					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/67-urok-28-extras-peredaem-dannye-s-pomoschju-intent.html">
+						Урок 28. Extras - передаем данные с помощью Intent					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/68-urok-29-vyzyvaem-activity-i-poluchaem-rezultat-metod-startactivityforresult.html">
+						Урок 29. Вызываем Activity и получаем результат. Метод startActivityForResult 					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					31 октября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/69-urok-30-podrobnee-pro-onactivityresult-zachem-nuzhny-requestcode-i-resultcode.html">
+						Урок 30. Подробнее про onActivityResult. Зачем нужны requestCode и resultCode					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					03 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/70-urok-31-zachem-u-intent-est-atribut-data-chto-takoe-uri-vyzyvaem-sistemnye-prilozhenija.html">
+						Урок 31. Зачем у Intent есть атрибут data. Что такое Uri. Вызываем системные приложения					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/72-urok-32-pishem-prostoj-brauzer.html">
+						Урок 32. Пишем простой браузер					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/73-urok-33-hranenie-dannyh-preferences.html">
+						Урок 33. Хранение данных. Preferences.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html">
+						Урок 34. Хранение данных. SQLite					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/75-urok-35-metody-query-i-delete-s-ukazaniem-uslovija.html">
+						Урок 35. SQLite. Методы update и delete с указанием условия					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					21 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/76-urok-36-sqlite-podrobnee-pro-metod-query-uslovie-sortirovka-gruppirovka.html">
+						Урок 36. SQLite. Подробнее про метод query. Условие, сортировка, группировка					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/77-urok-37-zaprosy-iz-svjazannyh-tablits-inner-join-v-sqlite-metod-rawquery.html">
+						Урок 37. Запросы из связанных таблиц. INNER JOIN в SQLite. Метод rawQuery.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 ноября 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/78-urok-38-tranzaktsii-v-sqlite.html">
+						Урок 38. Транзакции в SQLite. Небольшой FAQ по SQLite.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html">
+						Урок 39. onUpgrade. Обновляем БД в SQLite					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					05 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/80-urok-40-layoutinflater-uchimsja-ispolzovat.html">
+						Урок 40. LayoutInflater. Учимся использовать.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/81-urok-41-ispolzuem-layoutinflater-dlja-sozdanija-spiska.html">
+						Урок 41. Используем LayoutInflater для создания списка					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					12 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/82-urok42-spisok-listview.html">
+						Урок 42. Список - ListView					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					15 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/83-urok-43-odinochnyj-i-mnozhestvennyj-vybor-v-list.html">
+						Урок 43. Одиночный и множественный выбор в ListView					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/85-urok-44-sobytija-v-listview.html">
+						Урок 44. События в ListView					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					22 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/86-urok-45-spisok-derevo-expandablelistview.html">
+						Урок 45. Список-дерево ExpandableListView					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/88-urok-46-sobytija-expandablelistview.html">
+						Урок 46. События ExpandableListView					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 декабря 2011				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/96-urok-47-obzor-adapterov.html">
+						Урок 47. Обзор адаптеров					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					12 января 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/107-urok-48-ispolzuem-simpleadapter.html">
+						Урок 48. Используем SimpleAdapter.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					16 января 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/108-urok-49-simpleadapter-metody-setviewtext-i-setviewimage.html">
+						Урок 49. SimpleAdapter. Методы SetViewText и SetViewImage					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 января 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/109-urok-50-simpleadapter-ispolzuem-viewbinder.html">
+						Урок 50. SimpleAdapter. Используем ViewBinder					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 января 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/110-urok-51-simpleadapter-dobavlenie-i-udalenie-zapisej.html">
+						Урок 51. SimpleAdapter, добавление и удаление записей					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 января 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/111-urok-52-simplecursoradapter-primer-ispolzovanija.html">
+						Урок 52. SimpleCursorAdapter, пример использования					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					30 января 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/112-urok-53-simplecursortreeadapter-primer-ispolzovanija.html">
+						Урок 53. SimpleCursorTreeAdapter, пример использования					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					02 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/113-urok-54-kastomizatsija-spiska-sozdaem-svoj-adapter.html">
+						Урок 54. Кастомизация списка. Создаем свой адаптер					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					06 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/114-urok-55-header-i-footer-v-spiskah-headerviewlistadapter.html">
+						Урок 55. Header и Footer в списках. HeaderViewListAdapter					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					09 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/115-urok-56-spinner-vypadajuschij-spisok.html">
+						Урок 56. Spinner – выпадающий список					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/116-urok-57-gridview-i-ego-atributy.html">
+						Урок 57. GridView и его атрибуты					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					16 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/117-urok-58-dialogi-timepickerdialog.html">
+						Урок 58. Диалоги. TimePickerDialog					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					20 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/118-urok-59-dialogi-datepickerdialog.html">
+						Урок 59. Диалоги. DatePickerDialog					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/119-urok-60-dialogi-alertdialog-title-message-icon-buttons.html">
+						Урок 60. Диалоги. AlertDialog: Title, Message, Icon, Buttons					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 февраля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/120-urok-61-dialogi-alertdialogmetod-onpreparedialog.html">
+						Урок 61. Диалоги. AlertDialog.Метод onPrepareDialog					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 марта 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/121-urok-62-dialogi-alertdialog-spisok.html">
+						Урок 62. Диалоги. AlertDialog. Список					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					05 марта 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/122-urok-63-dialogi-alertdialog-spisok-s-odinochnym-vyborom.html">
+						Урок 63. Диалоги. AlertDialog. Список с одиночным выбором					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 марта 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/123-urok-64-dialogi-alertdialog-spisok-s-mnozhestvennym-vyborom.html">
+						Урок 64. Диалоги. AlertDialog. Список с множественным выбором					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 марта 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/126-urok-65-dialogi-alertdialog-kastomizatsija.html">
+						Урок 65. Диалоги. AlertDialog. Кастомизация					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 марта 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/127-urok-66-dialogi-obrabotchiki-i-operatsii.html">
+						Урок 66. Диалоги. Обработчики и операции					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					02 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/128-urok-67-dialogi-progressdialog.html">
+						Урок 67. Диалоги. ProgressDialog					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					05 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/131-urok-68-nemnogo-o-parcel.html">
+						Урок 68. Немного о Parcel					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					09 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/132-urok-69-peredaem-parcelable-obekty-s-pomoschju-intent.html">
+						Урок 69. Передаем Parcelable объекты с помощью Intent					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					12 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/133-urok-70-onsaveinstancestate-sohranenie-dannyh-activity-pri-povorote-ekrana.html">
+						Урок 70. onSaveInstanceState. Сохранение данных Activity при повороте экрана					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					16 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/134-urok-71-preferences-kak-nastrojki-prilozhenija-preferenceactivity.html">
+						Урок 71. Preferences как настройки приложения. PreferenceActivity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/135-urok-72-preferences-spisok-ekrany-i-kategorii.html">
+						Урок 72. Preferences. Список, экраны и категории					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/136-urok-73-preferences-upravljaem-aktivnostju-nastroek-setenabled.html">
+						Урок 73. Preferences. Управляем активностью настроек (setEnabled)					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/137-urok-74-preferences-programmnoe-sozdanie-ekrana-nastroek.html">
+						Урок 74. Preferences. Программное создание экрана настроек					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					30 апреля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/138-urok-75-hranenie-dannyh-rabota-s-fajlami.html">
+						Урок 75. Хранение данных. Работа с файлами.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					03 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/139-urok-76-tab-vkladki-obschij-obzor.html">
+						Урок 76. Tab - вкладки. Общий обзор					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/140-urok-77-tab-vkladki-tabactivity-activity-kak-soderzhimoe-vkladki.html">
+						Урок 77. Tab - вкладки. TabActivity. Activity, как содержимое вкладки					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/141-urok-78-tab-vkladki-tabcontentfactory-ruchnoe-sozdanie-soderzhimogo-vkladki.html">
+						Урок 78. Tab - вкладки. TabContentFactory, ручное создание содержимого вкладки					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/142-urok-79-xmlpullparser-parsim-xml.html">
+						Урок 79. XmlPullParser. Парсим XML 					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/143-urok-80-handler-nemnogo-teorii-nagljadnyj-primer-ispolzovanija.html">
+						Урок 80. Handler. Немного теории.  Наглядный пример использования					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					21 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/144-urok-81-handler-posylaem-prostoe-soobschenie.html">
+						Урок 81. Handler. Посылаем простое сообщение					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/145-urok-82-handler-primer-s-bolee-soderzhatelnymi-soobschenijami.html">
+						Урок 82. Handler. Пример с более содержательными сообщениями					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/146-urok-83-handler-otlozhennye-soobschenija-udalenie-iz-ocheredi-handlercallback.html">
+						Урок 83. Handler. Отложенные сообщения, удаление из очереди, Handler.Callback					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					31 мая 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/147-urok-84-handler-obrabotka-runnable.html">
+						Урок 84. Handler. Обработка Runnable					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					04 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/148-urok-85-esche-neskolko-sposobov-vypolnenija-koda-v-ui-potoke.html">
+						Урок 85. Еще несколько способов выполнения кода в UI-потоке					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/149-urok-86-asynctask-znakomstvo-neslozhnyj-primer.html">
+						Урок 86. AsyncTask. Знакомство, несложный пример					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					11 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/150-urok-87-asynctask-parametry-promezhutochnye-rezultaty.html">
+						Урок 87. AsyncTask. Параметры. Промежуточные результаты					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/151-urok-88-asynctask-itogovyj-rezultat-metod-get.html">
+						Урок 88. AsyncTask. Итоговый результат. Метод get					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/152-urok-89-asynctask-cancel-otmenjaem-zadachu-v-protsesse-vypolnenija.html">
+						Урок 89. AsyncTask. Cancel – отменяем задачу в процессе выполнения					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					21 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/153-urok-90-asynctask-status-statusy-zadachi.html">
+						Урок 90. AsyncTask. Status – статусы задачи					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					25 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/154-urok-91-asynctask-povorot-ekrana.html">
+						Урок 91. AsyncTask. Поворот экрана					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 июня 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html">
+						Урок 92. Service. Простой пример					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					02 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/158-urok-93-service-peredacha-dannyh-v-servis-metody-ostanovki-servisa.html">
+						Урок 93. Service. Передача данных в сервис. Методы остановки сервиса					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					05 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/159-urok-94-service-podrobno-pro-onstartcommand.html">
+						Урок 94. Service. Подробно про onStartCommand					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					09 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/160-urok-95-service-obratnaja-svjaz-s-pomoschju-pendingintent.html">
+						Урок 95. Service. Обратная связь с помощью PendingIntent					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					12 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/161-urok-96-service-obratnaja-svjaz-s-pomoschju-broadcastreceiver.html">
+						Урок 96. Service. Обратная связь с помощью BroadcastReceiver					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					16 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/162-urok-97-service-binding-serviceconnection.html">
+						Урок 97. Service. Биндинг. ServiceConnection					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/163-urok-98-service-lokalnyj-binding.html">
+						Урок 98. Service. Локальный биндинг					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/164-urok-99-service-uvedomlenija-notifications.html">
+						Урок 99. Service. Уведомления - notifications					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/165-urok-100-service-intentservice-foreground-avtozagruzka-servisa.html">
+						Урок 100. Service. IntentService. Foreground. Автозагрузка сервиса					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					30 июля 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/166-urok-101-sozdaem-svoj-contentprovider.html">
+						Урок 101. Создаем свой ContentProvider					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 августа 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/167-urok-102-touch-obrabotka-kasanija.html">
+						Урок 102. Touch – обработка касания					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 августа 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/168-urok-103-multitouch-obrabotka-mnozhestvennyh-kasanij.html">
+						Урок 103. MultiTouch – обработка множественных касаний					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 августа 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/174-urok-104-android-3-fragments-lifecycle.html">
+						Урок 104. Android 3. Fragments. Lifecycle					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 августа 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/175-urok-105-android-3-fragments-dinamicheskaja-rabota.html">
+						Урок 105. Android 3. Fragments. Динамическая работа					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					03 сентября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/176-urok-106-android-3-fragments-vzaimodejstvie-s-activity.html">
+						Урок 106. Android 3. Fragments. Взаимодействие с Activity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 сентября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/177-urok-107-android-3-actionbar-razmeschenie-elementov.html">
+						Урок 107. Android 3. ActionBar. Размещение элементов					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 сентября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/178-urok-108-android-3-actionbar-navigatsija-taby-i-vypadajuschij-spisok.html">
+						Урок 108. Android 3. ActionBar. Навигация - табы и выпадающий список					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 сентября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/179-urok-109-android-3-fragments-listfragment-spisok.html">
+						Урок 109. Android 3. Fragments. ListFragment - список					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 октября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/180-urok-110-android-3-fragments-dialogfragment-dialog.html">
+						Урок 110. Android 3. Fragments. DialogFragment - диалог					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 октября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/181-urok-111-android-3-fragments-preferencefragment-nastrojki-headers.html">
+						Урок 111. Android 3. Fragments. PreferenceFragment - настройки. Headers					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 октября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/182-urok-112-android-3-actionbar-dinamicheskoe-razmeschenie-elementov.html">
+						Урок 112. Android 3. ActionBar. Динамическое размещение элементов					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 ноября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/183-urok-113-android-3-actionmode-kak-alternativa-kontekstnomu-menju.html">
+						Урок 113. Android 3. ActionMode, как альтернатива контекстному меню					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 ноября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/184-urok-114-android-3-biblioteka-support-library-zachem-nuzhna-i-kak-ee-ispolzovat-na-primere-fragmentov.html">
+						Урок 114. Android 3. Библиотека Support Library. Зачем нужна и как ее использовать на примере фрагментов					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					26 ноября 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/189-urok-115-odno-prilozhenie-na-raznyh-ekranah.html">
+						Урок 115. Одно приложение на разных экранах					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 декабря 2012				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/190-urok-116-povedenie-activity-v-task-intent-flagi-launchmode-affinity.html">
+						Урок 116. Поведение Activity в Task. Intent-флаги, launchMode, affinity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 декабря 2012				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/195-urok-117-vidzhety-sozdanie-lifecycle.html">
+						Урок 117. Виджеты. Создание. Lifecycle					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 января 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/198-urok-118-vidzhety-konfiguratsionnyj-ekran-obnovlenie.html">
+						Урок 118. Виджеты. Конфигурационный экран. Обновление					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 января 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/204-urok-119-pendingintent-flagi-requestcode-alarmmanager.html">
+						Урок 119. PendingIntent – флаги, requestCode. AlarmManager					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					04 февраля 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/205-urok-120-vidzhety-obrabotka-nazhatij.html">
+						Урок 120. Виджеты. Обработка нажатий					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 февраля 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/212-urok-121-vidzhety-spisok.html">
+						Урок 121. Виджеты. Список					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					25 февраля 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/217-urok-122-vidzhety-prevju-izmenenie-razmera-ekran-blokirovki-ruchnoe-obnovlenie.html">
+						Урок 122. Виджеты. Превью, изменение размера, экран блокировки, ручное обновление					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					06 марта 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/221-urok-123-kak-podpisat-prilozhenie-utility-keytool-i-jarsigner.html">
+						Урок 123. Как подписать приложение. Утилиты keytool и jarsigner					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 марта 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/223-urok-124-chto-takoe-package-dlja-prilozhenija.html">
+						Урок 124. Что такое Package для приложения					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 марта 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/228-urok-125-viewpager.html">
+						Урок 125. ViewPager					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 апреля 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/236-urok-126-media-mediaplayer-audiovideo-pleer-osnovnye-vozmozhnosti.html">
+						Урок 126. Медиа. MediaPlayer – аудио/видео плеер, основные возможности					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 апреля 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/239-urok-127-media-soundpool.html">
+						Урок 127. Медиа. SoundPool					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 мая 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/240-urok-128-media-audio-focus.html">
+						Урок 128. Медиа. Audio Focus					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 июня 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/244-urok-129-media-zapis-zvuka-s-pomoschju-mediarecorder.html">
+						Урок 129. Медиа. Запись звука с помощью MediaRecorder					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 июня 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/247-urok-130-media-zapis-zvuka-s-pomoschju-audiorecorder.html">
+						Урок 130. Медиа. Запись звука с помощью AudioRecorder					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					22 июля 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/254-urok-131-kamera-ispolzuem-sistemnoe-prilozhenie.html">
+						Урок 131. Камера. Используем системное приложение					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					19 августа 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/264-urok-132-kamera-vyvod-izobrazhenija-na-ekran-obrabotka-povorota.html">
+						Урок 132. Камера. Вывод изображения на экран. Размер preview. Обработка поворота устройства					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					30 сентября 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/266-urok-133-kamera-delaem-snimok-i-pishem-video.html">
+						Урок 133. Камера. Делаем снимок и пишем видео					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 октября 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/270-urok-134-kamera-nastrojki.html">
+						Урок 134. Камера. Настройки					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 октября 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/274-urok-135-loader-loadermanager-asynctaskloader.html">
+						Урок 135. Loader. LoaderManager. AsyncTaskLoader					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					11 ноября 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/278-urok-136-cursorloader.html">
+						Урок 136. CursorLoader					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 ноября 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/287-urok-137-sensory-uskorenie-orientatsija.html">
+						Урок 137. Сенсоры. Ускорение, ориентация.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					09 декабря 2013				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/291-urok-138-opredelenie-mestopolozhenija-gps-koordinaty.html">
+						Урок 138. Определение местоположения. GPS координаты.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					16 декабря 2013				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/306-urok-139-google-maps-sozdanie-i-nastrojka-proekta-karta-kamera-sobytija.html">
+						Урок 139. Google maps. Создание и настройка проекта. Карта, камера, события					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 января 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/307-urok-140-google-maps-svoi-obekty-na-karte.html">
+						Урок 140. Google maps. Свои объекты на карте					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 января 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/311-urok-141-risovanie-dostup-k-canvas.html">
+						Урок 141. Рисование. Доступ к Canvas					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					03 февраля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/312-urok-142-risovanie-prostye-figury-tekst.html">
+						Урок 142. Рисование. Простые фигуры, текст					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 февраля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/316-urok-143-risovanie-path.html">
+						Урок 143. Рисование. Path					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 февраля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/317-urok-144-risovanie-matrix-preobrazovanija.html">
+						Урок 144. Рисование. Matrix-преобразования					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 февраля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/320-urok-145-risovanie-matrix-setrecttorect-i-setpolytopoly.html">
+						Урок 145. Рисование. Matrix. setRectToRect и setPolyToPoly					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					03 марта 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/322-urok-146-risovanie-canvas-preobrazovanija.html">
+						Урок 146. Рисование. Canvas-преобразования. Методы save и restore.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 марта 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/325-urok-147-risovanie-region.html">
+						Урок 147. Рисование. Region					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 марта 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/326-urok-148-risovanie-canvas-clip.html">
+						Урок 148. Рисование. Canvas, clip					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 марта 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/329-urok-149-risovanie-tekst.html">
+						Урок 149. Рисование. Текст					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 апреля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/332-urok-150-risovanie-pathmeasure-informatsija-o-path-obekte.html">
+						Урок 150. Рисование. PathMeasure – информация о Path-объекте					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 апреля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/348-urok-151-risovanie-patheffect.html">
+						Урок 151. Рисование. PathEffect					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 июля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/351-urok-152-risovanie-picture.html">
+						Урок 152. Рисование. Picture					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					21 июля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/353-urok-153-risovanie-colorfilter-colormatrix.html">
+						Урок 153. Рисование. ColorFilter, ColorMatrix					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					28 июля 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/356-urok-154-porterduffmode-porterduffxfermode.html">
+						Урок 154. Рисование. PorterDuff.Mode, PorterDuffXfermode					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 августа 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/359-urok-155-risovanie-porterduffcolorfilter.html">
+						Урок 155. Рисование. PorterDuffColorFilter					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					25 августа 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/360-urok-156-risovanie-avoidxfermode.html">
+						Урок 156. Рисование. AvoidXfermode					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 сентября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/364-urok-157-risovanie-bitmap-bitmapfactory-chtenie-vyvod-na-kanvu-osnovnaja-informatsija.html">
+						Урок 157. Рисование. Bitmap. BitmapFactory. Чтение, вывод на канву, основная информация					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					06 октября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/365-urok-158-risovanie-bitmap-metody-createbitmap-rabota-s-pikselami-density-mutable.html">
+						Урок 158. Рисование. Bitmap. Методы createBitmap, работа с пикселами, density, mutable					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 октября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/370-urok-159-risovanie-bitmap-bitmapfactoryoptions-sohranenie-v-fajl.html">
+						Урок 159. Рисование. Bitmap. BitmapFactory.Options, сохранение в файл					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					20 октября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/372-urok-160-risovanie-bitmap-chtenie-izobrazhenij-bolshogo-razmera.html">
+						Урок 160. Рисование. Bitmap. Чтение изображений большого размера					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 октября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/376-urok-161-risovanie-bitmap-memory-kesh-picasso.html">
+						Урок 161. Рисование. Bitmap. Memory-кэш. Picasso					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					05 ноября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html">
+						Урок 162. Графика. Drawable. Shape, Gradient.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					18 ноября 2014				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/381-urok-163-grafika-drawable-bitmap-layer-list-state-list.html">
+						Урок 163. Графика. Drawable. Bitmap, Layer List, State List.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 декабря 2014				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/392-urok-164-grafika-drawable-level-list-transition-inset-clip-scale.html">
+						Урок 164. Графика. Drawable. Level List, Transition, Inset, Clip, Scale					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 августа 2015				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/393-urok-165-risovanie-bitmapshader-lineargradient-radialgradient-sweepgradient.html">
+						Урок 165. Графика. BitmapShader, LinearGradient, RadialGradient, SweepGradient					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					24 августа 2015				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/394-urok-166-risovanie-sozdanie-svoego-drawable.html">
+						Урок 166. Графика. Создание своего Drawable					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 сентября 2015				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/395-urok-167-risovanie-metod-canvas-savelayer.html">
+						Урок 167. Рисование. Метод Canvas saveLayer.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					21 сентября 2015				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/397-urok-168-opengl-vvedenie.html">
+						Урок 168. OpenGL. Введение.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 октября 2015				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/398-urok-169-opengl-shejdery.html">
+						Урок 169. OpenGL. Шейдеры					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 октября 2015				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/399-urok-170-opengl-graficheskie-primitivy.html">
+						Урок 170. OpenGL. Графические примитивы					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					10 ноября 2015				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/400-urok-171-opengl-tsvet.html">
+						Урок 171. OpenGL. Цвет.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 ноября 2015				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/401-urok-172-perspective-frustum-ortho.html">
+						Урок 172. OpenGL. Perspective. Frustum. Ortho.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					08 декабря 2015				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/403-urok-173-opengl-kamera.html">
+						Урок 173. OpenGL. Камера					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 января 2016				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/405-urok-174-opengl-model.html">
+						Урок 174. OpenGL. Модель					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					16 февраля 2016				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/406-urok-175-opengl-tekstury.html">
+						Урок 175. OpenGL. Текстуры.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 марта 2016				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/408-urok-176-opengl-indeksy-tekstury-dlja-kuba.html">
+						Урок 176. OpenGL. Индексы, текстуры для куба.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					11 апреля 2016				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/489-urok-180-constraintlayout-osnovy.html">
+						Урок 180. ConstraintLayout. Основы					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					07 июля 2017				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/490-urok-181-constraintslayout-advanced.html">
+						Урок 181. ConstraintLayout: match_constraints, инструменты в toolbar, guidelines, aspect ratio					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					09 июля 2017				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/491-urok-182-constraintlayout-chain-weight-barrier-group.html">
+						Урок 182. ConstraintLayout: chain, weight, barrier, group, circular					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					12 июля 2017				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/494-urok-183-constraintset-programmnaya-nastroyka-constraintlayout.html">
+						Урок 183. ConstraintSet. Программная настройка ConstraintLayout					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					17 июля 2017				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/509-android-notifications-osnovy.html">
+						Урок 184. Android Notifications. Уведомления. Основы					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					14 ноября 2017				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/510-urok-185-notifications-rezhimy-otkrytiya-activity.html">
+						Урок 185. Notifications. Режимы открытия Activity					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					13 ноября 2017				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/511-urok-186-notifications-rasshirennye-uvedomlenija.html">
+						Урок 186. Notifications. Расширенные уведомления					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					20 ноября 2017				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/512-urok-187-notifications-action-knopki-reply.html">
+						Урок 187. Notifications. Action кнопки. Reply.					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					23 ноября 2017				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/513-urok-188-notifications-customize.html">
+						Урок 188. Notifications. Кастомные уведомления					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					27 ноября 2017				</td>
+																					</tr>
+									<tr class="cat-list-row1">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/514-urok-189-notifications-bundling.html">
+						Урок 189. Notifications. Группировка уведомлений					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					29 ноября 2017				</td>
+																					</tr>
+									<tr class="cat-list-row0">
+						<td headers="categorylist_header_title" class="list-title">
+									<a href="/ru/uroki/vse-uroki-spiskom/515-urok-190-notifications-kanaly.html">
+						Урок 190. Notifications. Каналы					</a>
+																								</td>
+							<td headers="categorylist_header_date" class="list-date small">
+					01 декабря 2017				</td>
+																					</tr>
+				</tbody>
+	</table>
+
+
+	</form>
+    </div>
+
+			</div>
+
+</div>
+
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+									<li class="lang-active">
+			<a href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+								<li>
+			<a href="/en/lessons.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod323"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center">
+<h2>Автор сайта</h2>
+<p><img src="/images/stories/pic/150x150xdmitryvinogradov.jpg.pagespeed.ic.ZW6Ncwy8-8.jpg" width="150" height="150"/></p>
+<p>Дмитрий Виноградов</p>
+<p>Подробнее можно <a href="https://youtu.be/xPuiCBRmJDg?t=102" target="_blank" rel="noopener noreferrer">посмотреть</a> или <a href="/ru/about/ob-avtore.html" target="_blank" rel="noopener noreferrer">почитать</a>.</p>
+<p>Никакие другие люди не имеют к этому сайту никакого отношения и просто занимаются плагиатом.</p>
+</div></div>
+</div></div></div><div class="t3-module module " id="Mod139"><div class="module-inner"><div class="module-ct"><div class="bannergroup">
+
+	<div class="banneritem">
+																																																																			<a href="/ru/component/banners/click/9.html" title="Курс корутины">
+							<img src="https://startandroid.ru/images/banners/xbanner_coroutines.png.pagespeed.ic.z0-kLuGVjP.png" alt="Курс корутины" width="240" height="400"/>
+						</a>
+																<div class="clr"></div>
+	</div>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod91"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center"><h2>Социальные сети</h2></div>
+<p> </p>
+<div align="center">
+<p><img src="/images/stories/pic/telegram.png.pagespeed.ce.nkfL74AMTR.png" alt="" width="100" height="100"/></p>
+<p>В <a href="https://t.me/startandroid" target="_blank">канале</a> я публикую ссылки на интересные и полезные статьи по Android</p>
+<p>В <a href="https://t.me/startandroidchat" target="_blank">чате</a> можно обсудить вопросы и проблемы, возникающие при разработке</p>
+</div>
+
+<br><br>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?144"></script>
+<!-- VK Widget -->
+
+<div align="center"><h4>Группа ВКонтакте</h4>
+<div id="vk_groups"></div>
+</div>
+<script type="text/javascript">VK.Widgets.Group("vk_groups",{mode:3},36284347);</script>
+<br><br>
+</div>
+</div></div></div><div class="t3-module module " id="Mod90"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<h1>Поддержка проекта</h1>
+<p><a href="https://money.yandex.ru/prepaid/" target="_blank">Яндекс</a><br/><strong>410011180491924</strong></p>
+<p><a href="http://www.webmoney.ru/rus/addfunds/index.shtml">WebMoney</a><br/><strong>R248743991365</strong><br/><strong>Z551306702056</strong></p>
+<p><a href="https://www.paypal.me/startandroidcourse">Paypal</a></p>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Button, onclick, listener, onclicklistener, activity, getid"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lesson 10. Optimizing event listeners implementation"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://lh6.googleusercontent.com/-Hh7vKh8lHWE/Tk-9xRvRnBI/AAAAAAAAAPM/mwbO3uUlKJE/s800/20110820_L0010_L_addUninplMethods.jpg"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="How to handle button click in Activity."/>
+	<meta name="author" content="Dmitry Vinogradov"/>
+	<meta name="description" content="How to handle button click in Activity."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lesson 10. Optimizing event listeners implementation</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shCore.css+plugins,,_content,,_hs_highlighter,,_lib,,_styles,,_shThemeDefault.css,Mcc.g9s2Fj-V5G.css.pagespeed.cf.C1U8Cas-X8.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/plugins/content/hs_highlighter/lib/scripts/shCore.js+shAutoloader.js.pagespeed.jc.WXf0A72UUc.js"></script><script>eval(mod_pagespeed_su9IpL5SVr);</script>
+	<script>eval(mod_pagespeed_WeiLV__hGm);</script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">window.addEvent('load',function(){var siteurl='https://startandroid.ru/';function path(){var args=arguments,result=[];for(var i=0;i<args.length;i++){result.push(args[i].replace('@',[siteurl,'plugins/content/hs_highlighter/lib/scripts/'].join('')));}return result;};SyntaxHighlighter.autoloader.apply(null,path('applescript            @shBrushAppleScript.js','actionscript3 as3      @shBrushAS3.js','bash shell             @shBrushBash.js','coldfusion cf          @shBrushColdFusion.js','cpp c                  @shBrushCpp.js','c# c-sharp csharp      @shBrushCSharp.js','css                    @shBrushCss.js','delphi pascal          @shBrushDelphi.js','diff patch pas         @shBrushDiff.js','erl erlang             @shBrushErlang.js','groovy                 @shBrushGroovy.js','java                   @shBrushJava.js','jfx javafx             @shBrushJavaFX.js','js jscript javascript  @shBrushJScript.js','perl pl                @shBrushPerl.js','php                    @shBrushPhp.js','text plain             @shBrushPlain.js','py python              @shBrushPython.js','ruby rails ror rb      @shBrushRuby.js','sass scss              @shBrushSass.js','scala                  @shBrushScala.js','sql                    @shBrushSql.js','vb vbnet               @shBrushVb.js','xml xhtml xslt html    @shBrushXml.js'));SyntaxHighlighter.defaults['auto-links']=false;SyntaxHighlighter.defaults['toolbar']=false;;SyntaxHighlighter.all();});JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[213]='/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Lessons</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="en-GB"/>
+	<meta itemprop="url" content="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url" title="Lesson 10. Optimizing event listeners implementation">
+				Lesson 10. Optimizing event listeners implementation</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-25T19:03:25+03:00" itemprop="datePublished">
+					25 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p><span style="line-height: 1.3em;">In this lesson we will:</span></p>
+<p>- learn how to use one listener for several View-elements<br/>- teach Activity to to act as a listener</p>
+ 
+<p><i>Translated by Taras Leskiv (<a href="http://android-by-example.blogspot.com/" target="_blank" rel="noopener noreferrer">http://android-by-example.blogspot.com/</a>)</i></p>
+<p>Create a project:</p>
+<p><strong>Project name</strong>: P0101_Listener<br/><strong>Build Target</strong>: Android 2.3.3<br/><strong>Application name</strong>: Listener<br/><strong>Package name</strong>: ru.startandroid.develop.listener<br/><strong>Create Activity</strong>: MainActivity</p>
+<p><br/>We will be working with the same View from the previous lesson. <b>main.xml</b> code:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="horizontal"&gt;
+	&lt;LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_margin="30dp"&gt;
+		&lt;TextView
+			android:layout_width="wrap_content"
+			android:text="TextView"
+			android:layout_height="wrap_content"
+			android:id="@+id/tvOut"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginBottom="50dp"&gt;
+		&lt;/TextView&gt;
+		&lt;Button
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/btnOk"
+			android:text="OK"
+			android:layout_width="100dp"&gt;
+		&lt;/Button&gt;
+		&lt;Button
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/btnCancel"
+			android:text="Cancel"
+			android:layout_width="100dp"&gt;
+		&lt;/Button&gt;
+	&lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;</pre>
+<p> </p>
+<h3>One listener for two buttons</h3>
+<p>So we have a TextView with text and two buttons. We will make the content of the TextView change when a button is clicked as in the previous lesson. When OK button is clicked - we will show text "OK button was clicked", when Cancel button - "Cancel button was clicked". But this time, we will implement this using <b>one listener</b> that will process clicks <b>for both buttons</b>.</p>
+<p>I will remind you the mechanism of processing an event by button click example. The button cannot process a click on its own, it needs a listener, which is assigned using setOnClickListener method. When the button is clicked, the listener reacts and runs the code from onClick method.</p>
+<p>So we need to perform the following steps for implementation:<br/>- create a listener<br/>- implement onClick method<br/>- assign listener to a button</p>
+<p>In our case we will assign one listener to multiple buttons, and we will have to define inside the listener which button has been clicked.</p>
+<p>Prepare objects and create a listener:</p>
+<pre class="brush:java">public class MainActivity extends Activity {
+ 
+   TextView tvOut;
+   Button btnOk;
+   Button btnCancel;
+ 
+   /** Called when the activity is first created. */
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.main);
+ 
+     // find View-elements
+     tvOut = (TextView) findViewById(R.id.tvOut);
+     btnOk = (Button) findViewById(R.id.btnOk);
+     btnCancel = (Button) findViewById(R.id.btnCancel);
+ 
+     // create a listener
+     OnClickListener oclBtn = new OnClickListener() {
+       @Override
+       public void onClick(View v) {
+         // TODO Auto-generated method stub
+ 
+       }
+     };
+ 
+   }
+ }</pre>
+<p><br/>Let's implement onClick method. It is passed <b>View</b> object as a parameter and its exactly what we need. This is a View which has been clicked and which invoked the listener. So in our case it would be either OK or Cancel button. The only thing that is left is to find out the <b>ID</b> of this <b>View</b> and compare it to our <b>R.id.btnOk</b> and <b>R.id.btnCancel</b>, to define which button was that. To get the ID of a View, use <a href="http://developer.android.com/reference/android/view/View.html#getId()" target="_blank" rel="noopener noreferrer">getId</a> method. To go through the results we will use java <a href="http://download.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank" rel="noopener noreferrer">switch</a> operator.</p>
+<p> </p>
+<p>onClick method implementation:</p>
+<pre class="brush:java">      public void onClick(View v) {
+         // define the button that invoked the listener by id
+         switch (v.getId()) {
+         case R.id.btnOk:
+           // OK button
+           tvOut.setText("OK button was clicked");
+           break;
+         case R.id.btnCancel:
+           // Cancel button
+           tvOut.setText("Cancel button was clicked");
+           break;
+         }
+       }</pre>
+<p><br/>If you run the application now and check clicking buttons, nothing will happen. We have created a listener but we didn’t assign it to any buttons. Now assign the same listener to both buttons:</p>
+<pre class="brush:java">    btnOk.setOnClickListener(oclBtn);
+    btnCancel.setOnClickListener(oclBtn);</pre>
+<p> </p>
+<div class="java">Now you can run and check, everything should work fine.</div>
+<p>As you already understand, <b>one listener</b> can be assigned not only to two buttons but to <b>any number</b> of them. And not only to buttons. Other View-elements also have different events, which require listeners. Later we will be working with them. But for now, it is important to understand how event processing is done.</p>
+<p>The difference in implementation between this and previous lesson is that now we have created <b>one listener-object for both buttons</b>, but on previous lesson - we had <b>two listener objects, one for each button</b>. There is a rule - the less objects you create the better, as memory is allocated for each object and it is a quite limited resource, especially for mobile devices. That’s why creating one listener for several Views is better from the optimization point of view. Also the amount of code is reduced and it becomes more readable.</p>
+<p>There is one more way of creating a listener, which does not require creating an object. We will use an object that is already created - Activity.</p>
+<p> </p>
+<h3>Activity as a listener</h3>
+<p>Button is assigened a listener using <a href="http://developer.android.com/reference/android/view/View.html#setOnClickListener(android.view.View.OnClickListener)" target="_blank" rel="noopener noreferrer">setOnClickListener (View.OnClickListener l)</a> method. It means that any object that implements <a href="http://developer.android.com/reference/android/view/View.OnClickListener.html" target="_blank" rel="noopener noreferrer">View.OnClickListener</a> <a href="http://download.oracle.com/javase/tutorial/java/IandI/createinterface.html" target="_blank" rel="noopener noreferrer">interface</a> fits here. Why don’t make an Activity such an object? We will just make Activity implement View.OnClickListener interface and fill its onCreate method.</p>
+<p>Let’s create a new project for this purpose:</p>
+<p><strong>Project name</strong>: P0102_ActivityListener<br/><strong>Build Target</strong>: Android 2.3.3<br/><strong>Application name</strong>: ActivityListener<br/><strong>Package name</strong>: ru.startandroid.develop.activitylistener<br/><strong>Create Activity</strong>: MainActivity</p>
+<p><br/>Let’s use the same layout again:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="horizontal"&gt;
+	&lt;LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_margin="30dp"&gt;
+		&lt;TextView
+			android:layout_width="wrap_content"
+			android:text="TextView"
+			android:layout_height="wrap_content"
+			android:id="@+id/tvOut"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginBottom="50dp"&gt;
+		&lt;/TextView&gt;
+		&lt;Button
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/btnOk"
+			android:text="OK"
+			android:layout_width="100dp"&gt;
+		&lt;/Button&gt;
+		&lt;Button
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/btnCancel"
+			android:text="Cancel"
+			android:layout_width="100dp"&gt;
+		&lt;/Button&gt;
+	&lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;
+</pre>
+<p> </p>
+<p>Prepare objects and add the interface implementation (implements onClickListener)</p>
+<pre class="brush:java">public class MainActivity extends Activity implements OnClickListener {
+ 
+   TextView tvOut;
+   Button btnOk;
+   Button btnCancel;
+ 
+   /** Called when the activity is first created. */
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.main);
+ 
+     // find View-elements
+     tvOut = (TextView) findViewById(R.id.tvOut);
+     btnOk = (Button) findViewById(R.id.btnOk);
+     btnCancel = (Button) findViewById(R.id.btnCancel);
+   }
+ }</pre>
+<p> </p>
+<p>onClickListener is underlined with red as it is not present in import section. Press CTRL + SHIFT + O and choose View.OnClickListener.</p>
+<p>Now Eclipse underlines MainActivity. This is happening because MainActivity <b>implements the interface</b>, but doesn’t <b>implement its methods</b> yet. Let’s correct it using Eclipse. Place the cursor over <b>MainActivity </b>and choose <b>Add unimplemented methods</b>.</p>
+<p><img src="https://lh6.googleusercontent.com/-Hh7vKh8lHWE/Tk-9xRvRnBI/AAAAAAAAAPM/mwbO3uUlKJE/s800/20110820_L0010_L_addUninplMethods.jpg" alt="" border="0"/></p>
+<p><br/>Eclipse will add <b>onClick</b> method that we are already familiar with. Only now this method will be implemented in Activity, not in a separate listener object. So Activity will act as a listener correspondingly.</p>
+<p>Let’s implement a method exactly as the previous time. Nothing has changed. It is also passed a View (on which an event has happened) as a parameter, we define which View exactly was that by Id and perform the corresponding actions:</p>
+<pre class="brush:java">  public void onClick(View v) {
+     // define the button that invoked the listener by id
+     switch (v.getId()) {
+     case R.id.btnOk:
+       // ОК button
+       tvOut.setText("OK button was clicked");
+       break;
+     case R.id.btnCancel:
+       // Cancel button
+       tvOut.setText("Cancel button was clicked");
+       break;
+     }
+   }</pre>
+<p> </p>
+<p>The only thing left to do is to assign listener to buttons. It will be object this, which is the current MainActivity object.</p>
+<pre class="brush:java">    btnOk.setOnClickListener(this);
+    btnCancel.setOnClickListener(this);</pre>
+<p> </p>
+<p>We haven’t created any unnecessary objects in this implementation (Activity is created anyway) and memory expenditure is minimal, so this is a preferred method. But this implementation may seem complicated and incomprehensible, especially if you a have small experience in object-oriented programming. In this case use the implementation that is understandable and convenient for you. And understanding will come for sure with time and experience.</p>
+<p>The complete code:</p>
+<pre class="brush:java">public class MainActivity extends Activity implements OnClickListener {
+ 
+   TextView tvOut;
+   Button btnOk;
+   Button btnCancel;
+ 
+   /** Called when the activity is first created. */
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.main);
+ 
+     // find View-elements
+     tvOut = (TextView) findViewById(R.id.tvOut);
+     btnOk = (Button) findViewById(R.id.btnOk);
+     btnCancel = (Button) findViewById(R.id.btnCancel);
+ 
+     // assign listeners to buttons
+     btnOk.setOnClickListener(this);
+     btnCancel.setOnClickListener(this);
+   }
+ 
+   @Override
+   public void onClick(View v) {
+     // define the button that invoked the listener by id
+     switch (v.getId()) {
+     case R.id.btnOk:
+       // ОК button
+       tvOut.setText("OK button was clicked");
+       break;
+     case R.id.btnCancel:
+       // Cancel button
+       tvOut.setText("Cancel button was clicked");
+       break;
+     }
+   }
+ 
+ }</pre>
+<p> </p>
+<h3>The most simple listener implementation</h3>
+<p>There is one more way of implementing a listener. In the layout-file (main.xml) when describing a button write:</p>
+<pre class="brush:xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Button
+	android:id="@+id/btnStart"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:onClick="onClickStart"
+	android:text="start"&gt;
+&lt;/Button&gt;</pre>
+<p>We are using <a href="http://developer.android.com/reference/android/R.attr.html#onClick" target="_blank" rel="noopener noreferrer">onClick</a> attribute. In this attribute we specify the name of the method in Activity. This method will be invoked when the button is clicked.</p>
+<p>Then, add this method inisde Activity (MainActivity.java). Method requirements: public, void and receives a View object as a parameter:</p>
+<pre class="brush:java">  public void onClickStart(View v) {
+    // actions when the button is clicked
+  }</pre>
+<p>Write all the actions you need inside this method and they will be performed when the button is clicked.</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Lesson 9. Event listeners with Button example" aria-label="Previous article: Lesson 9. Event listeners with Button example" href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Prev</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Lesson 11. res/values folder. Using application resources" aria-label="Next article: Lesson 11. res/values folder. Using application resources" href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" rel="next">
+			<span aria-hidden="true">Next</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

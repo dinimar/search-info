@@ -1,0 +1,1649 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-category layout-blog itemid-106 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/en/lessons.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Андроид,андройд,Android,программирование,под,учебник,уроки,начинающих,чайников,разработка,литература,программы,Eclipse,SDK,Java,Андройд,пример,example,sample,первое,простое,приложение,создать,научиться,программировать,учимся, beginner, dummie, study, programm, application, lesson, tutorial, книги, книга, java, programming, development, create, first, application, create, learn,"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Lessons"/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:url" content="https://startandroid.ru/en/lessons.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="Сайт о разработке программ для Андроид (Android). Учебник, уроки для начинающих, для чайников. Как самому создать приложение для андроид. Как научиться программировать под android."/>
+	<meta name="description" content="Сайт о разработке программ для Андроид (Android). Учебник, уроки для начинающих, для чайников. Как самому создать приложение для андроид. Как научиться программировать под android."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Lessons</title>
+	<link href="/en/lessons.feed?type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0"/>
+	<link href="/en/lessons.feed?type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0"/>
+	<link href="https://startandroid.ru/ru/uroki.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002,Mcc.7KF2sl1Z1n.css.pagespeed.cf.xARBNHkBBQ.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Ed2PAi7Y_z.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">JFusion.view='category';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[199]='/en/lessons/199-lesson-1-introduction.html';JFusion.articelUrl[200]='/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html';JFusion.articelUrl[201]='/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html';JFusion.articelUrl[202]='/en/lessons/202-lesson-4-layout-elements-and-their-properties.html';JFusion.articelUrl[203]='/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html';JFusion.articelUrl[207]='/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html';JFusion.articelUrl[208]='/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html';JFusion.articelUrl[209]='/en/lessons/209-lesson-8-working-with-layout-elements-from-code.html';JFusion.articelUrl[210]='/en/lessons/210-lesson-9-event-listeners-with-button-example.html';JFusion.articelUrl[213]='/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html';JFusion.articelUrl[214]='/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html';JFusion.articelUrl[215]='/en/lessons/215-lesson-12-logs-and-toast-messages.html';JFusion.articelUrl[216]='/en/lessons/216-lesson-13-creating-a-simple-menu.html';JFusion.articelUrl[218]='/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html';JFusion.articelUrl[219]='/en/lessons/219-lesson-15-context-menu.html';JFusion.articelUrl[220]='/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html';JFusion.articelUrl[222]='/en/lessons/222-lesson-17-creating-view-components-in-a-running-application.html';JFusion.articelUrl[224]='/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html';JFusion.articelUrl[225]='/en/lessons/225-lesson-19-creating-a-simple-calculator.html';JFusion.articelUrl[226]='/en/lessons/226-lesson-20-animation.html';jQuery(window).on('load',function(){new JCaption('img.caption');});jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod100"><div class="module-inner"><h3 class="module-title "><span>Most read</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 19. Creating a simple calculator			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 16. Creating layout programmatically. LayoutParams			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/241-lesson-28-extras-passing-data-using-intent.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 28. Extras - passing data using Intent			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 9. Event listeners with Button example			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/232-lesson-24-activity-lifecycle-example-about-changing-states-with-two-activities.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 24. Activity Lifecycle, example about changing states with two Activities			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 6. Layout types. Key differences and properties			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 18. Changing layoutParams in a running application			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/227-lesson-21-creating-and-starting-an-activity.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 21. Creating and starting an Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 10. Optimizing event listeners implementation			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 3. Creating AVD. The first application. Android project structure			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 11. res/values folder. Using application resources			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 7. Layout parameters for View-elements			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/229-lesson-22-intent-intent-filter-context-theory.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 22. Intent, Intent Filter, Context - theory			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 15. Context menu			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 12. Logs and Toast messages.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 1. Introduction			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url">
+			<span itemprop="name">
+				Lesson 4. Layout elements and their properties			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="102" data-level="1">
+<a itemprop='url' class="" href="/en/" data-target="#">Home </a>
+
+</li>
+<li itemprop='name' class="current active" data-id="106" data-level="1">
+<a itemprop='url' class="" href="/en/lessons.html" data-target="#">Lessons </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="135" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Courses<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="136" data-level="2">
+<a itemprop='url' class="" href="/en/courses-en/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="141" data-level="1">
+<a itemprop='url' class="" href="/en/login.html" data-target="#">Log in </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						
+<div class="blog" itemscope itemtype="https://schema.org/Blog">
+		<div class="page-header clearfix">
+		<h1 class="page-title"> Lessons </h1>
+	</div>
+		
+		
+		
+	
+	
+		
+	
+											<div class="items-row cols-2 row-0 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/199-lesson-1-introduction.html" itemprop="url" title="Lesson 1. Introduction">
+				Lesson 1. Introduction</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-07-26T17:35:39+03:00" itemprop="datePublished">
+					26 July 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>Good afternoon!</p>
+<p>This is an introductory lesson. We will not code anything here. In this lesson I will enlighten reasons why I decided to create this site.</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/199-lesson-1-introduction.html" title="Lesson 1. Introduction">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" itemprop="url" title="Lesson 2. Installing and configuring development environment Eclipse and SDK Tools">
+				Lesson 2. Installing and configuring development environment Eclipse and SDK Tools</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-07-28T19:05:41+03:00" itemprop="datePublished">
+					28 July 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>To write programs we need a development environment. Google recommends to use Eclipse for this purpose with Android Development Tools (ADT) plugin. In this lesson we will have a look in detail how to install and configure this development environment.</p>
+<p> </p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/200-lesson-2-installing-and-configuring-development-environment-eclipse-and-sdk-tools.html" title="Lesson 2. Installing and configuring development environment Eclipse and SDK Tools">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-1 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" itemprop="url" title="Lesson 3. Creating AVD. The first application. Android project structure">
+				Lesson 3. Creating AVD. The first application. Android project structure</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-01T13:50:03+03:00" itemprop="datePublished">
+					01 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>To test our applications we will need an Android Virtual Device (AVD). It is an Android smartphone emulator, where Eclipse can install and launch our applications. Let’s create it.</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" title="Lesson 3. Creating AVD. The first application. Android project structure">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" itemprop="url" title="Lesson 4. Layout elements and their properties">
+				Lesson 4. Layout elements and their properties</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-04T17:52:05+03:00" itemprop="datePublished">
+					04 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>Let’s have a look how is screen content composed in Android applications.</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/202-lesson-4-layout-elements-and-their-properties.html" title="Lesson 4. Layout elements and their properties">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-2 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" itemprop="url" title="Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation">
+				Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-08T17:53:16+03:00" itemprop="datePublished">
+					08 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In the last lesson we have learnt that Activity reads a layout-file and displays what is configured in it. Now let’s find out how Activity knows which specific file to read. <span style="line-height: 1.3em;"> </span></p>
+<p> </p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/203-lesson-5-layout-file-fo-ractivity-xml-representation-changing-screen-orientation.html" title="Lesson 5. Layout-file for Activity. XML Representation. Changing screen orientation">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" itemprop="url" title="Lesson 6. Layout types. Key differences and properties">
+				Lesson 6. Layout types. Key differences and properties</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-11T17:49:09+03:00" itemprop="datePublished">
+					11 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>Positioning of View-elements on the screen depends on the <b style="line-height: 1.3em;">ViewGroup</b> (layout), inside which they are located. In this lesson we will observe main types of <b>Layouts</b>.</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/207-lesson-6-layout-types-key-differences-and-properties.html" title="Lesson 6. Layout types. Key differences and properties">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-3 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" itemprop="url" title="Lesson 7. Layout parameters for View-elements">
+				Lesson 7. Layout parameters for View-elements</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-15T17:50:31+03:00" itemprop="datePublished">
+					15 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- examine screen properties;<br/>- explore layout parameters (height, width, margin, gravity, weight)</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/208-lesson-7-layout-parameters-for-view-elements.html" title="Lesson 7. Layout parameters for View-elements">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/209-lesson-8-working-with-layout-elements-from-code.html" itemprop="url" title="Lesson 8. Working with layout elements from code">
+				Lesson 8. Working with layout elements from code</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-18T17:51:06+03:00" itemprop="datePublished">
+					18 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- learn how to refer to View-elements on the screen from code and change their properties</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/209-lesson-8-working-with-layout-elements-from-code.html" title="Lesson 8. Working with layout elements from code">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-4 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" itemprop="url" title="Lesson 9. Event listeners with Button example">
+				Lesson 9. Event listeners with Button example</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-22T11:28:03+03:00" itemprop="datePublished">
+					22 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- learn how to process button clicks and find out what a listener is.</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/210-lesson-9-event-listeners-with-button-example.html" title="Lesson 9. Event listeners with Button example">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" itemprop="url" title="Lesson 10. Optimizing event listeners implementation">
+				Lesson 10. Optimizing event listeners implementation</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-25T19:03:25+03:00" itemprop="datePublished">
+					25 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p><span style="line-height: 1.3em;">In this lesson we will:</span></p>
+<p>- learn how to use one listener for several View-elements<br/>- teach Activity to to act as a listener</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/213-lesson-10-optimizing-event-listeners-implementation.html" title="Lesson 10. Optimizing event listeners implementation">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-5 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" itemprop="url" title="Lesson 11. res/values folder. Using application resources">
+				Lesson 11. res/values folder. Using application resources</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-29T15:30:31+03:00" itemprop="datePublished">
+					29 August 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- find out what is res/values folder needed for, what can you store in it and how to use it.</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/214-lesson-11-resvalues-folder-using-application-resources.html" title="Lesson 11. res/values folder. Using application resources">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" itemprop="url" title="Lesson 12. Logs and Toast messages.">
+				Lesson 12. Logs and Toast messages.</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-01T15:21:10+03:00" itemprop="datePublished">
+					01 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p> - look through application logs and Toast messages</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/215-lesson-12-logs-and-toast-messages.html" title="Lesson 12. Logs and Toast messages.">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-6 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/216-lesson-13-creating-a-simple-menu.html" itemprop="url" title="Lesson 13. Creating a simple menu">
+				Lesson 13. Creating a simple menu</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-05T18:45:20+03:00" itemprop="datePublished">
+					05 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p> - create menu items</p>
+<p> </p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/216-lesson-13-creating-a-simple-menu.html" title="Lesson 13. Creating a simple menu">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" itemprop="url" title="Lesson 14. Menu, groups, order. MenuInflater and xml-menu">
+				Lesson 14. Menu, groups, order. MenuInflater and xml-menu</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-08T17:06:49+03:00" itemprop="datePublished">
+					08 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- create menu items with IDs<br/>- group and sort menu items</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/218-lesson-14-menu-groups-order-menuinflater-and-xml-menu.html" title="Lesson 14. Menu, groups, order. MenuInflater and xml-menu">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-7 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/219-lesson-15-context-menu.html" itemprop="url" title="Lesson 15. Context menu">
+				Lesson 15. Context menu</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-12T05:00:00+03:00" itemprop="datePublished">
+					12 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- create a context menu</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/219-lesson-15-context-menu.html" title="Lesson 15. Context menu">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" itemprop="url" title="Lesson 16. Creating layout programmatically. LayoutParams">
+				Lesson 16. Creating layout programmatically. LayoutParams</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-15T15:27:56+03:00" itemprop="datePublished">
+					15 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- create layout programmatically, not using layout-files</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html" title="Lesson 16. Creating layout programmatically. LayoutParams">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-8 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/222-lesson-17-creating-view-components-in-a-running-application.html" itemprop="url" title="Lesson 17. Creating View-components in a running application">
+				Lesson 17. Creating View-components in a running application</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-19T15:29:05+03:00" itemprop="datePublished">
+					19 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In this lesson we will:</p>
+<p>- add components to the screen while application is running</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/222-lesson-17-creating-view-components-in-a-running-application.html" title="Lesson 17. Creating View-components in a running application">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" itemprop="url" title="Lesson 18. Changing layoutParams in a running application">
+				Lesson 18. Changing layoutParams in a running application</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-22T15:29:53+03:00" itemprop="datePublished">
+					22 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In the this lesson we will:</p>
+<p>- change layout-parameters for already existing screen components</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/224-lesson-18-changing-layoutparams-in-a-running-application.html" title="Lesson 18. Changing layoutParams in a running application">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+													<div class="items-row cols-2 row-9 row">
+					<div class="col-sm-6">
+				<div class="item column-1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" itemprop="url" title="Lesson 19. Creating a simple calculator">
+				Lesson 19. Creating a simple calculator</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-26T15:29:57+03:00" itemprop="datePublished">
+					26 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In the this lesson we will:</p>
+<p>- write a calculator application</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/225-lesson-19-creating-a-simple-calculator.html" title="Lesson 19. Creating a simple calculator">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+											<div class="col-sm-6">
+				<div class="item column-2" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					
+
+	<!-- Article -->
+	<article>
+  
+    			
+<header class="article-header clearfix">
+	<h2 class="article-title" itemprop="headline">
+					<a href="/en/lessons/226-lesson-20-animation.html" itemprop="url" title="Lesson 20. Animation">
+				Lesson 20. Animation</a>
+			</h2>
+
+			</header>
+    	
+    
+    <!-- Aside -->
+        <aside class="article-aside clearfix">
+      
+            	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Details							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Published: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-09-29T15:30:03+03:00" itemprop="datePublished">
+					29 September 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+          </aside>  
+        <!-- //Aside -->
+
+		<section class="article-intro clearfix">
+      			
+			
+			<p>In the this lesson we will:</p>
+<p>- explore animation of View-components</p>
+<div class="jcomments-links"><a class="readmore-link" href="/en/lessons/226-lesson-20-animation.html" title="Lesson 20. Animation">Read more ...</a>  </div>
+		</section>
+
+    <!-- footer -->
+        <!-- //footer -->
+
+
+		
+	</article>
+	<!-- //Article -->
+
+
+ 
+				</div><!-- end item -->
+							</div><!-- end span -->
+						
+		</div><!-- end row -->
+						
+		
+		
+		<div class="pagination-wrap">
+				<div class="counter"> Page 1 of 3</div>
+				<ul class="pagination"><li class="disabled"><a>Start</a></li><li class="disabled"><a>Prev</a></li><li class="active"><a>1</a></li><li><a title="2" href="/en/lessons.html?start=20">2</a></li><li><a title="3" href="/en/lessons.html?start=40">3</a></li><li><a title="Next" href="/en/lessons.html?start=20">Next</a></li><li><a title="End" href="/en/lessons.html?start=40">End</a></li></ul> </div>
+	</div>
+
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+						<li>
+			<a href="/ru/uroki.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+											<li class="lang-active">
+			<a href="https://startandroid.ru/en/lessons.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>

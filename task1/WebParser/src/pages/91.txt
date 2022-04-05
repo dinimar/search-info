@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class='com_content view-article itemid-110 j39 mm-hover '>
+<head>
+<link href="https://www.startandroid.ru/templates/mycustomcss.css" rel="stylesheet" type="text/css">
+	<base href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="AVD, эмулятор, создание, настройка, приложение, структура проекта"/>
+	<meta name="rights" content="StartAndroid"/>
+	<meta name="og:title" content="Урок 3. Создание AVD. Первое приложение. Структура Android-проекта."/>
+	<meta name="og:type" content="article"/>
+	<meta name="og:image" content="https://startandroid.ru/images/stories/lessons/L0003/L0003_351.png"/>
+	<meta name="og:url" content="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html"/>
+	<meta name="og:site_name" content="StartAndroid"/>
+	<meta name="og:description" content="Создание проекта в Android Studio. Создание AVD эмулятора и запуск приложения. Структура проекта в Android Studio"/>
+	<meta name="author" content="Dmitry Vinogradov"/>
+	<meta name="description" content="Создание проекта в Android Studio. Создание AVD эмулятора и запуск приложения. Структура проекта в Android Studio"/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.</title>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" rel="alternate" hreflang="ru-RU"/>
+	<link href="https://startandroid.ru/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html" rel="alternate" hreflang="en-GB"/>
+	<link href="/templates/purity_iii/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="/A.templates,,_purity_iii,,_local,,_css,,_bootstrap.css+components,,_com_jcomments,,_tpl,,_default,,_style.css,,qv==3002,Mcc.7KF2sl1Z1n.css.pagespeed.cf.xARBNHkBBQ.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.css" rel="stylesheet" type="text/css"/>
+	<link href="/A.templates,,_system,,_css,,_system.css+templates,,_purity_iii,,_local,,_css,,_template.css+templates,,_purity_iii,,_local,,_css,,_megamenu.css+templates,,_purity_iii,,_local,,_css,,_off-canvas.css+templates,,_purity_iii,,_fonts,,_font-awesome,,_css,,_font-awesome.min.css+templates,,_purity_iii,,_local,,_css,,_layouts,,_corporate.css+plugins,,_system,,_mediabox_ck,,_assets,,_mediaboxck.css+media,,_mod_languages,,_css,,_template.css,,q092552cf642fe2bdd8a0d9879112de23,Mcc.8bkeEgaG8c.css.pagespeed.cf.NQwL-2HVTk.css" rel="stylesheet" type="text/css"/>
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">#mbCenter,#mbToolbar{background-color:#1a1a1a;-webkit-border-radius:10px;-khtml-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.50);-khtml-box-shadow:0 5px 20px rgba(0,0,0,.50);-moz-box-shadow:0 5px 20px rgba(0,0,0,.50);box-shadow:0 5px 20px rgba(0,0,0,.50);-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')}#mbOverlay{background-color:#000}#mbCenter.mbLoading{background-color:#1a1a1a}#mbBottom{color:#999}#mbTitle,#mbPrevLink,#mbNextLink,#mbCloseLink,#mbPlayLink,#mbPauseLink,#mbZoomMinus,#mbZoomValue,#mbZoomPlus{color:#fff}</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"ed37a4ab8f272e400044c1ea8adb7ccf","system.paths":{"root":"","base":""},"joomla.jtext":{"BUTTON_CANCEL":"Cancel","BUTTON_INITIATE":"Initiate Discussion","BUTTON_PUBLISH_NEW_DISCUSSION":"Publish New Discussion","BUTTON_REPUBLISH_DISCUSSION":"Republish Discussion","BUTTON_UNPUBLISH_DISCUSSION":"Unpublish Discussion","CONFIRM_THREAD_CREATION":"Initiate the discussion bot for this article? A thread will automatically be created in the forum and associated with this article.","CONFIRM_UNPUBLISH_DISCUSSION":"Do you want to unpublish this discussion? Note that this will not manipulate the forum in any way. It will simply remove the discussion from the article.","CONFIRM_PUBLISH_DISCUSSION":"This article has been previously initiated. Click 'Republish Discussion' to associate the article with the existing discussion (this can be undone by simply clicking 'Uninitiate Discussion' after initializing). Or click 'Publish New Discussion' to create a new thread and associate the article with the new discussion.","DISCUSSBOT_ERROR":"Error","HIDE_REPLIES":"Hide Replies","JYES":"Yes","SHOW_REPLIES":"Show Replies","SUBMITTING_QUICK_REPLY":"Submitting quick reply..."}}</script>
+	<script src="/media/system/js/mootools-core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.ywlvbuicbl.js" type="text/javascript"></script>
+	<script src="/media/system/js/core.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.ce.I4kCTD093I.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.-6O1zP2hFm.js" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery.min.js,q092552cf642fe2bdd8a0d9879112de23.pagespeed.jm.Esjhv-eXHl.js" type="text/javascript"></script>
+	<script src="/media,_jui,_js,_jquery-noconflict.js,q092552cf642fe2bdd8a0d9879112de23+media,_jui,_js,_jquery-migrate.min.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_bootstrap,_js,_bootstrap.js,q092552cf642fe2bdd8a0d9879112de23+media,_system,_js,_caption.js,q092552cf642fe2bdd8a0d9879112de23+plugins,_system,_t3,_base-bs3,_js,_jquery.tap.min.js.pagespeed.jc.Zgymc-Cw8E.js"></script><script>eval(mod_pagespeed_mx8RjjKG3V);</script>
+	<script>eval(mod_pagespeed_EEHT5I5lbD);</script>
+	<script src="http://www.startandroid.ru/plugins/content/jfusion/discussbot/tmpl/default/jfusion.js" type="text/javascript"></script>
+	<script>eval(mod_pagespeed_y3OBNTle2M);</script>
+	<script>eval(mod_pagespeed_UCstg9erlS);</script>
+	<script>eval(mod_pagespeed_1XadJYvQRa);</script>
+	<script src="/plugins,_system,_t3,_base-bs3,_js,_off-canvas.js+plugins,_system,_t3,_base-bs3,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_menu.js+templates,_purity_iii,_js,_script.js+plugins,_system,_t3,_base-bs3,_js,_nav-collapse.js+plugins,_system,_mediabox_ck,_assets,_mediaboxck.min.js,qver==2.4.0.pagespeed.jc.tzMQyIb0Wy.js"></script><script>eval(mod_pagespeed_r6BAo9HvrJ);</script>
+	<script>eval(mod_pagespeed_$6DR3H2ba0);</script>
+	<script>eval(mod_pagespeed_oaBYG6qGe9);</script>
+	<script>eval(mod_pagespeed_AmCkxaCr$c);</script>
+	<script>eval(mod_pagespeed_ZlfQYd6O1_);</script>
+	<script>eval(mod_pagespeed_rDcvdPCnuH);</script>
+	<script type="text/javascript">JFusion.view='article';JFusion.enablePagination=1;JFusion.enableJumpto=0;JFusion.articelUrl[12]='/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html';jQuery(function($){initTooltips();$("body").on("subform-row-add",initTooltips);function initTooltips(event,container){container=container||document;$(container).find(".hasTooltip").tooltip({"html":true,"container":"body"});}});jQuery(window).on('load',function(){new JCaption('img.caption');});Mediabox.scanPage=function(){var links=jQuery('a').filter(function(i){if(jQuery(this).attr('rel')&&jQuery(this).data('mediaboxck_done')!='1'){var patt=new RegExp(/^lightbox/i);return patt.test(jQuery(this).attr('rel'));}});if(!links.length)return false;new Mediaboxck(links,{overlayOpacity:0.7,resizeOpening:1,resizeDuration:240,initialWidth:320,initialHeight:180,fullWidth:'0',defaultWidth:'640',defaultHeight:'360',showCaption:1,showCounter:1,loop:0,isMobileEnable:1,isMobile:false,mobileResolution:'640',attribType:'rel',showToolbar:'0',diapoTime:'3000',diapoAutoplay:'0',toolbarSize:'normal',medialoop:false,showZoom:0,counterText:'({x} of {y})',playerpath:'/plugins/system/mediabox_ck/assets/NonverBlaster.swf'},null,function(curlink,el){var rel0=curlink.rel.replace(/[[]|]/gi," ");var relsize=rel0.split(" ");return(curlink==el)||((curlink.rel.length>8)&&el.rel.match(relsize[1]));});};jQuery(document).ready(function(){Mediabox.scanPage();});</script>
+	<link href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" rel="alternate" hreflang="x-default"/>
+
+	
+<!-- META FOR IOS & HANDHELD -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/stylesheet">@-webkit-viewport   { width: device-width; }@-moz-viewport      { width: device-width; }@-ms-viewport       { width: device-width; }@-o-viewport        { width: device-width; }@viewport           { width: device-width; }</style>
+	<script type="text/javascript">if(navigator.userAgent.match(/IEMobile\/10\.0/)){var msViewportStyle=document.createElement("style");msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(msViewportStyle);}</script>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="YES"/>
+<!-- //META FOR IOS & HANDHELD -->
+
+
+
+
+<!-- Le HTML5 shim and media query for IE8 support -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="/plugins/system/t3/base-bs3/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- You can add Google Analytics here or use T3 Injection feature -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/templates/purity_iii/css/ie8.css" type="text/css" />
+<![endif]-->
+	</head>
+
+<body>
+
+<div class="t3-wrapper corporate"> <!-- Need this wrapper for off-canvas menu. Remove if you don't use of-canvas -->
+
+	
+<!-- MAIN NAVIGATION -->
+<header id="t3-mainnav" class="wrap navbar navbar-default navbar-fixed-top t3-mainnav">
+
+	<!-- OFF-CANVAS -->
+			
+<button class="btn btn-default off-canvas-toggle " type="button" data-pos="left" data-nav="#t3-off-canvas" data-effect="off-canvas-effect-4">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- OFF-CANVAS SIDEBAR -->
+<div id="t3-off-canvas" class="t3-off-canvas ">
+
+  <div class="t3-off-canvas-header">
+    <h2 class="t3-off-canvas-header-title">Sidebar</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+
+  <div class="t3-off-canvas-body">
+    <div class="t3-module module " id="Mod97"><div class="module-inner"><h3 class="module-title "><span>Самое читаемое</span></h3><div class="module-ct"><ul class="mostread mod-list">
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" itemprop="url">
+			<span itemprop="name">
+				Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html" itemprop="url">
+			<span itemprop="name">
+				Урок 2. Установка Android Studio			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 4. Компоненты экрана и их свойства			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/14-urok-5-layout-kak-ispolzovat-smena-orientatsii-ekrana.html" itemprop="url">
+			<span itemprop="name">
+				Урок 5. Layout-файл в Activity. XML представление. Смена ориентации экрана.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/4-urok-1-vvedenie.html" itemprop="url">
+			<span itemprop="name">
+				Урок 1. Введение.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/16-urok-9-obrabotchiki-sobytij-na-primere-button.html" itemprop="url">
+			<span itemprop="name">
+				Урок 9. Обработчики событий на примере Button.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/15-urok-6-vidy-layouts-kljuchevye-otlichija-i-svojstva.html" itemprop="url">
+			<span itemprop="name">
+				Урок 6. Виды Layouts. Ключевые отличия и свойства.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/38-urok-7-layout-parametry-dlja-view-elementov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 7. Layout параметры для View-элементов.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/74-urok-34-hranenie-dannyh-sqlite.html" itemprop="url">
+			<span itemprop="name">
+				Урок 34. Хранение данных. SQLite			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/82-urok42-spisok-listview.html" itemprop="url">
+			<span itemprop="name">
+				Урок 42. Список - ListView			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/58-urok-21-sozdanie-i-vyzov-activity.html" itemprop="url">
+			<span itemprop="name">
+				Урок 21. Создание и вызов Activity			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/24-urok-8-rabotaem-s-elementami-ekrana-iz-koda.html" itemprop="url">
+			<span itemprop="name">
+				Урок 8. Работаем с элементами экрана из кода			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/73-urok-33-hranenie-dannyh-preferences.html" itemprop="url">
+			<span itemprop="name">
+				Урок 33. Хранение данных. Preferences.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/80-urok-40-layoutinflater-uchimsja-ispolzovat.html" itemprop="url">
+			<span itemprop="name">
+				Урок 40. LayoutInflater. Учимся использовать.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/489-urok-180-constraintlayout-osnovy.html" itemprop="url">
+			<span itemprop="name">
+				Урок 180. ConstraintLayout. Основы			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/175-urok-105-android-3-fragments-dinamicheskaja-rabota.html" itemprop="url">
+			<span itemprop="name">
+				Урок 105. Android 3. Fragments. Динамическая работа			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/17-urok-10-optimiziruem-realizatsiju-obrabotchikov.html" itemprop="url">
+			<span itemprop="name">
+				Урок 10. Оптимизируем реализацию обработчиков.			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html" itemprop="url">
+			<span itemprop="name">
+				Урок 92. Service. Простой пример			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/54-urok-19-pishem-prostoj-kalkuljator.html" itemprop="url">
+			<span itemprop="name">
+				Урок 19. Пишем простой калькулятор			</span>
+		</a>
+	</li>
+	<li itemscope itemtype="https://schema.org/Article">
+		<a href="/ru/uroki/vse-uroki-spiskom/67-urok-28-extras-peredaem-dannye-s-pomoschju-intent.html" itemprop="url">
+			<span itemprop="name">
+				Урок 28. Extras - передаем данные с помощью Intent			</span>
+		</a>
+	</li>
+</ul>
+</div></div></div>
+  </div>
+
+</div>
+<!-- //OFF-CANVAS SIDEBAR -->
+
+		<!-- //OFF-CANVAS -->
+
+	<div class="container">
+
+		<!-- NAVBAR HEADER -->
+		<div class="navbar-header">
+
+			<!-- LOGO -->
+			<div class="logo logo-text">
+				<div class="logo-text">
+					<a href="/" title="StartAndroid">
+						
+												
+						<span>StartAndroid</span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+			
+	    	    <!-- HEAD SEARCH -->
+	    <div class="head-search">     
+	      <form class="form-search" action="/ru/uroki/vse-uroki-spiskom.html" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Поиск</label><i class="fa fa-search"></i><input name="searchword" id="mod-search-searchword" maxlength="200" class="form-control " type="text" size="0"/>	<input type="hidden" name="task" value="search"/>
+	<input type="hidden" name="option" value="com_search"/>
+	<input type="hidden" name="Itemid" value="110"/>
+	</div>
+</form>
+
+	    </div>
+	    <!-- //HEAD SEARCH -->
+	    
+		</div>
+		<!-- //NAVBAR HEADER -->
+
+		<!-- NAVBAR MAIN -->
+				<nav class="t3-navbar-collapse navbar-collapse collapse"></nav>
+		
+		<nav class="t3-navbar navbar-collapse collapse">
+			<div class="t3-megamenu animate elastic" data-duration="400" data-responsive="true">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav navbar-nav level0">
+<li itemprop='name' data-id="103" data-level="1">
+<a itemprop='url' class="" href="/ru/" data-target="#">Главная </a>
+
+</li>
+<li itemprop='name' data-id="124" data-level="1">
+<a itemprop='url' class="" href="/ru/novosti.html" data-target="#">Новости </a>
+
+</li>
+<li itemprop='name' class="active dropdown mega" data-id="104" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="/ru/uroki.html" data-target="#" data-toggle="dropdown">Уроки <em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' class="current active" data-id="110" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/vse-uroki-spiskom.html" data-target="#">Полный список </a>
+
+</li>
+<li itemprop='name' data-id="123" data-level="2">
+<a itemprop='url' class="" href="/ru/uroki/100-pdf.html" target="_blank" data-target="#">Первые 100 уроков в PDF </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="167" data-level="1">
+<a itemprop='url' class="" href="/ru/blog.html" data-target="#">Блог </a>
+
+</li>
+<li itemprop='name' class="dropdown mega" data-id="131" data-level="1">
+<a itemprop='url' class="customlight-background dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">🆕Курсы<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="211" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/vse-kursy.html" data-target="#">🆕 Все курсы </a>
+
+</li>
+<li itemprop='name' data-id="132" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/dagger-2.html" data-target="#">Dagger 2 </a>
+
+</li>
+<li itemprop='name' data-id="138" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/rxjava.html" data-target="#">RxJava </a>
+
+</li>
+<li itemprop='name' data-id="185" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/testing.html" data-target="#">Тестирование </a>
+
+</li>
+<li itemprop='name' data-id="187" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/architecture-components.html" data-target="#">Architecture Components </a>
+
+</li>
+<li itemprop='name' data-id="194" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/performance.html" data-target="#">Производительность </a>
+
+</li>
+<li itemprop='name' data-id="223" data-level="2">
+<a itemprop='url' class="" href="/ru/courses/kotlin.html" data-target="#">Kotlin </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' class="dropdown mega" data-id="107" data-level="1">
+<a itemprop='url' class=" dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">Инфо<em class="caret"></em></a>
+
+<div class="nav-child dropdown-menu mega-dropdown-menu"><div class="mega-dropdown-inner">
+<div class="row">
+<div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
+<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="mega-nav level1">
+<li itemprop='name' data-id="160" data-level="2">
+<a itemprop='url' class="" href="/ru/about/cntct5.html" data-target="#">Вопрос </a>
+
+</li>
+<li itemprop='name' data-id="108" data-level="2">
+<a itemprop='url' class="" href="/ru/about/osajte.html" data-target="#">О сайте </a>
+
+</li>
+<li itemprop='name' data-id="109" data-level="2">
+<a itemprop='url' class="" href="/ru/about/ob-avtore.html" data-target="#">Об авторе </a>
+
+</li>
+<li itemprop='name' data-id="224" data-level="2">
+<a itemprop='url' class="" href="/ru/about/reklama.html" data-target="#">Реклама </a>
+
+</li>
+</ul>
+</div></div>
+</div>
+</div></div>
+</li>
+<li itemprop='name' data-id="184" data-level="1">
+<a itemprop='url' class="" href="/ru/chats.html" data-target="#">Чаты </a>
+
+</li>
+<li itemprop='name' data-id="126" data-level="1">
+<a itemprop='url' class="" href="/ru/login.html" data-target="#">Войти </a>
+
+</li>
+</ul>
+</div>
+
+		</nav>
+    <!-- //NAVBAR MAIN -->
+
+	</div>
+</header>
+<!-- //MAIN NAVIGATION -->
+
+
+
+
+
+
+  
+
+
+  
+
+
+	
+<div id="t3-mainbody" class="container t3-mainbody">
+	<div class="row">
+
+		<!-- MAIN CONTENT -->
+		<div id="t3-content" class="t3-content col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+						<div class="page-header clearfix">
+		<h1 class="page-title">Полный список</h1>
+	</div>
+
+<div class="item-page clearfix">
+
+
+<!-- Article -->
+<article>
+	<meta itemprop="inLanguage" content="ru-RU"/>
+	<meta itemprop="url" content="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html"/>
+
+      
+<header class="article-header clearfix">
+	<h1 class="article-title" itemprop="headline">
+					<a href="/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html" itemprop="url" title="Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.">
+				Урок 3. Создание AVD. Первое приложение. Структура Android-проекта.</a>
+			</h1>
+
+			</header>
+    
+    
+  <!-- Aside -->
+    <aside class="article-aside clearfix">
+          	<dl class="article-info  muted">
+
+		
+			<dt class="article-info-term">
+													Подробности							</dt>
+
+			
+			
+			
+										<dd class="published hasTooltip" title="Опубликовано: ">
+				<i class="icon-calendar"></i>
+				<time datetime="2011-08-01T10:00:00+03:00" itemprop="datePublished">
+					01 августа 2011				</time>
+			</dd>					
+					
+			
+						</dl>
+        
+      </aside>  
+    <!-- //Aside -->
+
+  
+  
+  
+	
+  
+	
+	<section class="article-content clearfix">
+		<p>Для того, чтобы тестировать приложения, нам понадобится Android Virtual Device (AVD). Это эмулятор Android-смартфона, на который мы сможем устанавливать созданные нами приложения, и запускать их там. Давайте его создадим.</p>
+ 
+<p> </p>
+<p><i>Урок обновлен 04.06.2017</i></p>
+<p>На прошлом уроке мы установили среду разработки и Android SDK.</p>
+<p>Теперь наконец-то мы можем создать наше первое приложение и посмотреть, как оно работает.</p>
+<p>Чтобы создать приложение, нам нужно в Android Studio создать проект. При создании проекта, в нем создается модуль. В этом модуле мы рисуем экраны приложения и пишем код. И при запуске этого модуля мы получаем готовое приложение. Поэтому модуль по сути и является приложением. А проект - контейнер для модуля.</p>
+<p>Т.е. в самом простом случае структура проекта такова:</p>
+<p><img src="/images/stories/lessons/L0003/xL0003_351.png.pagespeed.ic.RieZmB7dQO.png" alt="" width="158" height="148"/></p>
+<p>Есть проект, и в нем есть модуль. При запуске проекта запускается модуль и мы получаем Android-приложение, которое создано в этом модуле.</p>
+<p>В этом случае: один проект = одно Android-приложение (один модуль).</p>
+<p> </p>
+<p>Но в одном проекте может быть несколько модулей. Да и проектов можно создать несколько.</p>
+<p><img src="/images/stories/lessons/L0003/xL0003_352.png.pagespeed.ic.GtpKEnUGgp.png" alt="" width="319" height="271"/></p>
+<p>Здесь в первом проекте созданы два модуля, а во втором проекте – три модуля.</p>
+<p>При запуске какого-либо проекта необходимо будет указать, какой именно модуль вы хотите запустить. И каждый модуль является отдельным Android-приложением.</p>
+<p>Т.е. в этом случае: один проект = несколько Android-приложений (несколько модулей).</p>
+<p> </p>
+<p>Пока не будем вдаваться в детали, какая из предложенных схем лучше и удобнее. Для прохождения уроков можно создать один проект, и в нем создавать модули для каждого урока. Либо можно создавать отдельный проект, например, на каждые 10 уроков. Можно вообще создавать отдельный проект на каждый урок.</p>
+<p>Я думаю, что мы начнем с варианта: один проект под все уроки. А со временем, как освоитесь, сами решите, какой вариант вам удобнее.</p>
+<p> </p>
+<p>Давайте создадим проект. Открываем Android Studio. Ярлык для запуска должен быть в меню пуск. Либо вы можете открыть папку, куда устанавливали Android Studio на прошлом уроке. В подпапке bin должен быть EXE-файл.</p>
+<p><img src="/images/stories/lessons/L0003/010.png.pagespeed.ce.b_BgaCCtIH.png" width="700" height="390"/></p>
+<p> </p>
+<p>Открылась среда разработки. Жмем <b>Start a new Android Studio project</b>.</p>
+<p><img src="/images/stories/lessons/L0003/x020.png.pagespeed.ic.K75EWsEKjV.png" width="662" height="458"/></p>
+<p> </p>
+<p>Появилось окно создания проекта. Давайте заполнять.</p>
+<p><img src="/images/stories/lessons/L0003/640x410x030.png.pagespeed.ic.azaBahlQwq.png" width="640" height="410"/></p>
+<p> </p>
+<p><b>Application name</b> – имя проекта. Оно будет отображаться в списке проектов при открытии Android Studio. Напишем здесь Android lessons (т.е. Android уроки).</p>
+<p><b>Company Domain</b> – имя сайта, пишем startandroid.ru.</p>
+<p><b>Package name</b> – это понятие из Java, подробно можно посмотреть <a href="http://java-course.ru/begin/packages/" target="_blank" rel="alternate noopener noreferrer">здесь</a>. Вкратце – это префикс для имени классов нашего приложения. Как видите, пакет автоматически составился из имени сайта и имени проекта. Его всегда можно отредактировать вручную нажав на ссылку edit справа.</p>
+<p><b>Project location</b> – папка на компе, где будут находиться все файлы проекта. Мы на прошлом уроке создавали папку android, куда установили Android Studio и SDK. Там же создайте папку AndroidStudioProjects – в этой папке будем хранить все проекты Android Studio. И в ней создайте папку Androidlessons для нашего текущего проекта.</p>
+<p>Скорее всего сейчас ничего не понятно. Это нормально, не волнуйтесь. В каждом уроке я буду подсказывать, что заполнять в этих полях, и со временем понимание придет.</p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p>Визард спрашивает под какую платформу будем кодить и Minimum SDK (минимальная версия Android, на которой можно будет запустить приложение). Оставляем все как есть.</p>
+<p><img src="/images/stories/lessons/L0003/040.png.pagespeed.ce.jKXgBEyg5T.png" alt="" width="640" height="410"/></p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p>Визард может подгрузить необходимые ему компоненты.</p>
+<p><img src="/images/stories/lessons/L0003/050.png.pagespeed.ce.jPHH1WIM0K.png" alt="" width="640" height="410"/></p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p> </p>
+<p>Далее выберите <b>Empty Activity</b>.</p>
+<p><img src="/images/stories/lessons/L0003/640x410x060.png.pagespeed.ic.PDTUqpYtOG.png" width="640" height="410"/></p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p>Здесь ничего не меняем. Пока что нам нет необходимости знать, зачем все это нужно.</p>
+<p><img src="/images/stories/lessons/L0003/640x410x070.png.pagespeed.ic.rXEpzosG0T.png" width="640" height="410"/></p>
+<p>Жмем <b>Finish</b>.</p>
+<p> </p>
+<p>Проект создается</p>
+<p><img src="/images/stories/lessons/L0003/x080.png.pagespeed.ic.NpmP4tCWsy.png" width="662" height="458"/></p>
+<p> </p>
+<p>Далее открывается студия. После открытия, она может показывать подсказки.</p>
+<p><img src="/images/stories/lessons/L0003/x090.png.pagespeed.ic.SsNJs8PBzT.png" alt="" width="571" height="371"/></p>
+<p>Если они вам не нужны, выключайте чекбокс. </p>
+<p>Жмем <strong>Close</strong>. </p>
+<p> </p>
+<p>Студия открылась</p>
+<p><img src="/images/stories/lessons/L0003/100.png.pagespeed.ce.IXGmkbnAbs.png" alt="" width="640"/></p>
+<p>Но снизу виден прогресс бар. Это означает, что еще выполняются какие то действия, и надо подождать.</p>
+<p> </p>
+<p>И в итоге проект открывается</p>
+<p><img src="/images/stories/lessons/L0003/110.png.pagespeed.ce.8TBKMTuZGj.png" alt="" width="640" height="388"/></p>
+<p>Нам сразу открыты на редактирование некоторые файлы. В них мы ничего менять не будем, в этом пока нет необходимости.</p>
+<p> </p>
+<p>В левой части мы видим слово <b>app </b>– это модуль. По умолчанию при создании проекта создается модуль app. Нам он не интересен, т.к. мы будем создавать свои модули. Но пусть он остается, удалять его я вам не советую. Тот визард, который мы только что прошли при создании проекта, в основном касался как раз этого модуля.</p>
+<p> </p>
+<p>Итак, проект создан. Теперь создадим в проекте свой модуль. Повторюсь, что почти для каждого урока мы будем создавать модуль в этом проекте. Сейчас создадим модуль (приложение) для этого текущего урока. Эта процедура будет частично похожа на создание проекта, но с небольшими отличиями.</p>
+<p>Чтобы создать модуль – в меню выбираем <b>File</b> -&gt;<b> New </b>-&gt; <b>New module</b></p>
+<p>Тип модуля выбираем<b> Phone and Tablet Application</b></p>
+<p><img src="/images/stories/lessons/L0003/640x433x120.png.pagespeed.ic.02haZhxz-b.png" alt="" width="640" height="433"/></p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p>Заполняем поля</p>
+<p><img src="/images/stories/lessons/L0003/640x433x130.png.pagespeed.ic.Sf-KmB6LsG.png" alt="" width="640" height="433"/></p>
+<p><b>Application/Library name</b> – непосредственно имя приложения, которое будет отображаться в списке приложений в смартфоне. Пишем тут FirstProject.</p>
+<p><b>Module name</b> – это название модуля. Т.е. это название будет отображаться слева в списке модулей, там, где сейчас есть app. Давайте придумаем шаблон для названия модулей.</p>
+<p>Например: p&lt;номер урока(000)&gt;&lt;номер проекта в уроке(0)&gt;.</p>
+<p>На номер урока выделим три цифры, на номер проекта – одну. Также, будем добавлять название приложения - FirstProject. И все это напишем маленькими буквами и без пробелов. Получится такое имя модуля: p0031firstproject.</p>
+<p><b>Package name</b> – имя пакета отредактируем вручную, нажав edit справа. Оставим там ru.startandroid и добавим точку и имя модуля.</p>
+<p><b>Minimum SDK</b> оставляйте без изменений.</p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p>Далее выберите <b>Empty Activity</b>.</p>
+<p><img src="/images/stories/lessons/L0003/640x433x140.png.pagespeed.ic.nLA8XCBPo1.png" alt="" width="640" height="433"/></p>
+<p> Жмем <b>Next</b></p>
+<p> </p>
+<p>Здесь ничего не меняем</p>
+<p><img src="/images/stories/lessons/L0003/640x433x150.png.pagespeed.ic.F-5m6MCv_x.png" alt="" width="640" height="433"/></p>
+<p> Жмем <b>Finish </b>и ждем.</p>
+<p> </p>
+<p>Через какое-то время модуль будет создан и мы увидим его в списке слева. Это p0031firstproject - значение, которое мы указали в поле Module name.</p>
+<p><img src="/images/stories/lessons/L0003/160.png.pagespeed.ce.HZWBF0vYKA.png" alt="" width="640" height="384"/></p>
+<p>Можно раскрыть этот модуль и посмотреть его содержимое.</p>
+<p>Вкратце пройдемся по интересующим нас элементам</p>
+<p>Файл <b>AndroidManifest.xml</b> – манифест или конфиг-файл приложения</p>
+<p>В папке <b>java</b> и ее подпапках будет весь, написанный нами, код приложения</p>
+<p>Папка <b>res</b> используется для файлов-ресурсов различного типа.</p>
+<p> </p>
+<p>Все это мы будем в дальнейшем использовать, и станет понятнее, что и зачем нужно.</p>
+<p> </p>
+<p>Давайте наконец-то запустим наше первое приложение! Для этого надо выбрать соответствующий ему модуль в выпадающем списке сверху</p>
+<p><img src="/images/stories/lessons/L0003/170.png.pagespeed.ce.haUTmoTmfx.png" alt="" width="640" height="173"/></p>
+<p>И жмем (чуть правее списка) кнопку с зеленым треугольником (либо комбинацию Shift+F10).</p>
+<p> </p>
+<p>Чтобы запустить приложение, нужно какое-нить реальное Android-устройство или эмулятор.</p>
+<p><img src="/images/stories/lessons/L0003/x180.png.pagespeed.ic.ujSbK7tl6I.png" alt="" width="640" height="507"/></p>
+<p>У нас пока не на чем запускать приложение. Можете подключить шнуром реальное устройство, и оно здесь появится (если не возникнет проблем с драйверами или настройками устройства).</p>
+<p>Либо можно создать эмулятор. Жмем Create New Virtual Device</p>
+<p><img src="/images/stories/lessons/L0003/190.png.pagespeed.ce.kknxRo6vVF.png" alt="" width="640" height="461"/></p>
+<p>Здесь можно выбрать форм-фактор устройства. Оставляйте то, что выбрано по умолчанию.</p>
+<p>Жмем <strong>Next</strong></p>
+<p> </p>
+<p>Далее переходите на вкладку x86 Images и там должен быть образ, в названии которого нет слова Download. Т.е. он уже загружен и мы можем его использовать.</p>
+<p><img src="/images/stories/lessons/L0003/640x461x200.png.pagespeed.ic.dqJjZUzeAA.png" alt="" width="640" height="461"/></p>
+<p>В данном случае на эмулятор будет установлен Android версии 7.1.1. Если вам нужна другая версия, то загружайте ее и используйте.</p>
+<p>Жмем <b>Next</b></p>
+<p> </p>
+<p>Далее нам предлагают указать название эмулятора и поменять его настройки. Оставляем все как есть </p>
+<p><img src="/images/stories/lessons/L0003/640x461x210.png.pagespeed.ic.DJ-svoZStV.png" alt="" width="640" height="461"/></p>
+<p> Жмем <strong>Finish</strong></p>
+<p> </p>
+<p>В итоге в списке устройств появляется только что созданный эмулятор и мы можем использовать его для запуска приложения.</p>
+<p><img src="/images/stories/lessons/L0003/x220.png.pagespeed.ic.oBdH8fVNaD.png" alt="" width="626" height="496"/></p>
+<p>Жмем <strong>Ok</strong></p>
+<p> </p>
+<p>Через какое-то время (вплоть до нескольких минут) появится эмулятор</p>
+<p><img src="/images/stories/lessons/L0003/x230.png.pagespeed.ic._1tjaR4mBH.png" alt="" width="329" height="616"/></p>
+<p> </p>
+<p> </p>
+<p>И в нем начнет запускаться Android</p>
+<p><img src="/images/stories/lessons/L0003/x240.png.pagespeed.ic.yowGMIfCBH.png" alt="" width="329" height="616"/></p>
+<p> </p>
+<p>И в итоге запустится наше приложение</p>
+<p><img src="/images/stories/lessons/L0003/x250.png.pagespeed.ic.57hHWq8p7h.png" alt="" width="329" height="616"/></p>
+<p>Название в заголовке - FirstProject. Именно его мы указывали при создании приложения.</p>
+<p>Т.е. вы создали и запустили ваше первое приложение, с чем вас и поздравляю) Впереди сотни таких приложений и запусков.</p>
+<p> </p>
+<p>Если эмулятор не показал ваше приложение, то убедитесь, что Android Studio "видит" этот эмулятор. Для этого снизу слева нажмите вкладку Android Monitor</p>
+<p><img src="/images/stories/lessons/L0003/260.png.pagespeed.ce.Fc_ql3RRuK.png" alt="" width="640" height="388"/></p>
+<p>И в списке устройств чуть выше должен быть виден эмулятор <b>Nexus_5X_API_25</b></p>
+<p>Если эмулятор есть в списке, а приложение не отобразилось, то попробуйте снова запустить приложение, нажав зеленый треугольник (Shift+F10).</p>
+<p>Если эмулятора в списке нет, то закройте эмулятор и попробуйте снова запустить приложение.</p>
+<p> </p>
+<p> </p>
+<p>Этот урок был обновлен в июне 2017. А многие последующие уроки были написаны аж в 2011-2012. Поэтому скриншоты в них могут отличаться от ваших. Это нормально.</p>
+<p>Также, должен предупредить, что я делал и тестировал первые уроки под Android версии 2.3.3. Это указано в начале уроков. Но это вовсе не означает, что уроки уже безнадежно устарели и читать их смысла нет никакого. Код под 2.3.3 и 7.1.1 в подавляющем большинстве случаев абсолютно один и тот же. В новых версиях Android добавляются новые компоненты, а прошлые обычно остаются без изменений и достаточно редко меняются или объявляются устаревшими.</p>
+<p> </p>
+<p>P.S.</p>
+<p>Если у вас открыт проект и вы хотите снова увидеть стартовое окно Android Studio, в меню выберите <b>File</b> &gt; <b>Close Project</b>.</p>
+<p>Вы увидите стартовое окно, слева будет список ваших проектов.</p>
+<p> </p>
+<p>P.S.S.</p>
+<p>Если у вас имя пользователя русскими буквами, то могут возникнуть проблемы. Как их решить, можно прочесть на форуме в <a href="http://forum.startandroid.ru/viewtopic.php?f=3&amp;t=84#p620" target="_blank" rel="noopener noreferrer">ветке</a> этого урока.</p>
+<p>Если строка выше не помогла, то попробуйте еще <a href="http://forum.startandroid.ru/viewtopic.php?f=3&amp;t=84&amp;p=5150#p5092" target="_blank" rel="noopener noreferrer">такое</a> решение.</p>
+<p> </p>
+<p>На следующем уроке будем добавлять в наше приложение различные элементы и менять их свойства.</p><div><hr>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>Присоединяйтесь к нам в <b>Telegram</b>:</p>
+<p>- в канале <a href="https://t.me/startandroid" target="_blank" rel="alternate noopener noreferrer">StartAndroid</a> публикуются ссылки на новые статьи с сайта startandroid.ru и интересные материалы с хабра, medium.com и т.п.</p>
+<p>- в чатах решаем возникающие вопросы и проблемы по различным темам: <a href="https://t.me/startandroidchat" target="_blank" rel="alternate noopener noreferrer">Android</a>, <a href="https://t.me/kotlinchat" target="_blank" rel="alternate noopener noreferrer">Kotlin</a>, <a href="https://t.me/rxjavachat" target="_blank" rel="alternate noopener noreferrer">RxJava</a>, <a href="https://t.me/daggerchat" target="_blank" rel="alternate noopener noreferrer">Dagger</a>, <a href="https://t.me/androidtestingchat" target="_blank" rel="alternate noopener noreferrer">Тестирование</a> </p>
+<p>- ну и если просто хочется поговорить с коллегами по разработке, то есть чат <a href="https://t.me/startandroidflood" target="_blank" rel="noopener noreferrer">Флудильня</a></p>
+<p>- новый чат <a href="https://t.me/android_performance_chat" target="_blank" rel="noopener noreferrer">Performance</a> для обсуждения проблем производительности и для ваших пожеланий по содержанию курса по этой теме </p></div>
+<!-- END: Modules Anywhere -->
+<hr>
+<br>
+
+</div><div id="jfusioncontent12">                <div class="jfusionclearfix jfusionButtonArea">
+                    	<a class="readon jfusionButton jfusionBtnDiscuss" target="_blank" href="http://forum.startandroid.ru/viewtopic.php?t=84"><span>Обсудить на форуме [521 replies]</span></a>
+                </div>
+                <div class="jfusionclearfix jfusionButtonConfirmationBox" style="display: none;">
+                </div></div>	</section>
+  
+  <!-- footer -->
+    <!-- //footer -->
+
+			<hr class="divider-vertical"/><ul class="pager pagenav">
+	<li class="previous">
+		<a class="hasTooltip" title="Урок 2. Установка Android Studio" aria-label="Previous article: Урок 2. Установка Android Studio" href="/ru/uroki/vse-uroki-spiskom/9-urok-2-ustanovka-i-nastrojka-sredy-razrabotki.html" rel="prev">
+			<span class="icon-chevron-left" aria-hidden="true"></span> <span aria-hidden="true">Назад</span>		</a>
+	</li>
+	<li class="next">
+		<a class="hasTooltip" title="Урок 4. Компоненты экрана и их свойства" aria-label="Next article: Урок 4. Компоненты экрана и их свойства" href="/ru/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html" rel="next">
+			<span aria-hidden="true">Вперёд</span> <span class="icon-chevron-right" aria-hidden="true"></span>		</a>
+	</li>
+</ul>
+	
+	
+	</article>
+<!-- //Article -->
+
+
+</div>
+		</div>
+		<!-- //MAIN CONTENT -->
+
+		<!-- SIDEBAR LEFT -->
+		<div class="t3-sidebar t3-sidebar-left col-xs-12 col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 ">
+			<div class="t3-module module " id="Mod87"><div class="module-inner"><div class="module-ct"><div class="mod-languages">
+	<div class="pretext"><p><h1>Language</h1></p></div>
+
+	<ul class="lang-inline" dir="ltr">
+									<li class="lang-active">
+			<a href="https://startandroid.ru/ru/uroki/vse-uroki-spiskom/12-urok-3-sozdanie-avd-pervoe-prilozhenie-struktura-android-proekta.html">
+												<img src="/media/mod_languages/images/ru.gif.pagespeed.ce.bzLHrnbLL7.gif" alt="Русский" title="Русский"/>										</a>
+			</li>
+								<li>
+			<a href="/en/lessons/201-lesson3-creating-avd-the-first-application-android-project-structure.html">
+												<img src="/media/mod_languages/images/xen.gif.pagespeed.ic.a_9qHVLn30.png" alt="English (UK)" title="English (UK)"/>										</a>
+			</li>
+				</ul>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod323"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center">
+<h2>Автор сайта</h2>
+<p><img src="/images/stories/pic/150x150xdmitryvinogradov.jpg.pagespeed.ic.ZW6Ncwy8-8.jpg" width="150" height="150"/></p>
+<p>Дмитрий Виноградов</p>
+<p>Подробнее можно <a href="https://youtu.be/xPuiCBRmJDg?t=102" target="_blank" rel="noopener noreferrer">посмотреть</a> или <a href="/ru/about/ob-avtore.html" target="_blank" rel="noopener noreferrer">почитать</a>.</p>
+<p>Никакие другие люди не имеют к этому сайту никакого отношения и просто занимаются плагиатом.</p>
+</div></div>
+</div></div></div><div class="t3-module module " id="Mod139"><div class="module-inner"><div class="module-ct"><div class="bannergroup">
+
+	<div class="banneritem">
+																																																																			<a href="/ru/component/banners/click/1.html" title="Курс Dagger 2">
+							<img src="https://startandroid.ru/images/banners/xbanner_dagger2_n.png.pagespeed.ic.rjlKy8qgX6.png" alt="Курс Dagger 2" width="240" height="400"/>
+						</a>
+																<div class="clr"></div>
+	</div>
+
+</div>
+</div></div></div><div class="t3-module module " id="Mod91"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<div align="center"><h2>Социальные сети</h2></div>
+<p> </p>
+<div align="center">
+<p><img src="/images/stories/pic/telegram.png.pagespeed.ce.nkfL74AMTR.png" alt="" width="100" height="100"/></p>
+<p>В <a href="https://t.me/startandroid" target="_blank">канале</a> я публикую ссылки на интересные и полезные статьи по Android</p>
+<p>В <a href="https://t.me/startandroidchat" target="_blank">чате</a> можно обсудить вопросы и проблемы, возникающие при разработке</p>
+</div>
+
+<br><br>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?144"></script>
+<!-- VK Widget -->
+
+<div align="center"><h4>Группа ВКонтакте</h4>
+<div id="vk_groups"></div>
+</div>
+<script type="text/javascript">VK.Widgets.Group("vk_groups",{mode:3},36284347);</script>
+<br><br>
+</div>
+</div></div></div><div class="t3-module module " id="Mod90"><div class="module-inner"><div class="module-ct">
+
+<div class="custom">
+	<h1>Поддержка проекта</h1>
+<p><a href="https://money.yandex.ru/prepaid/" target="_blank">Яндекс</a><br/><strong>410011180491924</strong></p>
+<p><a href="http://www.webmoney.ru/rus/addfunds/index.shtml">WebMoney</a><br/><strong>R248743991365</strong><br/><strong>Z551306702056</strong></p>
+<p><a href="https://www.paypal.me/startandroidcourse">Paypal</a></p>
+
+</div>
+</div></div></div>
+		</div>
+		<!-- //SIDEBAR LEFT -->
+
+	</div>
+</div> 
+
+
+  
+
+
+  
+
+
+	
+<!-- BACK TOP TOP BUTTON -->
+<div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix-top">
+  <button class="btn btn-primary" title="Back to Top"><i class="fa fa-caret-up"></i></button>
+</div>
+<script type="text/javascript">(function($){$('#back-to-top').on('click',function(){$("html, body").animate({scrollTop:0},500);return false;});$(window).load(function(){if((parseInt($(window).height())*2)>(parseInt($(document).height()))){$('#back-to-top').hide();}});})(jQuery);</script>
+<!-- BACK TO TOP BUTTON -->
+
+<!-- FOOTER -->
+<footer id="t3-footer" class="wrap t3-footer">
+
+	
+	<section class="t3-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 copyright ">
+					
+
+<div class="custom">
+	<p>© Start Android, 2011-2020. Все права защищены, копирование материалов возможно только с разрешения автора </p>
+<!-- START: Modules Anywhere -->
+
+<div class="custom">
+	<p>При возникновении каких-либо вопросов, используйте <a href="http://startandroid.ru/ru/about/cntct5.html" target="blank">форму обратной связи</a> </p></div>
+<!-- END: Modules Anywhere -->
+<p> </p>
+<p> </p></div>
+
+          <small>
+            <a href="http://twitter.github.io/bootstrap/" title="Bootstrap by Twitter" target="_blank">Bootstrap</a> is a front-end framework of Twitter, Inc. Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" title="MIT License" target="_blank">MIT License.</a>
+          </small>
+          <small>
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> font licensed under <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>.
+          </small>
+				</div>
+									<div class="col-md-4 poweredby text-hide">
+						<a class="t3-logo t3-logo-color" href="http://t3-framework.org" title="Powered By T3 Framework" target="_blank" rel="nofollow">Powered by <strong>T3 Framework</strong></a>
+					</div>
+							</div>
+		</div>
+	</section>
+
+</footer>
+<!-- //FOOTER -->
+
+</div>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-19388196-4','auto');ga('send','pageview');</script>
+</body>
+</html>
